@@ -2,3 +2,4 @@ About.txt
 chapter1.txt
 chapter2.txt
 chapter3.txt
+scene-types.txt
