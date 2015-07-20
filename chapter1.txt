@@ -1,3 +1,0 @@
-# Chapter 1 (Example Chapter)
-
-I was born in the year 1632, in the city of York, of a good family...
