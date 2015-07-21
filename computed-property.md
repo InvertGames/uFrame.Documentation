@@ -12,7 +12,7 @@ This is currently done with code - as you cannot link collections in the uFrame 
 
 For every Computed Property there exists
 
-	        public override IEnumerable<IObservableProperty> Get{ComputedPropertyName}Dependents()
+	public override IEnumerable<IObservableProperty> Get[ComputedName]Dependents()
 
 Which you can override to define other [Observable Properties](Observable-Property) which the Computed Property is reliant on.
 
@@ -25,3 +25,13 @@ foreach guys in base.Get[ComputedName]Dependents
 yeild return guys
 then yield return viewModel.CollectionProperty 
 - sinitreo
+
+Example:
+_(Add this to your ViewModel implementation, Replace [ComputedName] with Computed Property Name and [CollectionName] to Collection Property Name you are binding)_
+
+	public override IEnumerable<IObservableProperty> Get[ComputedName]Dependents () {
+		foreach ( var dep in base.Get[ComputedName]Dependents ())
+    			yield return dep;
+  
+  		yield return [CollectionName];
+	}
