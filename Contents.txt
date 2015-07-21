@@ -1,6 +1,6 @@
 scene-types.txt
 elements.txt
 default-project.md
-computed-property.md
-scene-types.md
 elements.md
+scene-types.md
+computed-property.md
