@@ -5,3 +5,4 @@ elements.md
 scene-types.md
 computed-property.md
 viewmodel.md
+execution-order.md
