@@ -14,6 +14,15 @@ _Scene Type_ node defines how to load a scene and allows for unloading the scene
 
 ### Scene Type
 
+uFrame will generate for an empty class with the name of the scene type. You can add there custom fields and properties. Public fields will be displayed in the inspector.
+
+```
+public class MainMenuScene : MainMenuSceneBase {
+    public int someIntField; // This will be displayed int the inspector.
+    public int someIntProperty { get; set; } // This won't be displayed.
+}
+```
+
 Below is an example of a scene base class that is automatically generated from the designer. It has a `DefaultKernelScene` property that defines the [kernel scene](Kernel Scene) that will be loaden with the scene and a `Settings` property that will contain all settings passed to the scene from the `LoadSceneCommand`.
 
 Example _UIScene.designer.cs_
