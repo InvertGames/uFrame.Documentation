@@ -1,3 +1,3 @@
-# Enums.md
+# Enums
 
-Write here...
+Enums define a new Property Type which then can be used by [Elements](Element).
