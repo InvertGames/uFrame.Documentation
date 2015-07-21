@@ -1,3 +1,5 @@
 scene-types.txt
 elements.txt
 computed-property.md
+scene-types.md
+elements.md
