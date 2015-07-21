@@ -25,3 +25,11 @@ foreach guys in base.Get[ComputedName]Dependents
 yeild return guys
 then yield return viewModel.CollectionProperty 
 - sinitreo
+
+Example:_(Replace [ComputedName] with Computed Property Name )_
+> public override IEnumerable<IObservableProperty Get[ComputedName]Dependents () {
+		foreach ( var dep in base.Get[ComputedName]Dependents ())
+    			yield return dep;
+  
+  		yield return Collectable;
+}
