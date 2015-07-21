@@ -1,10 +1,6 @@
-About.txt
-chapter1.txt
-chapter2.txt
-chapter3.txt
 scene-types.txt
 elements.txt
+default-project.md
 computed-property.md
 scene-types.md
 elements.md
-default-project.md
