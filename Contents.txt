@@ -3,3 +3,4 @@ elements.txt
 computed-property.md
 scene-types.md
 elements.md
+viewmodel.md
