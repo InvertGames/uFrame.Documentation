@@ -8,7 +8,16 @@
 
 #### How to bind Computed Property to a collection change?
 
-there is something like Get<ComputedProperty>Dependants which returns Observables which are used to determinate when to update the computed property
+This is currently done with code - as you cannot link collections in the uFrame Designer to Computed Properties.
+
+For every Computed Property there exists
+
+	        public override IEnumerable<IObservableProperty> Get{ComputedPropertyName}Dependents()
+
+Which you can override to define other [Blablabla](Observable Properties) 
+
+Sources: (Slack)
+> there is something like Get<ComputedProperty>Dependents which returns Observables which are used to determinate when to update the computed property
 
 > on your viewmodel, override Get[ComputedName]Dependents()
 foreach guys in base.Get[ComputedName]Dependents
