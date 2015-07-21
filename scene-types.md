@@ -16,6 +16,7 @@ _Scene Type_ node defines how to load a scene and allows for unloading the scene
 
 uFrame will generate for an empty class with the name of the scene type. You can add there custom fields and properties. Public fields will be displayed in the inspector.
 
+[this code below should be a use case example documented with comments]
 ```
 public class MainMenuScene : MainMenuSceneBase {
     public int someIntField; // This will be displayed int the inspector.
