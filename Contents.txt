@@ -5,3 +5,4 @@ chapter3.txt
 scene-types.txt
 elements.txt
 computed-property.md
+scene-types.md
