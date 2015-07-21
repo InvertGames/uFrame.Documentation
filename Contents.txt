@@ -1,6 +1,7 @@
 scene-types.txt
 elements.txt
-computed-property.md
-scene-types.md
+default-project.md
 elements.md
+scene-types.md
+computed-property.md
 viewmodel.md
