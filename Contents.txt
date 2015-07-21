@@ -4,3 +4,4 @@ default-project.md
 elements.md
 scene-types.md
 computed-property.md
+viewmodel.md
