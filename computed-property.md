@@ -14,7 +14,7 @@ For every Computed Property there exists
 
 	        public override IEnumerable<IObservableProperty> Get{ComputedPropertyName}Dependents()
 
-Which you can override to define other [Blablabla](Observable Properties) 
+Which you can override to define other [Observable Properties](Observable-Property) which the Computed Property is reliant on.
 
 Sources: (Slack)
 > there is something like Get<ComputedProperty>Dependents which returns Observables which are used to determinate when to update the computed property
