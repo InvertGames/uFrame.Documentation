@@ -1,0 +1,3 @@
+# default-project.md
+
+Write here...

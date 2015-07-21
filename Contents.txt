@@ -7,3 +7,4 @@ elements.txt
 computed-property.md
 scene-types.md
 elements.md
+default-project.md
