@@ -29,7 +29,7 @@ then yield return viewModel.CollectionProperty
 Example:
 _(Add this to your ViewModel implementation, Replace [ComputedName] with Computed Property Name and [CollectionName] to Collection Property Name you are binding)_
 
-	public override IEnumerable<IObservableProperty Get[ComputedName]Dependents () {
+	public override IEnumerable<IObservableProperty> Get[ComputedName]Dependents () {
 		foreach ( var dep in base.Get[ComputedName]Dependents ())
     			yield return dep;
   
