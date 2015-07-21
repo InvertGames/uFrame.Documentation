@@ -8,3 +8,4 @@ viewmodel.md
 execution-order.md
 scene-loader.txt
 subsystems.md
+system-loaders.md
