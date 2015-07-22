@@ -1,13 +1,10 @@
 # Scene Types
 
-<!-- TOC depth:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
 - [Scene Types](#scene-types)
 	- [Generated Code](#generated-code)
 		- [Scene Type](#scene-type)
 		- [Scene Type Settings](#scene-type-settings)
 		- [Scene Loader](#scene-loader)
-<!-- /TOC -->
 
 In order to load/unload scene with uFrame, a scene must contain a single root game object that is a parent to all other game objects in the scene.
 
@@ -25,7 +22,7 @@ _Scene Type_ node defines how to load a scene and allows for unloading the scene
 
 uFrame will generate an empty class with the name of the scene type. You can add there custom fields and properties. Public fields will be displayed in the inspector.
 
-If you have multiple scene using the same Scene Type you may want to add a custom field that can be adjusted for each scene separately, for eg. weather conditions on the scene. [Scene Loader](scene-loader) can later read the data while loading the scene to make the scene reflect the specified weather conditions.
+If you have multiple scene using the same Scene Type you may want to add a custom field that can be adjusted for each scene separately, for eg. weather conditions on the scene. [Scene Loader](scene-loader.md) can later read the data while loading the scene to make the scene reflect the specified weather conditions.
 
 [this code below should be a use case example documented with comments]
 ```
