@@ -1,10 +1,10 @@
 # uFrame MVVM 1.6 Getting Started I
 
-Overview
+## Overview
 
 This tutorial shows how to install uFrame MVVM, shows the default package and proposes a simple change in the default project: creating an error message for login screen
 
-Steps
+### Steps
 
 1. Learn how to install uFrame MVVM
 2. Learn how to setup example project
@@ -14,116 +14,125 @@ Steps
 6. Learn how to connect view with GUI
 7. Perform final test
 
-Average Time
+### Average Time
 
 6-8 minutes
 
+## Transcript
 
-Transcript
-Introduction:
-Hello and welcome to uFrame 1.6 getting started series.
-This part will show how to install uFrame MVVM and how to setup default project. It also shows how to make one simple change to the default project.
+###### Introduction:
+Hello and welcome to uFrame 1.6 getting started guide.
+The entire guide is based on uFrame MVVM 1.6 Example Project.
+Every part explains certain features of uFrame MVVM. Almost every part then proposes a simple change in the example project.
 
-How to install uFrame MVVM
-Using asset store, you can install uFrame MVVM just like any other asset: simply import it. 
+This part will show how to install uFrame MVVM and how to setup example project. It also proposes a simple change in the example project: creating an error message for the login screen.
 
-<<<PICTURE OF IMPORT BUTTON>>>
+###### How to install uFrame MVVM
+Using asset store, you can install uFrame MVVM just like any other asset: simply import it and follow Unity instructions.
+![How to import uFrame MVVM](/images/getting-started-for-uframe-mvvm-1.6/assetstore_import.png)
 
-As for uFrame MVVM 1.6, you will find folder called uFrameMVVM inside of your assets folder. It contains 2 other packages with different uFrame MVVM versions. Version 1.5 is shipped for backwards compatibility. If you are new to uFrame MVVM, please stick with version 1.6. Import the version you want by double clicking on the corresponding package. 
+As for uFrame MVVM 1.6, you will find folder called uFrameMVVM inside of your assets folder. It contains 2 other packages with different uFrame MVVM versions.
 
-Picture with 2 assets
+![2 Package inside of uFrameMVVM folder](/images/getting-started-for-uframe-mvvm-1.6/uframe_importedstate.png)
 
-You can safely remove uFrameMVVM folder after this step. This tutorial shows basics of uFrame MVVM 1.6. Tutorials for version 1.5 are available on Invert Games Studios website.
-<<<URL TO WEBSITE
 
-Learn how to setup default project
+Version 1.5 is shipped for backwards compatibility. If you are new to uFrame MVVM, please stick with version 1.6. Import the version you want by double clicking on the corresponding package. You can safely remove uFrameMVVM folder after this step.
 
-Once you import uFrameMVVM 1.6, Welcome Screen will show up. To manually open Welcome Screen, select uFrame -> Welcome Screen in the menu panel.
+This tutorial shows basics of uFrame MVVM 1.6. Tutorials for version 1.5 are available on [Invert Games Studios Website](http://invertgamestudios.com/mvvm/overview).
 
-<<PICTURE OF uFrame -> Welcome Screen>>
+###### Learn how to setup default project
 
-In the Welcome Window, navigate to Example and click “SETUP EXAMPLE PROJECT” button. 
+Once you import uFrameMVVM 1.6, Welcome Screen will show up. To manually open Welcome Screen, select uFrame -> Welcome Screen in the menu panel (1).
 
-<<PICTURE OF NAVIGATION>>
+![uFrame MVVM Welcome Screen](/images/getting-started-for-uframe-mvvm-1.6/uframe_welcome_screen_open.png)
 
-
+In the welcome screen, navigate to Examples (1) and click “SETUP EXAMPLE PROJECT” button (2).
 
-Follow the instructions. Example Package will be deployed into your Assets Folder, all the needed scene will be added to your build settings. Finally intro scene will be opened and run.
-<<<PICTURE OF FINAL STATE>>>
+![uFrame MVVM Setup Example Project Button](/images/getting-started-for-uframe-mvvm-1.6/uframe_welcome_screen_goto.png)
 
-Learn how to add property to the element
+Follow the instructions. Example Package will be deployed into your Assets Folder (1), all the needed scene will be added to your build settings (2). Finally intro scene will be opened and run (3).
+![Example Project deplyed state](/images/getting-started-for-uframe-mvvm-1.6/example_project_deployed.png)
+
+###### Learn how to add property to the element
 Open uFrame Designer Window using menu panel Windows -> uFrame Designer.
 
-<<<PICTURE OF Windows -> uFrame Designer
+![How to open graph designer](/images/getting-started-for-uframe-mvvm-1.6/uframe_open_graph_designer_instruction.png)
 
 First of all you need to open MainMenuSystem graph. Check opened graph tabs:
 
-<<<<INSERT PICTURE WHICH SHOWS TABS>>>>
+![Opened graph tabs](/images/getting-started-for-uframe-mvvm-1.6/uframe_graph_tabs.png)
 
-If it contains MainMenuSystem, simply click it. 
+If it contains MainMenuSystem, simply click it.
 If MainMenuSystem tab is not there, click Graph selection control and select MainMenuSystem:
 
-<<<<INSERT PICTURE WHICH HOW TO OPEN EXISTING GRAPH>>>>
+![How to open graph](/images/getting-started-for-uframe-mvvm-1.6/open_graph_example.png)
 
-MainMenuSystem graph should open, and you should be able to locate MainMenuSystem graph tab.
-<<< PICTURE OF FINAL STATE
+MainMenuSystem graph should open (1), and you should be able to locate MainMenuSystem graph tab (2).
 
-Just like with any other graph, MainMenuSystem graph contains nodes. Nodes can represent different information. uFrame MVVM nodes contain special sub-header (or tag) which shows what type of node it is:
 
-<<<<INSERT PICTURE WHICH SHOWS NODE TYPE>>>>
+![Main menu graph opened](/images/getting-started-for-uframe-mvvm-1.6/main_menu_graph_opened.png)
 
-In this step we are interested in Element node which is called LoginScreen.
+Just like with any other graph, MainMenuSystem graph contains nodes. Nodes can represent different information. uFrame MVVM nodes contain special sub-header (or tag) which shows what type of node it is (1). In this step we are interested in Element node which is called LoginScreen:
 
-<<<<INSERT PICTURE WHICH SHOWS LoginScreen NODE>>>>
+![LoginScreen element](/images/getting-started-for-uframe-mvvm-1.6/img_0000.png)
 
-Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. You can collapse or expand node by clicking arrow control in the bottom of the node. 
-<<<<INSERT PICTURE WHICH SHOWS EXPAND/COLLAPSE CONTROL>>>>
+Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. Such data is revealed when you expand the node. You can expand or collapse a node by clicking arrow control in the bottom of the node (1):
 
-Expand LoginScreen. Let us add new property. For this we need to click + button near the Properties section.
+![Expand/Collapse control shown](/images/getting-started-for-uframe-mvvm-1.6/img_0001.png)
 
-<<<<INSERT PICTURE WHICH SHOWS + button>>>>
+Expand LoginScreen. Let us add new property. For this we need to click + button near the Properties section (1):
 
-New node child item will be created. in the Properties section. Such child item will contain type in the left column and name in the right column. 
+![Plus button near properties shown](/images/getting-started-for-uframe-mvvm-1.6/img_0002.png)
 
-<<<<INSERT PICTURE WHICH SHOWS newly create prop>>>>
+New node child item will be created. in the Properties section. Such child item will contain type in the left column and name in the right column (1):
 
-Type represents type of the property and by default it is set to string. Name represents name of the property and by default it is set to “Properties”.
+![Property child item shown](/images/getting-started-for-uframe-mvvm-1.6/img_0003.png)
 
-We now need to change the name of the property by double clicking on the current name. Field will become editable and you can type in the name. Let us name it ErrorMessage.
+Type (1) represents type of the property and by default it is set to string. Name (2) represents name of the property and by default it is set to “Properties”. We now need to change the name of the property. When you add a new property, field is automatically editable and you can type in the name. Let us name it ErrorMessage. Finish editing by clicking outside of the node. If, at some point, you want to rename existing property later, you need to double click on the current name, to make field editable again. After this step, your node should look like this:
 
-<<<<INSERT PICTURE WHICH SHOWS final ErrorMessage property>>>>
+![Final state of LoginScreen element](/images/getting-started-for-uframe-mvvm-1.6/img_0004.png)
+
+
 
 This property will be of type string and we do not have to change. However, if you want to change the type of the property, you can click the current type and select desired type from the window which pops up.
 
-<<<<INSERT PICTURE WHICH SHOWS Show window and type selectio>>>>
+![Type selection window](/images/getting-started-for-uframe-mvvm-1.6/img_0006.png)
 
 We have successfully added new property to the LoginScreen element.
 
-Learn how to add binding to the view
-Being on the MainMenuSystem graph, let us double click header of LoginScreen element node. This will let us get deeper into the details of the node. As a matter of fact, MVVM stands for Model View ViewModel. While Element node defines Model and ViewModel, View is expressed differently. In this example, View is represented using a View Node called LoginScreenView. It is important to note, that element can have unlimited number of views.
+###### Learn how to add binding to the view
+Being on the MainMenuSystem graph, let us double click header of LoginScreen element node.
 
-<<<<INSERT PICTURE WHICH SHOWS LoginScreenView NODE>>>>
+![Double click header of Login Screen](/images/getting-started-for-uframe-mvvm-1.6/img_0007.png)
 
-We plug LoginScreen element node (A) into LoginScreenView element input (B), to express that LoginScreenView represents LoginScreen data. We can also see that LoginScreenView inherits from SubScreenView. You can read more about inheritance in the documentation.
+This will let us get deeper into the details of the node. As a matter of fact, MVVM stands for Model View ViewModel. While Element node defines Model and ViewModel, View is expressed differently. In this example, View is represented using a View Node called LoginScreenView.
+
+![Graph filtered by LoginScreen](/images/getting-started-for-uframe-mvvm-1.6/img_0009.png )
+
+> It is important to note, that element can have unlimited number of views:
+
+We plug LoginScreen element node (A) into LoginScreenView element input (B), to express that LoginScreenView represents LoginScreen data. We can also see that LoginScreenView inherits from SubScreenView (C). You can read more about inheritance in the documentation.
 
 In this step we want to create a binding of ErrorMessageProperty to the Text GUI object.
-For that, we need to click plus button near the Bindings section on the LoginScreenView Node.
+For that, we need to click plus button (1) near the Bindings section on the LoginScreenView Node.
 
-<<<<INSERT PICTURE WHICH SHOWS + button on bindings>>>>
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0010.png)
 
- A window will popup, with a list of all possible bindings. We need to select “ErrorMessage To Text”. 
+A window will popup, with a list of all possible bindings. We need to select “ErrorMessage To Text” (1):
 
-<<<<INSERT PICTURE WHICH SHOWS bindings selection window>>>>
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0011.png)
 
-Once we select it, it should appear in the list of existing bindings.
+Once we select it, it should appear in the list of existing bindings (1):
+
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0012.png)
 
 We have successfully added binding to the LoginScreenView node.
 
-Learn how to change logic in controllers and services
+###### Learn how to change logic in controllers and services
 
-This step involves a little bit of programming. Since we have done some changes to the nodes, we need to Save and Compile our diagram using corresponding button in the top right corner.
+This step involves a little bit of programming. Since we have done some changes to the nodes, we need to Save and Compile our diagram using corresponding button (1) in the top right corner.
 
-<<SHOW SAVE AND COMPILE BINDING
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0013.png)
 
 Saving and Compiling process turns diagram items and nodes into CSharp code.
 
@@ -132,38 +141,57 @@ In the previous step we have introduces UI binding for the ErrorMessage property
 
 Right click on the LoginScreen element node header. Select Open -> LoginScreenController.cs
 
-<<SHOW CONTEXT MENU PICTURE>>
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0014.png)
 
-This will open your IDE with the corresponding generated file and let you modify the internals of it. Alternatively, you can manually locate LoginScreenController.cs file in your unity project 
+This will open your IDE with the corresponding generated file and let you modify the internals of it. Alternatively, you can manually locate LoginScreenController.cs file in your unity project
 
 We are interested in method called Login. It gets invoked when we try to log in. It delegates login procedure to the UserManagementService along with the Username and Password.
 
-<<GIST OF THE METHOD>>
-
-In the very end of the method body let us add the following code:
-
-if(UserManagementService.LocalUser.AuthorizationState != AuthorizationState.Authorized){
-	viewModel.ErrorMessage = “Failed to login! Incorrect username or password!”
-} else {
-	viewModel.ErrorMessage = string.Empty;
+```cs
+public override void Login(LoginScreenViewModel viewModel)
+{
+    base.Login(viewModel);
+    /* Direct call to the service. */
+    UserManagementService.AuthorizeLocalUser(viewModel.Username, viewModel.Password);
 }
+```
+
+Let's modify this method to look like this:
+
+```cs
+public override void Login(LoginScreenViewModel viewModel)
+{
+    base.Login(viewModel);
+    /* Direct call to the service. */
+    UserManagementService.AuthorizeLocalUser(viewModel.Username, viewModel.Password);
+    if(UserManagementService.LocalUser.AuthorizationState != AuthorizationState.Authorized){
+    	viewModel.ErrorMessage = "Failed to login! Incorrect username or password!";
+    } else {
+    	viewModel.ErrorMessage = string.Empty;
+    }
+}
+```
+
+>The key point of the newly added piece of code is that it checks current authorization state and sets the corresponding error message.
 
 We have succesfully modified LoginScreenController to set ErrorMessage
-Learn how to connect view with GUI
+
+###### Learn how to connect view with GUI
+
 Our last step is creating a text object in the MainMenuScene to show ErrorMessage.
-Open MainMenuScene and in the scene hierarchy navigate to _MainMenuSceneRoot/MainMenuCanvas/LoginUI/LoginScreenPanel. 
-Inside of this object create UGUI text object. Style it however you want.
 
-<<<SHOW PICTURE WITH STRUCTURE>>>
+Open `Assets/ExampleProject/Scenes/MainMenuScene.unity` (1) and in the scene hierarchy navigate to `_MainMenuSceneRoot/MainMenuCanvas/LoginUI/LoginScreenPanel` (2):
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0015.png)
 
- Now navigate to _MainMenuSceneRoot/MainMenuRoot/LoginScreen. Select this object. In the inspector locate Binding section. Expand it. Locate setting for ErrorMessage property. Drag the text object you created earlier to the Input field.
+Inside of this object create UGUI text (1) object. Name and style it however you want (2).
 
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0016.png)
 
-<<<SHOW EXACTLY WHERE
-We have successfully setup ErrorMessage text object.
+ Now, in the hierarchy navigate to `_MainMenuSceneRoot/MainMenuRoot/LoginScreen`(1). Select this object. In the inspector locate Binding section. Expand it (2). Locate setting for ErrorMessage property (3). Drag the text object you created earlier to the Input field (4).
 
-
-Perform final test
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0017.png)
+
+###### Perform final test
 Run the scene. Try to enter invalid data in the login screen and press Login. You should be able to see your message now.
-<<<SHOW FINAL RESULT
 
+![](/images/getting-started-for-uframe-mvvm-1.6/img_0018.png)
