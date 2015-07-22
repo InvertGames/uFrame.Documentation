@@ -18,7 +18,7 @@ Average Time
 
 6-8 minutes
 
-
+
 Transcript
 Introduction:
 Hello and welcome to uFrame 1.6 getting started series.
