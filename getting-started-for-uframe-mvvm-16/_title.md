@@ -1,1 +1,1 @@
-Getting Started for uFrame MVVM 1.6
+Getting Started with uFrame MVVM 1.6
