@@ -1,5 +1,3 @@
-scene-types.txt
-elements.txt
 default-project.md
 elements.md
 scene-types.md
@@ -9,3 +7,5 @@ execution-order.md
 scene-loader.txt
 subsystems.md
 system-loaders.md
+getting-started-with-uframe-mvvm-16/tutorial-1.txt
+
