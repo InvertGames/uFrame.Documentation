@@ -7,5 +7,4 @@ execution-order.md
 scene-loader.txt
 subsystems.md
 system-loaders.md
-getting-started-with-uframe-mvvm-16/tutorial-1.txt
-
+getting-started-for-uframe-mvvm-16/tutorial-1.txt
