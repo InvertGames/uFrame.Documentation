@@ -1,3 +1,3 @@
 scene-types.txt
 elements.txt
-getting-started-for-uframe-mvvm-16/tutorial-1.txt
+getting-started-with-uframe-mvvm-16/tutorial-1.txt
