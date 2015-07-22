@@ -1,4 +1,4 @@
-# uFrame MVVM 1.6 Getting Started I
+# uFrame MVVM 1.6 Getting Started VIII
 
 
 
@@ -27,11 +27,11 @@ Hello and welcome to uFrame 1.6 getting started series.
 This part will show how to install uFrame MVVM and how to setup default project. It also shows how to make one simple change to the default project.
 
 How to install uFrame MVVM
-Using asset store, you can install uFrame MVVM just like any other asset: simply import it. 
+Using asset store, you can install uFrame MVVM just like any other asset: simply import it.
 
 <<<PICTURE OF IMPORT BUTTON>>>
 
-As for uFrame MVVM 1.6, you will find folder called uFrameMVVM inside of your assets folder. It contains 2 other packages with different uFrame MVVM versions. Version 1.5 is shipped for backwards compatibility. If you are new to uFrame MVVM, please stick with version 1.6. Import the version you want by double clicking on the corresponding package. 
+As for uFrame MVVM 1.6, you will find folder called uFrameMVVM inside of your assets folder. It contains 2 other packages with different uFrame MVVM versions. Version 1.5 is shipped for backwards compatibility. If you are new to uFrame MVVM, please stick with version 1.6. Import the version you want by double clicking on the corresponding package.
 
 Picture with 2 assets
 
@@ -44,7 +44,7 @@ Once you import uFrameMVVM 1.6, Welcome Screen will show up. To manually open We
 
 <<PICTURE OF uFrame -> Welcome Screen>>
 
-In the Welcome Window, navigate to Example and click “SETUP EXAMPLE PROJECT” button. 
+In the Welcome Window, navigate to Example and click “SETUP EXAMPLE PROJECT” button.
 
 <<PICTURE OF NAVIGATION>>
 
@@ -62,7 +62,7 @@ First of all you need to open MainMenuSystem graph. Check opened graph tabs:
 
 <<<<INSERT PICTURE WHICH SHOWS TABS>>>>
 
-If it contains MainMenuSystem, simply click it. 
+If it contains MainMenuSystem, simply click it.
 If MainMenuSystem tab is not there, click Graph selection control and select MainMenuSystem:
 
 <<<<INSERT PICTURE WHICH HOW TO OPEN EXISTING GRAPH>>>>
@@ -78,14 +78,14 @@ In this step we are interested in Element node which is called LoginScreen.
 
 <<<<INSERT PICTURE WHICH SHOWS LoginScreen NODE>>>>
 
-Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. You can collapse or expand node by clicking arrow control in the bottom of the node. 
+Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. You can collapse or expand node by clicking arrow control in the bottom of the node.
 <<<<INSERT PICTURE WHICH SHOWS EXPAND/COLLAPSE CONTROL>>>>
 
 Expand LoginScreen. Let us add new property. For this we need to click + button near the Properties section.
 
 <<<<INSERT PICTURE WHICH SHOWS + button>>>>
 
-New node child item will be created. in the Properties section. Such child item will contain type in the left column and name in the right column. 
+New node child item will be created. in the Properties section. Such child item will contain type in the left column and name in the right column.
 
 <<<<INSERT PICTURE WHICH SHOWS newly create prop>>>>
 
@@ -113,7 +113,7 @@ For that, we need to click plus button near the Bindings section on the LoginScr
 
 <<<<INSERT PICTURE WHICH SHOWS + button on bindings>>>>
 
- A window will popup, with a list of all possible bindings. We need to select “ErrorMessage To Text”. 
+ A window will popup, with a list of all possible bindings. We need to select “ErrorMessage To Text”.
 
 <<<<INSERT PICTURE WHICH SHOWS bindings selection window>>>>
 
@@ -136,7 +136,7 @@ Right click on the LoginScreen element node header. Select Open -> LoginScreenCo
 
 <<SHOW CONTEXT MENU PICTURE>>
 
-This will open your IDE with the corresponding generated file and let you modify the internals of it. Alternatively, you can manually locate LoginScreenController.cs file in your unity project 
+This will open your IDE with the corresponding generated file and let you modify the internals of it. Alternatively, you can manually locate LoginScreenController.cs file in your unity project
 
 We are interested in method called Login. It gets invoked when we try to log in. It delegates login procedure to the UserManagementService along with the Username and Password.
 
@@ -153,7 +153,7 @@ if(UserManagementService.LocalUser.AuthorizationState != AuthorizationState.Auth
 We have succesfully modified LoginScreenController to set ErrorMessage
 Learn how to connect view with GUI
 Our last step is creating a text object in the MainMenuScene to show ErrorMessage.
-Open MainMenuScene and in the scene hierarchy navigate to _MainMenuSceneRoot/MainMenuCanvas/LoginUI/LoginScreenPanel. 
+Open MainMenuScene and in the scene hierarchy navigate to _MainMenuSceneRoot/MainMenuCanvas/LoginUI/LoginScreenPanel.
 Inside of this object create UGUI text object. Style it however you want.
 
 <<<SHOW PICTURE WITH STRUCTURE>>>
@@ -168,4 +168,3 @@ We have successfully setup ErrorMessage text object.
 Perform final test
 Run the scene. Try to enter invalid data in the login screen and press Login. You should be able to see your message now.
 <<<SHOW FINAL RESULT
-
