@@ -5,7 +5,7 @@
 [uFrame 1.5 - Computed Properties on Youtube](https://www.youtube.com/watch?v=09gPdNbidDs)
 
 # FAQ
-![screenshot_108.png](/images/screenshot_108.png)
+![screenshot_108.png](images/screenshot_108.png)
 
 #### How to bind Computed Property to a collection change?
 
