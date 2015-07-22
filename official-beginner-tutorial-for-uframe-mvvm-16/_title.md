@@ -1,1 +1,0 @@
-Official Beginner Tutorial for uFrame MVVM 1.6
