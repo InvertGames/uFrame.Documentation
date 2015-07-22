@@ -8,3 +8,12 @@ scene-loader.txt
 subsystems.md
 system-loaders.md
 getting-started-for-uframe-mvvm-16/tutorial-1.md
+getting-started-for-uframe-mvvm-16/tutorial-2.md
+getting-started-for-uframe-mvvm-16/tutorial-3.md
+getting-started-for-uframe-mvvm-16/tutorial-4.md
+getting-started-for-uframe-mvvm-16/tutorial-5.md
+getting-started-for-uframe-mvvm-16/tutorial-6.md
+getting-started-for-uframe-mvvm-16/tutorial-7.md
+getting-started-for-uframe-mvvm-16/tutorial-8.md
+getting-started-for-uframe-mvvm-16/tutorial-9.md
+getting-started-for-uframe-mvvm-16/tutorial-10.md
