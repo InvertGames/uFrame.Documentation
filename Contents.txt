@@ -4,3 +4,4 @@ chapter2.txt
 chapter3.txt
 scene-types.txt
 elements.txt
+tutorial-1.txt
