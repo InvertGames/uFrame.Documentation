@@ -1,20 +1,18 @@
 # uFrame MVVM 1.6 Getting Started I
 
-
-
 Overview
 
 This tutorial shows how to install uFrame MVVM, shows the default package and proposes a simple change in the default project: creating an error message for login screen
 
 Steps
 
-Learn how to install uFrame MVVM
-Learn how to setup example project
-Learn how to add property to the element
-Learn how to add binding to the view
-Learn how to change logic in controllers
-Learn how to connect view with GUI
-Perform final test
+1. Learn how to install uFrame MVVM
+2. Learn how to setup example project
+3. Learn how to add property to the element
+4. Learn how to add binding to the view
+5. Learn how to change logic in controllers
+6. Learn how to connect view with GUI
+7. Perform final test
 
 Average Time
 
