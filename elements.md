@@ -41,31 +41,15 @@ You can use it to model the game world entities with their attributes and action
 
 #### Properties
 
-Properties are like C# class properties but more powerfull. When changed, they can invoke [State Machine](ReactiveStateMachines) transitions, [Computed Properties](ComputedProperties) and any other method that is subscribed to them (read more in the [Code section](#code)).
-
-You can select the property type from a list:
-
-![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_93.png)
-
-or you can drag another element, [Type Reference](TypeReferences), [Enum](Enums) or [StateMachine](StateMachine) to use its type:
-
-![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_94.png)
-
-Linking a property to a view can make it a [Scene Property](SceneProperties).
+Properties can hold data of specified type.
 
 Read more about [Properties](Properties)
 
 #### Collections
 
-Collections can store multiple elements of the same type. For example, you can store references to multiple menu screens that can be displayed/hidden on demand.
+Collections can hold multiple elements of the same type.
 
-![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_95.png)
-
-You can subscribe to changes in the collections and execute custom actions when an element is added/removed from the list.
-
-[subscription example]
-
-Read more about [Collections](Collections)
+Read more about [Collections](collections.md)
 
 #### Commands
 
