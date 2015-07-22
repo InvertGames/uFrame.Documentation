@@ -1,5 +1,22 @@
 # Elements
 
+- [Elements](#elements)
+	- [Introduction](#introduction)
+		- [What an element is?](#what-an-element-is)
+		- [What is it for?](#what-is-it-for)
+	- [Element Attributes](#element-attributes)
+		- [Properties](#properties)
+		- [Collections](#collections)
+		- [Commands](#commands)
+		- [Linking nodes](#linking-nodes)
+		- [Context Menu](#context-menu)
+	- [Code](#code)
+		- [How elements are represented in the code?](#how-elements-are-represented-in-the-code)
+		- [ViewModel](#viewmodel)
+		- [Controller](#controller)
+- [Advanced](#advanced)
+	- [Inheritance](#inheritance)
+
 ## Introduction
 
 ### What an element is?
@@ -74,7 +91,7 @@ You have separate context menu for the node header and its attributes. Most of t
 
 * **Hide**
 
-    Allows to hide nodes that you don’t want to be on the diagram. You can restore node by clicking on the canvas and selecting node from the Show Item -> <Graph Name> menu. It is important to note, that Hide is not the same as Remove, as Node still present in the system and you can show it in any graph, which supports corresponding node type.   
+    Allows to hide nodes that you don’t want to be on the diagram. You can restore node by clicking on the canvas and selecting node from the Show Item -> <Graph Name> menu. It is important to note, that Hide is not the same as Remove, as Node still present in the system and you can show it in any graph, which supports corresponding node type.
 
 ## Code
 
@@ -91,7 +108,7 @@ Read more about [ViewModelBase](ViewModelBase) and [ControllerBase](ControllerBa
 
 ### Controller
 
-[Controller](Controller) is created along with the ViewModel and it’s responsible for implementing logic behind the ViewModel. Any command that is specified in the graph Element will be implemented here. Controller is also responsible for creating and initializing ViewModel. 
+[Controller](Controller) is created along with the ViewModel and it’s responsible for implementing logic behind the ViewModel. Any command that is specified in the graph Element will be implemented here. Controller is also responsible for creating and initializing ViewModel.
 
 [Add example code]
 
