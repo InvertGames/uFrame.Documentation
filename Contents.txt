@@ -1,11 +1,3 @@
-default-project.md
-elements.md
-scene-types.md
-computed-property.md
-viewmodel.md
-execution-order.md
-subsystems.md
-system-loaders.md
 getting-started-for-uframe-mvvm-16/tutorial-1.md
 getting-started-for-uframe-mvvm-16/tutorial-2.md
 getting-started-for-uframe-mvvm-16/tutorial-3.md
@@ -16,9 +8,4 @@ getting-started-for-uframe-mvvm-16/tutorial-7.md
 getting-started-for-uframe-mvvm-16/tutorial-8.md
 getting-started-for-uframe-mvvm-16/tutorial-9.md
 getting-started-for-uframe-mvvm-16/tutorial-10.md
-controller.md
-element-collections.md
-element-commands.md
-element-properties.md
 home.md
-scene-loaders.md
