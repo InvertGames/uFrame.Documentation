@@ -1,13 +1,5 @@
 # Elements
 
-- [Elements](#elements)
-	- [Introduction](#introduction)
-	- [Element Attributes](#element-attributes)
-	- [Linking Nodes](#linking-nodes)
-	- [Context Menu](#context-menu)
-	- [Generated Code](#generated-code)
-	- [Inheritance](#inheritance)
-
 ## Introduction
 
 Elements represent the [ViewModel](ViewModel) in the [MVVM pattern](MVVMPattern). In the game world it can be a player, weapon, menu screen or any other game entity. Elements hold only the data associated with the game’s entity. For example, Player element could contain information about player properties like health, running speed, obtained weapons or actions; Shoot, TakeDamage or Die.

@@ -1,11 +1,5 @@
 # Scene Types
 
-- [Scene Types](#scene-types)
-	- [Generated Code](#generated-code)
-		- [Scene Type](#scene-type)
-		- [Scene Type Settings](#scene-type-settings)
-		- [Scene Loader](#scene-loader)
-
 In order to load/unload scene with uFrame, a scene must contain a single root game object that is a parent to all other game objects in the scene.
 
 This root game object needs to have a _Scene Type_ component attached in order to be recognized by uFrame as a root game object.
