@@ -10,7 +10,7 @@ You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.co
 # The Basics
 The following pages should help you get familiar with the core concepts of uFrame and setting up your first project.
 
-* uFrame 000 - [Step by Step Tutorial](tutorial-1.md)
+* uFrame 000 - [Getting Started Tutorial](getting-started-for-uframe-mvvm-16/tutorial-1.md)
 * uFrame 101 - [Core Concepts](core-concepts.md)
 * uFrame 102 - [Setting Up Your Project](setting-up-your-project.md)
 * uFrame 000 - [uFrame Designer](uframe-designer.md)
