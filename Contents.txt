@@ -16,7 +16,9 @@ getting-started-for-uframe-mvvm-16/tutorial-7.md
 getting-started-for-uframe-mvvm-16/tutorial-8.md
 getting-started-for-uframe-mvvm-16/tutorial-9.md
 getting-started-for-uframe-mvvm-16/tutorial-10.md
-collections.md
-commands.md
-properties.md
-scene-loader.md
+controller.md
+element-collections.md
+element-commands.md
+element-properties.md
+home.md
+scene-loaders.md
