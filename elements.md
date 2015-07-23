@@ -2,24 +2,13 @@
 
 - [Elements](#elements)
 	- [Introduction](#introduction)
-		- [What an element is?](#what-an-element-is)
-		- [What is it for?](#what-is-it-for)
 	- [Element Attributes](#element-attributes)
-		- [Properties](#properties)
-		- [Collections](#collections)
-		- [Commands](#commands)
-	- [Linking nodes](#linking-nodes)
+	- [Linking Nodes](#linking-nodes)
 	- [Context Menu](#context-menu)
-	- [Code](#code)
-		- [How elements are represented in the code?](#how-elements-are-represented-in-the-code)
-		- [ViewModel](#viewmodel)
-		- [Controller](#controller)
-- [Advanced](#advanced)
+	- [Generated Code](#generated-code)
 	- [Inheritance](#inheritance)
 
 ## Introduction
-
-### What an element is?
 
 Elements represent the [ViewModel](ViewModel) in the [MVVM pattern](MVVMPattern). In the game world it can be a player, weapon, menu screen or any other game entity. Elements hold only the data associated with the game’s entity. For example, Player element could contain information about player properties like health, running speed, obtained weapons or actions; Shoot, TakeDamage or Die.
 
@@ -33,31 +22,17 @@ Elements in itself doesn’t contain any logic. They are also completely game en
 
 Each element can be represented in the game world through a [View](Views). View is a MonoBehaviour that will take the data from an element and represent it in the game. For example, it’ll play the die animation when the player’s health reaches zero.
 
-### What is it for?
-
-You can use it to model the game world entities with their attributes and actions even before making any Unity related stuff. They’ll be later represented visually in the game.
-
 ## Element Attributes
 
-#### Properties
+With the Element attributes (Properties, Collections and Commands) you can specify what kind of data the ViewModel that this Element represents will contain and what actions can be executed on it.
 
-Properties can hold data of specified type.
+Properties can hold data of specified type. Read more about [Properties](element-properties.md).
 
-Read more about [Properties](Properties)
+Collections can hold multiple elements of the same type. Read more about [Collections](element-collections.md).
 
-#### Collections
+Commands allows you to change the state of the ViewModel. Read more about [Commands](element-commands.md).
 
-Collections can hold multiple elements of the same type.
-
-Read more about [Collections](collections.md)
-
-#### Commands
-
-Commands allows you to change the state of the ViewModel that the Element represents.
-
-Read more about [Commands](commands.md)
-
-### Linking nodes
+### Linking Nodes
 
 I you make a connection from a property to another node then the node’s type will become type of the property. The same is true for Collections. You can also link a Property to a View and create a [Scene Property](SceneProperties).
 
@@ -67,33 +42,22 @@ If you make a connection from a Command to another node, then the command will h
 
 You have separate context menu for the node header and its attributes. Most of the options is self-explanatory. Other are explained below:
 
-* **Hide**
+* _Hide_
 
-    Allows to hide nodes that you don’t want to be on the diagram. You can restore node by clicking on the canvas and selecting node from the Show Item -> <Graph Name> menu. It is important to note, that Hide is not the same as Remove, as Node still present in the system and you can show it in any graph, which supports corresponding node type.
+    Allows to hide nodes that you don’t want to be on the diagram. You can restore node by clicking on the canvas and selecting node from the `Show Item -> <Graph Name>` menu. It is important to note, that _Hide_ is not the same as _Remove_, as Node still present in the system and you can show it in any graph, which supports corresponding node type.
 
-## Code
+## Generated Code
 
-### How elements are represented in the code?
-After creating an Element and recompiling, uFrame will create two editable files: {ElementName}ViewModel and {ElementName}Controller.
+After creating an Element and recompiling, uFrame will create two editable files: _{ElementName}ViewModel_ and _{ElementName}Controller_.
+
+Read more about [ViewModels](viewmodel.md) and [Controllers](controller.md).
 
 Each of those files is empty by default and is intended to by filled with implementation by the user. All the attributes specified in the diagram and the MVVM code are inherited from their base classes.
 
 Read more about [ViewModelBase](ViewModelBase) and [ControllerBase](ControllerBase) base classes.
 
-### ViewModel
-
-[ViewModel](ViewModel) is a class where all the data associated with a game entity is kept. You can also implement there [Computed Properties](ComputedProperties), initialize [State Machines](ReactiveStateMachines), implement your own serialization methods  and define any other methods you need.
-
-### Controller
-
-[Controller](Controller) is created along with the ViewModel and it’s responsible for implementing logic behind the ViewModel. Any command that is specified in the graph Element will be implemented here. Controller is also responsible for creating and initializing ViewModel.
-
-[Add example code]
-
-# Advanced
-
 ## Inheritance
 
-You can connect two elements together to make one of the inherit all attributes from the other one. In the example below, SettingsScreen Element will contain the IsActive property and Close command of its parent SubScreen.
+You can connect two elements together to make one of the inherit all attributes from the other one. In the example below, _SettingsScreen_ Element will contain the _IsActive_ property and _Close_ command of its parent _SubScreen_.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_97.png)
