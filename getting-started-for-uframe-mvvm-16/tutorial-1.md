@@ -29,7 +29,7 @@ This part will show how to install uFrame MVVM and how to setup example project.
 
 ###### How to install uFrame MVVM
 Using asset store, you can install uFrame MVVM just like any other asset: simply import it and follow Unity instructions.
-![How to import uFrame MVVM](/images/assetstore_import.png)
+![How to import uFrame MVVM](images/assetstore_import.png)
 
 As for uFrame MVVM 1.6, you will find folder called uFrameMVVM inside of your assets folder. It contains 2 other packages with different uFrame MVVM versions.
 
