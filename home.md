@@ -22,8 +22,8 @@ The following pages should help you get familiar with the core concepts of uFram
 * uFrame 103 - [Scene Managers](pages/scene-managers.md)
 * uFrame 202 - [Scene Properties](pages/scene-properties.md)
 * uFrame 110 - [Collections](pages/element-collections.md)
-* uFrame 204 - [Reactive State Machines](pages/reactive-state-machines.md)
 * uFrame 203 - [Inheritance](pages/inheritance.md)
+* uFrame 203 - [Kernel](pages/kernel.md)
 * uFrame 000 - [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
 
 # Advanced Concepts
