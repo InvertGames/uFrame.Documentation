@@ -1,6 +1,6 @@
 Nodes that you can create in the designer:
 
-* [Element](pages/elements.md)
+* [Element](elements.md)
 * [View](pages/views.md)
 * [View Component](pages/view-components.md)
 * [Enum](pages/enums.md)
