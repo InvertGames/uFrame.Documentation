@@ -10,9 +10,7 @@ _Scene Type_ node defines how to load a scene and allows for unloading the scene
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_102.png)
 
-## Generated Code
-
-### Scene Type
+## Scene Type
 
 uFrame will generate an empty class with the name of the scene type. You can add there custom fields and properties. Public fields will be displayed in the inspector.
 
@@ -67,7 +65,7 @@ public class UISceneBase : Scene {
 }
 ```
 
-### Scene Type Settings
+## Scene Type Settings
 
 In the `{SceneName}SceneSettings` class you can specify properties that can be passed along to the scene when it's loaded.
 
@@ -93,7 +91,7 @@ Publish(new LoadSceneCommand() {
 
 When the scene loads, you can make use of those settings from the `LoadScene()` method of the scene's loader class.
 
-### Scene Loader
+## Scene Loader
 
 A scene loader is generated for every scene type that exists in the graph.
 
