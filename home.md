@@ -15,25 +15,21 @@ The following pages should help you get familiar with the core concepts of uFram
 * uFrame 000 - [Getting Started Tutorial](getting-started-for-uframe-mvvm-16/tutorial-1.md)
 * uFrame 101 - [Core Concepts](pages/core-concepts.md)
 * uFrame 000 - [uFrame Designer](pages/uframe-designer.md)
-* uFrame 111 - [Nodes](pages/designer-nodes.md)
-* uFrame 000 - [Scene Types](pages/scene-types.md)
-* uFrame 103 - [Scene Managers](pages/scene-managers.md)
 * uFrame 104 - [Subsystems](pages/subsystems.md)
-* uFrame 105 - [Elements](pages/elements.md)
-* uFrame 106 - [Views](pages/views.md)
+* uFrame 111 - [Designer Nodes](pages/designer-nodes.md)
+* uFrame 107 - [ViewModels](pages/viewmodel.md)
 * uFrame 108 - [Controllers](pages/controller.md)
 * uFrame 110 - [Collections](pages/element-collections.md)
-* uFrame 201 - [Computed Properties](pages/computed-properties.md)
+* uFrame 103 - [Scene Managers](pages/scene-managers.md)
 * uFrame 202 - [Scene Properties](pages/scene-properties.md)
-* uFrame 203 - [Inheritance](pages/inheritance.md)
 * uFrame 204 - [Reactive State Machines](pages/reactive-state-machines.md)
-* uFrame 107 - [ViewModels](pages/viewmodel.md)
+* uFrame 203 - [Inheritance](pages/inheritance.md)
+* uFrame 000 - [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
 
 # Advanced Concepts
 
 * [Coupling and Cohesion](pages/coupling-and-cohesion.md)
 * [DI / IoC Container](pages/di-ioc-container.md)
-* [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
 
 # Reactive Programming
 
