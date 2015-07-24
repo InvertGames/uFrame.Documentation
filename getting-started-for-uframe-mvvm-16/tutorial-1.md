@@ -48,7 +48,7 @@ Once you import uFrameMVVM 1.6, Welcome Screen will show up. To manually open We
 
 In the welcome screen, navigate to Examples (1) and click “SETUP EXAMPLE PROJECT” button (2).
 
-![uFrame MVVM Setup Example Project Button](/images/uframe_welcome_screen_goto.png)
+![uFrame MVVM Setup Example Project Button](images/uframe_welcome_screen_goto.png)
 
 Follow the instructions. Example Package will be deployed into your Assets Folder (1), all the needed scene will be added to your build settings (2). Finally intro scene will be opened and run (3).
 ![Example Project deplyed state](images/example_project_deployed.png)
