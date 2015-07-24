@@ -21,11 +21,15 @@ MyViewModel.CommandName.OnNext(new {CommandName}Command() { });
 
 ## Reacting to commands
 
-When a command is called, it'll first execute a command handler specified in the controller.
+When a command is executed, first called will be a method containing implementation of that command defined in the controller class.
 
-[example]
+```
+public override TakeDamage() {
+  // your implementation here
+}
+```
 
-Then it'll executed the `Execute{CommandName}` method in the related view class. You must firts add a binding to the view node in the designer.
+Then executed will be the `Execute{CommandName}` method in the related view class. You must firts add a binding to the view node in the designer.
 
 [picture of a view with binding to the TakeDamage command]
 
@@ -36,3 +40,7 @@ You can also make a command to be published to the [Event Aggregator](event-aggr
 [explain how to do it]
 
 [add example]
+
+## Command internal implementation
+
+Commands are defined in the [ViewModel](viewmodel.md) classes as properties of type [`Signal`](signal.md). It makes it possible to subscribe to them and execute custom code when the command is executed.

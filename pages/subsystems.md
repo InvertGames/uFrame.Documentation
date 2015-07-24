@@ -1,8 +1,22 @@
 # Subsystems
 
-Subsystems allow you to seperate various pieces of your project into logical and reusable parts. Subsystems contain any number of Services, Elements, Views, StateMachines ..etc 
+Subsystems allow you to seperate various pieces of your project into logical and reusable parts. Subsystems contain any number of Services, Elements, Views, StateMachines, etc.
 
-For each subsystem in the designer uFrame generates a [system loader](system-loaders) class used to setup uFrame Runtime with any dependencies it might need before the game begins. 
+For each subsystem in the designer uFrame generates a [system loader](system-loaders.md) class used to setup uFrame Runtime with any dependencies it might need before the game begins.
+
+System loaders register an instance of every element controller that lives inside of it, as well as any instances defined on it.
+
+# System Loader base class
+
+System loader base classes are defined in the `SystemLoaders.designer` file in the subsystem folder. They contain references to all ViewModels defined in it as well as their controllers.
+
+You can override the default `Load()` method in the `{Subsystem}SystemLoader` class to register other instances to the dependency injection container.
+
+# Custom System Loaders
+
+In some cases creating a custom system loader can be very useful for different environments. e.g. Dev Environment, Production Environment, etc.
+
+To create a custom system loader, derive from SystemLoader, override the load method, and add it to the kernel.
 
 ## File structure
 
