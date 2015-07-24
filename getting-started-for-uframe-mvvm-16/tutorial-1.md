@@ -132,7 +132,7 @@ We have successfully added binding to the LoginScreenView node.
 
 This step involves a little bit of programming. Since we have done some changes to the nodes, we need to Save and Compile our diagram using corresponding button (1) in the top right corner.
 
-![](/images/img_0013.png)
+![image](/images/img_0013.png)
 
 Saving and Compiling process turns diagram items and nodes into CSharp code.
 
