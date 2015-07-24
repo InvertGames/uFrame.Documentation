@@ -12,7 +12,6 @@ The following pages should help you get familiar with the core concepts of uFram
 
 * uFrame 000 - [Getting Started Tutorial](getting-started-for-uframe-mvvm-16/tutorial-1.md)
 * uFrame 101 - [Core Concepts](pages/core-concepts.md)
-* uFrame 102 - [Setting Up Your Project](pages/setting-up-your-project.md)
 * uFrame 000 - [uFrame Designer](pages/uframe-designer.md)
 * uFrame 103 - [Scene Managers](pages/scene-managers.md)
 * uFrame 104 - [Subsystems](pages/subsystems.md)
@@ -21,8 +20,8 @@ The following pages should help you get familiar with the core concepts of uFram
 * uFrame 107 - [ViewModels](pages/viewmodel.md)
 * uFrame 108 - [Controllers](pages/controller.md)
 * uFrame 109 - [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
-* uFrame 110 - [Collections](pages/collections.md)
-* uFrame 111 - [Nodes](pages/nodes.md)
+* uFrame 110 - [Collections](pages/element-collections.md)
+* uFrame 111 - [Nodes](pages/designer-nodes.md)
 
 # Advanced Features
 * uFrame 201 - [Computed Properties](pages/computed-properties.md)
