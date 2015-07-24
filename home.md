@@ -11,32 +11,32 @@ You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.co
 The following pages should help you get familiar with the core concepts of uFrame and setting up your first project.
 
 * uFrame 000 - [Getting Started Tutorial](getting-started-for-uframe-mvvm-16/tutorial-1.md)
-* uFrame 101 - [Core Concepts](core-concepts.md)
-* uFrame 102 - [Setting Up Your Project](setting-up-your-project.md)
-* uFrame 000 - [uFrame Designer](uframe-designer.md)
-* uFrame 103 - [Scene Managers](scene-managers.md)
-* uFrame 104 - [Subsystems](subsystems.md)
-* uFrame 105 - [Elements](elements.md)
-* uFrame 106 - [Views](views.md)
-* uFrame 107 - [ViewModels](viewmodel.md)
-* uFrame 108 - [Controllers](controller.md)
-* uFrame 109 - [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
-* uFrame 110 - [Collections](collections.md)
-* uFrame 111 - [Nodes](nodes.md)
+* uFrame 101 - [Core Concepts](pages/core-concepts.md)
+* uFrame 102 - [Setting Up Your Project](pages/setting-up-your-project.md)
+* uFrame 000 - [uFrame Designer](pages/uframe-designer.md)
+* uFrame 103 - [Scene Managers](pages/scene-managers.md)
+* uFrame 104 - [Subsystems](pages/subsystems.md)
+* uFrame 105 - [Elements](pages/elements.md)
+* uFrame 106 - [Views](pages/views.md)
+* uFrame 107 - [ViewModels](pages/viewmodel.md)
+* uFrame 108 - [Controllers](pages/controller.md)
+* uFrame 109 - [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
+* uFrame 110 - [Collections](pages/collections.md)
+* uFrame 111 - [Nodes](pages/nodes.md)
 
 # Advanced Features
-* uFrame 201 - [Computed Properties](computed-properties.md)
-* uFrame 202 - [Scene Properties](scene-properties.md)
-* uFrame 203 - [Inheritance](inheritance.md)
-* uFrame 204 - [Reactive State Machines](reactive-state-machines.md)
+* uFrame 201 - [Computed Properties](pages/computed-properties.md)
+* uFrame 202 - [Scene Properties](pages/scene-properties.md)
+* uFrame 203 - [Inheritance](pages/inheritance.md)
+* uFrame 204 - [Reactive State Machines](pages/reactive-state-machines.md)
 
 # Programming Tutorials
-* [Coupling and Cohesion](coupling-and-cohesion.md)
-* [DI / IoC Container](di-ioc-container.md)
+* [Coupling and Cohesion](pages/coupling-and-cohesion.md)
+* [DI / IoC Container](pages/di-ioc-container.md)
 
 # Reactive Programming
 * [UniRX Main Page](https://github.com/neuecc/UniRx)
-* [Observable Examples](observable-examples.md)
+* [Observable Examples](pages/observable-examples.md)
 
 # Additional Resources
 * [Example Projects](example-projects.md)
