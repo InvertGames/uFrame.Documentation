@@ -16,8 +16,9 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Core Concepts](pages/core-concepts.md)
 * [Designer Overview](pages/designer-overview.md)
 * [Subsystems](pages/subsystems.md)
-* [Nodes](pages/nodes.md)
-* [Services](pages/services.md)
+* [Nodes](pages/nodes.md) (more pages inside)
+* [uFrame Kernel](pages/kernel.md)
+* [Services](pages/services.md) (more pages inside)
 * [System Loaders](pages/system-loaders.md)
 * [Scene Loaders](pages/scene-loaders.md)
 * [ViewModels](pages/viewmodel.md)
@@ -25,7 +26,6 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Scene Properties](pages/scene-properties.md)
 * [Collections](pages/element-collections.md)
 * [Inheritance](pages/inheritance.md)
-* [uFrame Kernel](pages/kernel.md)
 * [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
 
 # Advanced Concepts
