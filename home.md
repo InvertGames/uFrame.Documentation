@@ -16,6 +16,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Subsystems](pages/subsystems.md)
 * [Nodes](pages/nodes.md)
 * [uFrame Kernel](pages/kernel.md)
+* [Events](pages/events.md)
 * [Services](pages/services.md)
 * [System Loaders](pages/system-loaders.md)
 * [Scene Loaders](pages/scene-loaders.md)
