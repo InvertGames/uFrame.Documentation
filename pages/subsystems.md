@@ -6,13 +6,13 @@ For each subsystem in the designer uFrame generates a [system loader](system-loa
 
 System loaders register an instance of every element controller that lives inside of it, as well as any instances defined on it.
 
-# System Loader base class
+## System Loader base class
 
 System loader base classes are defined in the `SystemLoaders.designer` file in the subsystem folder. They contain references to all ViewModels defined in it as well as their controllers.
 
 You can override the default `Load()` method in the `{Subsystem}SystemLoader` class to register other instances to the dependency injection container.
 
-# Custom System Loaders
+## Custom System Loaders
 
 In some cases creating a custom system loader can be very useful for different environments. e.g. Dev Environment, Production Environment, etc.
 
