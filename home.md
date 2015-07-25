@@ -4,9 +4,7 @@ Welcome to the uFrame wiki - feel free to edit these pages and add things you th
 
 # Download and Installation
 
-You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.com/en/#!/content/14381).
-
-[TODO: Add installation instructions]
+You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.com/en/#!/content/14381). For installation instructions see the [Getting Started Tutorial](getting-started-for-uframe-mvvm-16/tutorial-1.md)
 
 # The Basics
 
