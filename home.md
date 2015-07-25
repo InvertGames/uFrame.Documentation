@@ -25,6 +25,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Scene Properties](pages/scene-properties.md)
 * [Collections](pages/element-collections.md)
 * [Inheritance](pages/inheritance.md)
+* [Execution Order](pages/execution-order.md)
 * [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
 
 # Advanced Concepts
