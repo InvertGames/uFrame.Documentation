@@ -1,15 +1,25 @@
 # The Book Of uFrame
 
 ## About
-This document tends to be an extensive, up-to-date guide to uFrame, crafter by community members and developers of uFrame.
+This document tends to be an extensive, up-to-date guide to uFrame, crafted by community members and developers of uFrame.
 
-## How to start
+## Sections
 
-Most of the content is exposed on [TOC Page](home.md).
+- #### [uFrame Guide](pages/home.md)
+  An up-to-date information about uFrame MVVM and uFrame Graph Designer
+
+
+- #### [Tutorials](pages/support.md)
+  A list of all the available tutorials.
+
+
+- #### [Support](pages/support.md)
+  Page, which covers all the sources of help
+
 
 ## Your input is invaluable!
 
-Please consider filling gaps and correcting mistakes in the guide. 
+Please consider filling gaps and correcting mistakes in the guide.
 
 First of all you'll need to register on [Penflip](https://www.penflip.com). Once you have done it, please visit ["The Book Of uFrame" project](https://www.penflip.com/bartlomiejwolk/uframe-documentation). Being on any page, you will see a button: "Make Changes":
 

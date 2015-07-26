@@ -1,6 +1,6 @@
-# uFrame Wiki
+# uFrame Guide
 
-Welcome to the uFrame wiki - feel free to edit these pages and add things you think others may find useful. If you can't find what you're looking for, don't be afraid to post a question on the _Discussions_ page or at the [uFrame Slack group](https://invert.typeform.com/to/nLPX8o) - someone is usually around to help you out. If you find your solution, you're more then welcome to come back here and share it on the wiki :)
+Welcome to the uFrame Guide.
 
 # Download and Installation
 
