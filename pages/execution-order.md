@@ -2,6 +2,8 @@
 
 ![](http://i.imgur.com/L5CC8q8.png)
 
+[add description to the diagram above]
+
 ## Views
 
 ### For Views instantiated at runtime
