@@ -24,13 +24,13 @@ Collections can hold multiple elements of the same type. Read more about [Collec
 
 Commands allows you to change the state of the ViewModel. Read more about [Commands](element-commands.md).
 
-### Linking Nodes
+## Linking Nodes
 
 I you make a connection from a property to another node then the node’s type will become type of the property. The same is true for Collections. You can also link a Property to a View and create a [Scene Property](SceneProperties).
 
 If you make a connection from a Command to another node, then the command will have a parameter of a type of that node. If there's no link from the Command, it'll have no parameters.
 
-### Context Menu
+## Context Menu
 
 You have separate context menu for the node header and its attributes. Most of the options is self-explanatory. Other are explained below:
 
