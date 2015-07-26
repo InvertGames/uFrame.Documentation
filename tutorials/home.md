@@ -4,6 +4,18 @@
 
 ## uFrame MVVM
 
+### Getting started for uFrame MVVM 1.6
+##### Description
+
+This tutorial show the very basics of uFrame MVVM 1.6, without any deep details
+of the underlying concepts. Each part of the tutorial explains a little bit of
+theory and also shows how to do a simple change to the Example Project.
+
+##### Content
+[Part I](getting-started-for-uframe-mvvm-16/tutorial-1.md)  
+[Part II](getting-started-for-uframe-mvvm-16/tutorial-2.md)  
+
+
 ## uFrame ECS
 ## uFrame Kernel
 ## Software Engineering

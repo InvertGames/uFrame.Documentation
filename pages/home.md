@@ -10,35 +10,34 @@ You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.co
 
 The following pages should help you get familiar with the core concepts of uFrame and setting up your first project.
 
-* [Getting Started Tutorial](getting-started-for-uframe-mvvm-16/tutorial-1.md)
-* [Core Concepts](pages/core-concepts.md)
-* [Designer Overview](pages/designer-overview.md)
-* [Subsystems](pages/subsystems.md)
-* [Nodes](pages/nodes.md)
-* [uFrame Kernel](pages/kernel.md)
-* [Events](pages/events.md)
-* [Services](pages/services.md)
-* [System Loaders](pages/system-loaders.md)
-* [Scene Loaders](pages/scene-loaders.md)
-* [ViewModels](pages/viewmodel.md)
-* [Controllers](pages/controller.md)
-* [Scene Properties](pages/scene-properties.md)
-* [Collections](pages/element-collections.md)
-* [Inheritance](pages/inheritance.md)
-* [Execution Order](pages/execution-order.md)
-* [Instantiation Scenarios and Methods](pages/instantiation-scenarios-and-methods.md)
+* [Core Concepts](core-concepts.md)
+* [Designer Overview](designer-overview.md)
+* [Subsystems](subsystems.md)
+* [Nodes](nodes.md)
+* [uFrame Kernel](kernel.md)
+* [Events](events.md)
+* [Services](services.md)
+* [System Loaders](system-loaders.md)
+* [Scene Loaders](scene-loaders.md)
+* [ViewModels](viewmodel.md)
+* [Controllers](controller.md)
+* [Scene Properties](scene-properties.md)
+* [Collections](element-collections.md)
+* [Inheritance](inheritance.md)
+* [Execution Order](execution-order.md)
+* [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
 
 # Advanced Concepts
 
-* [Coupling and Cohesion](pages/coupling-and-cohesion.md)
-* [DI / IoC Container](pages/di-ioc-container.md)
+* [Coupling and Cohesion](coupling-and-cohesion.md)
+* [DI / IoC Container](di-ioc-container.md)
 
 # Reactive Programming
 
 * [UniRX Main Page](https://github.com/neuecc/UniRx)
-* [Observable Examples](pages/observable-examples.md)
+* [Observable Examples](observable-examples.md)
 
 # Additional Resources
 
-* [Example Projects](pages/example-projects.md)
-* [Video Tutorials](pages/video-tutorials.md)
+* [Example Projects](example-projects.md)
+* [Video Tutorials](video-tutorials.md)
