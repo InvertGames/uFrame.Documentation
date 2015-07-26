@@ -25,13 +25,13 @@ This tutorial tends to explain the structure of **MainMenuSystem**. It explains 
 ###### Learn about uFrame Graphs
 Open `MainMenuSystem` graph:
 
-![](images\img_tut2_0000.png)
+![](images/img_tut2_0000.png)
 
 Nodes in this graph represent main menu from the graph perspective. This means that all the nodes are used to generate certain pieces of code which then form main menu functionality in runtime. While you can go deeper into the details of certain nodes, let us first expand on how uFrame stores graphs and nodes.
 
 Graph is a physical file which lives inside of Unity project and stores information about all the nodes defined inside of it. Navigate to `Assets/ExampleProject`:
 
-![](images\img_tut2_0001.png)
+![](images/img_tut2_0001.png)
 
 As you can see you have 5 asset files here.
 
@@ -44,7 +44,7 @@ All of those are graph files and can be opened inside of uFrame Designer.
 
 The last file is called `ExampleProject` (5) and it represents project entity. Once we click project file, we can observe settings of the project using unity inspector window
 
-![](images\img_tut2_0002.png)
+![](images/img_tut2_0002.png)
 
 For example we see that this project is connected to graphs which were described earlier (1).
 To sum it up, graph files can live anywhere inside of Unity project, and we use uFrame project asset (2) to combine those into a uFrame project.
@@ -53,7 +53,7 @@ To sum it up, graph files can live anywhere inside of Unity project, and we use 
 
 Open `MainMenuSystem` graph and locate MainMenuSystem node.
 
-![](images\img_tut2_0003.png)
+![](images/img_tut2_0003.png)
 
 MainMenuSystem node is a SubSystem node. From the graph perspective, **SubSystem** node serves as a container for the following nodes:
 
@@ -66,17 +66,17 @@ MainMenuSystem node is a SubSystem node. From the graph perspective, **SubSystem
 
 This means that while being inside of SubSystem node, you can right-click on the empty space on the graph and you will be able to add mentioned nodes to the graph:
 
-![](images\img_tut2_0004.png)
+![](images/img_tut2_0004.png)
 
 The key thing to remember, is that current node container (or filter) is always shown right below the opened tabs. This way you can instantly know that you are inside of some node. In this case it is MainMenuSystem.
 
-![](images\img_tut2_0005.png)
+![](images/img_tut2_0005.png)
 
 ###### Learn about MainMenuRoot
 
 Locate MainMenuRoot node. This node is an Element node. From graph perspective, Element node defines an entity with a bunch of typed properties. In this case it is a Type property, which is called CurrentScreenType. It hold the type of the screen to be shown at the moment. Element node allows to define collections. In this case it is Screens collections which holds SubScreenViewModels. Finally, Element node allows you to define operations, which can be performed on this entity. Such operations are called Commands. MainMenuRoot has no commands defined.
 
-![](images\img_tut2_0006.png)
+![](images/img_tut2_0006.png)
 
 From MVVM perspective, Element node defines ViewModel with it's data. It also defines Controller, which is not part of original MVVM. In uFrame MVVM, every ViewModel can have commands. Each command defines an operation or an event, which needs to be handled. This is where controller comes into play: it holds code to handle commands. We will see how this works in the next parts.
 
@@ -93,16 +93,16 @@ Finally, Element node serves as a container for the following nodes:
 
 To get inside of Element Node, we need to double click it's header:
 
-![](images\img_tut2_0007.png)
+![](images/img_tut2_0007.png)
 
 When you double click on the header, ensure that your current filter is MainMenuRoot (1).
 Just like with SubSystem node, you can right-click on the empty space of the graph, to see all the nodes, which can be added inside of this container (or filter) (2)
 
-![](images\img_tut2_0008.png)
+![](images/img_tut2_0008.png)
 
 Finally double click the header of MainMenuRoot again (1), to get back out of the MainMenuRoot element. Alternatively you can click `MainMenuSystem` near current filter indicator (2).
 
-![](images\img_tut2_0009.png)
+![](images/img_tut2_0009.png)
 
 This should bring you back to the MainMenuSystem.
 
@@ -110,7 +110,7 @@ This should bring you back to the MainMenuSystem.
 
 Locate SubScreenNode (1) and expand it(2).
 
-![](images\img_tut2_0011.png)
+![](images/img_tut2_0011.png)
 
 This node is Element node. From graph perspective, this node defines a screen entity, which will be part of the main menu. Regardless of the purpose of the screen, it will always hold a property, indicating if this screen is active or not. This property is called IsActive and has type bool. It will also contain an operation which closes the screen. Such an operation is defined using Close command (2).
 
@@ -118,7 +118,7 @@ This node is Element node. From graph perspective, this node defines a screen en
 
 There are severals elements which inherit from SubScreen element:
 
-![](images\img_tut2_0010.png)
+![](images/img_tut2_0010.png)
 
 1. **LoginScreen**  
 Serves to hold the input of the user, when he tries to log into the system. This input is represented using Username and Password properties, which are both of type string. It also exposes command called Login.
@@ -137,7 +137,7 @@ This means inheritance: all the described screens will contain IsActive property
 
 Locate MainMenuService node.
 
-![](images\img_tut2_0012.png)
+![](images/img_tut2_0012.png)
 
 From the graph perspective, Service node defines a set of functionality which is not strictly bound to any specific ViewModel. From MVVM perspective, Service can operate on any MVVM entity: View, ViewModel, Data or even controller. Usually service listens for certain events, and publishes it's own, and performes valuable work in between. Services will be covered in the next parts.
 
@@ -145,7 +145,7 @@ From the graph perspective, Service node defines a set of functionality which is
 
 View is an essential part of MVVM. Locate SubScreenNode and go inside of it. You should be able to locate SubScreenView node (1):
 
-![](images\img_tut2_0014.png)
+![](images/img_tut2_0014.png)
 
 This node defines visual representation of the data defined on SubScreenNode element. We express this fact by plugging SubScreen element node (A) into SubScreenView node (B).
 
@@ -155,11 +155,11 @@ From graphs perspective, View node serves to define a living visual representati
 
 In the bindings section of SubScreenView node locate IsActive changed binding (1):
 
-![](images\img_tut2_0015.png)
+![](images/img_tut2_0015.png)
 
 Ctrl+Click on SubScreenView node. Alernatively, you can right-click (1) on the header of SubScreenView node and select Open (2) -> MainMenuSystem/Views/SubScreenView.cs (3).
 
-![](images\img_tut2_0016.png)
+![](images/img_tut2_0016.png)
 
 This should open your IDE with SubScreenView class:
 
