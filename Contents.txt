@@ -1,2 +1,0 @@
-home.md
-about.md
