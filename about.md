@@ -7,15 +7,15 @@ This document tends to be an extensive, up-to-date guide to uFrame, crafted by c
 
 ## Sections
 
-- #### [uFrame Guide](pages/home.md)
+- #### [uFrame Guide](blob/master/pages/home.md)
   An up-to-date information about uFrame MVVM and uFrame Graph Designer
 
 
-- #### [Tutorials](pages/tutorials.md)
+- #### [Tutorials](blob/master/pages/tutorials.md)
   A list of all the available tutorials.
 
 
-- #### [Support](pages/support.md)
+- #### [Support](blob/master/pages/support.md)
   Page, which covers all the sources of help
 
 
