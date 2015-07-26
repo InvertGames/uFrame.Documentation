@@ -7,8 +7,6 @@ This document tends to be an extensive, up-to-date guide to uFrame, crafted by c
 
 - #### [uFrame Guide](pages/home.md)
   An up-to-date information about uFrame MVVM and uFrame Graph Designer
-  
-  * [uFrame Kernel](pages/kernel.md)
 
 
 - #### [Tutorials](pages/support.md)
