@@ -2,7 +2,7 @@
 
 ### Overall Idea
 
-This tutorial tends to explain the structure of **MainMenuSystem**. It explains what different elements do in this system and how they are combined into a working solution. It also explains how uFrame stores graphs. Finally it shows how to make simple change: *animation to show and hide different screens*.
+This tutorial tends to explain the structure of **MainMenuSystem** from the Example Project. It explains what different elements do in this system and how they are combined into a working solution. It also explains how uFrame stores graphs. Finally it shows how to make simple change: *animation to show and hide different screens*.
 
 ### Steps
 
