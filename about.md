@@ -1,5 +1,7 @@
 # The Book Of uFrame
 
+![](images/inprogress.png)
+
 ## About
 This document tends to be an extensive, up-to-date guide to uFrame, crafted by community members and developers of uFrame.
 
@@ -9,7 +11,7 @@ This document tends to be an extensive, up-to-date guide to uFrame, crafted by c
   An up-to-date information about uFrame MVVM and uFrame Graph Designer
 
 
-- #### [Tutorials](pages/support.md)
+- #### [Tutorials](pages/tutorials.md)
   A list of all the available tutorials.
 
 
