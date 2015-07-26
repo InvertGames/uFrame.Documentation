@@ -51,7 +51,7 @@ In the welcome screen, navigate to Examples (1) and click “SETUP EXAMPLE PROJE
 ![uFrame MVVM Setup Example Project Button](images/uframe_welcome_screen_goto.png)
 
 Follow the instructions. Example Package will be deployed into your Assets Folder (1), all the needed scene will be added to your build settings (2). Finally intro scene will be opened and run (3).
-![Example Project deplyed state](images/example_project_deployed.png)
+![Example Project deployed state](images/example_project_deployed.png)
 
 ###### Learn how to add property to the element
 Open uFrame Designer Window using menu panel Windows -> uFrame Designer.
@@ -78,7 +78,7 @@ Just like with any other graph, MainMenuSystem graph contains nodes. Nodes can r
 
 Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. Such data is revealed when you expand the node. You can expand or collapse a node by clicking arrow control in the bottom of the node (1):
 
-![Expand/Collapse control shown](images/img_0001.png)
+![Expand/Collapse control shown](images\img_tut1_0000.png)
 
 Expand LoginScreen. Let us add new property. For this we need to click + button near the Properties section (1):
 
