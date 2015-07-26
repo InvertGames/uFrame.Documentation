@@ -5,7 +5,7 @@ This document tends to be an extensive, up-to-date guide to uFrame.
 
 ## How to start
 
-Most of the content is exposed on [TOC Page](/home.md).
+Most of the content is exposed on [TOC Page](pages/home.md).
 
 ## Please, contribute!
 
