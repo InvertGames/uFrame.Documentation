@@ -109,7 +109,7 @@ This will let us get deeper into the details of the node. As a matter of fact, M
 
 ![Graph filtered by LoginScreen](images/img_0009.png )
 
-> It is important to note, that element can have unlimited number of views:
+> It is important to note, that element can have unlimited number of views.
 
 We plug LoginScreen element node (A) into LoginScreenView element input (B), to express that LoginScreenView represents LoginScreen data. We can also see that LoginScreenView inherits from SubScreenView (C). You can read more about inheritance in the documentation.
 

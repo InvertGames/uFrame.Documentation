@@ -1,3 +1,4 @@
+
 # The Book Of uFrame
 
 ## About
@@ -22,7 +23,4 @@ You can make as many changes as you want. When you feel like you are ready to in
 > ![](http://i.imgur.com/OltxT4F.png)
 
 After that, the entire community will be able to discuss your changes, and finally those will be approved by one of the project admins.
-
-
-
 
