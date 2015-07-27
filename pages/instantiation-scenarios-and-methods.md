@@ -15,6 +15,8 @@ This is when you have a prefab with the view component applied within the scene 
 
 Scene first is often not the favored way of doing things as it is not entirely data driven and it puts the view in charge of the view model which is a bit back to front. However it is often the simpler way of getting up and running when, as you do not need to worry about spawn points or other concerns, you can just drop your prefab in the scene and off you go.
 
+Tips: View uses different version of initialization i.e, different verstion of Start() method, which is IEnumerator Start() and it's not really recommended to touch it. the consequence of using Start() is that all ViewModel will be stuck in initialization. Therefore, method  KernelLoaded() is the right substitution to initialize fields.
+
 ## Code First
 This is a slightly more complicated approach as you are creating the view model, and instantiating the view then putting it into the view. This is data driven and gives you more control over how the view model should be controlled.
 
