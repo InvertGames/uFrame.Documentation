@@ -26,6 +26,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)
 * [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
+* [Services vs Controllers](services-vs-controllers.md)
 
 # Advanced Concepts
 
