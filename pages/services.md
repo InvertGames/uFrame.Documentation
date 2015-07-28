@@ -31,6 +31,20 @@ public override void Setup() {
 }
 ```
 
+### Service Async Setup
+
+You can also setup your services by overriding the `SetupAsync()` method.
+> This method is called by the kernel to do any setup that may take some time to complete.
+It is executed as a co-routine by the kernel.
+
+This is also invoked once upon kernel initialization.
+
+Method stub:
+	public override IEnumerator SetupAsync()
+
+[ **REQ** Code example ]
+
+
 ## Accessing ViewModel
 
 By default uFrame keeps up with viewmodels for us. It maintains a manager for each type of viewmodel you create.
