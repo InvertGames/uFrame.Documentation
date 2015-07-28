@@ -32,6 +32,7 @@ The following pages should help you get familiar with the core concepts of uFram
 
 * [Coupling and Cohesion](coupling-and-cohesion.md)
 * [DI / IoC Container](di-ioc-container.md)
+* [Services vs. Controllers](services-vs-controllers.md)
 
 # Reactive Programming
 
