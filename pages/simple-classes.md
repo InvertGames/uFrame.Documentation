@@ -1,5 +1,5 @@
 # Simple Classes
-
+[ More uses ]
 ## Defining custom events
 Simple classes can be used to define custom events.
 Any property given to a **Simple Class** can then be assigned inside of `Publish()`
