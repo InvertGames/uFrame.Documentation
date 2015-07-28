@@ -31,16 +31,15 @@ public override void Setup() {
 }
 ```
 
-### Service Async Setup
+## Service Async Setup
 
-You can also setup your services by overriding the `SetupAsync()` method.
-> This method is called by the kernel to do any setup that may take some time to complete.
-It is executed as a co-routine by the kernel.
+You can also setup your services by overriding the `SetupAsync()` method. This method is called by the kernel to do any setup that may take some time to complete. It is executed as a co-routine by the kernel. It's invoked once upon kernel initialization.
 
-This is also invoked once upon kernel initialization.
+Method signature:
 
-Method stub:
-	public override IEnumerator SetupAsync()
+```
+public override IEnumerator SetupAsync()
+```
 
 [ **REQ** Code example ]
 
