@@ -13,7 +13,7 @@ ViewModel.CommandName.OnNext(new CommandName() { // initialization })
 or you can use the `Publish` method:
 
 ```
-ViewModel.YourCommand.Publish(new CommandName() { ...possible initializer... } )
+ViewModel.YourCommand.Publish(new CommandName() { // initialization } )
 ```
 
 This works the same way as `CommandName.OnNext()` but it only triggers _CommandName()_ and _CommandNameHandler()_ override methods in the controller.
