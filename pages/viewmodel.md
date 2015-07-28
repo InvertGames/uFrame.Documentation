@@ -4,15 +4,17 @@
 
 ## Commands
 
-You can execute commands defined on a ViewModel by publishing it like this:
-
-[example with OnNext()]
-
-You can also use the `Publish` method:
+You can execute commands defined on a ViewModel by using its `OnNext()` method:
 
 ```
-ViewModel.YourCommand.Publish(new YourCommand() { ...possible initializer... } )
+ViewModel.CommandName.OnNext(new CommandName() { // initialization })
 ```
 
-This works the same way as `YourCommand.OnNext()` but it only triggers _YourCommand()_ and _YourCommandHandler()_ override methods in the controller.
-It does not trigger the handler function of a service, for that you need to use `this.Publish(new YourCommand())`` from a controller, service, or a view.
+or you can use the `Publish` method:
+
+```
+ViewModel.YourCommand.Publish(new CommandName() { ...possible initializer... } )
+```
+
+This works the same way as `CommandName.OnNext()` but it only triggers _CommandName()_ and _CommandNameHandler()_ override methods in the controller.
+It does not trigger the handler function of a service, for that you need to use `this.Publish(new CommandName())`` from a controller, service, or a view.
