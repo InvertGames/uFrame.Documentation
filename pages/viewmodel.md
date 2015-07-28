@@ -6,19 +6,28 @@
 
 You can execute commands defined on a ViewModel by using its `OnNext()` method:
 
-```
+```cs
 ViewModel.CommandName.OnNext(new CommandName() { // initialization })
 ```
 
 or you can use the `Publish` method:
 
-```
+```cs
 ViewModel.YourCommand.Publish(new CommandName() { // initialization } )
 ```
 
 > It is recommended to always use OnNext, because Publish is not Type-Safe. 
 
+To avoid inheritance issues with controllers, `OnNext()` does not publish the command using Event Aggregator. This means that it does not trigger the subscriptions like:
 
-To avoid inheritance issues with controllers, 
+```cs
+OnEvent<YourCommand>().Subscribe(...)
+```
 
-It does not trigger the handler function of a service, for that you need to use `this.Publish(new CommandName())`` from a controller, service, or a view.
+If you want your command to be published to the world, you have to mark it with `Publish` flag in the Graph Designer:
+
+![](http://i.imgur.com/CuAou2A.png)
+
+After you save and compile, your command execution will trigger both subscriptions and handler in the controller.
+
+> Command handler in the controller has a first-priority. It will be invoked before any other subscriptions.
