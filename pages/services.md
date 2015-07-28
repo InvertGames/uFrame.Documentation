@@ -13,6 +13,11 @@ Services can be accessed directly from any place in the codebase simply by injec
 However, this will create a coupling to specific service. Better way would be to communicate with the service through events. Services should be listening to events, processing them, and publishing its own events that might be useful to other services.
 
 [example of a service subscribe to an event]
+To subscribe to an event you have to use `OnEvent<{EventClassName}>()` and subscribe to it.
+	
+    // Inside a Service's Setup() function ie.
+	this.OnEvent<{EventClassName}>().Subscribe( evt => {
+    });
 
 [example of a class publishing an event]
 
