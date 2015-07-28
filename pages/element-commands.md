@@ -1,4 +1,4 @@
-# Commands
+# Elements Commands
 
 Commands allow you to change the state of the ViewModel that the Element represents. If player gets damage, the TakeDamage command can be executed to decrease the player’s health. Usually, ViewModel data should not be changed directly but only through the use of the defined commands. There are however use cases where VMs data can be changed directly from the View with [Scene Properties](scene-properties.md) or [Services](services.md).
 
