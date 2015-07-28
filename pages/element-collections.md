@@ -1,4 +1,4 @@
-# Collections
+# Element Collections
 
 Collections can store multiple elements of the same type. For example, you can store references to multiple menu screens that can be displayed/hidden on demand.
 

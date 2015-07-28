@@ -56,7 +56,7 @@ To access these managers, you can inject them into controllers and services usin
 
 Read more about [ViewModel managers](viewmodel-manager.md)
 
-# Default Services
+## Default Services
 
 These are the services that are available in uFrame by default.
 
