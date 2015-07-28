@@ -25,13 +25,13 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Collections](element-collections.md)
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)
-* [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
 
 # Advanced Concepts
 
 * [Coupling and Cohesion](coupling-and-cohesion.md)
 * [DI / IoC Container](di-ioc-container.md)
 * [Services vs Controllers](services-vs-controllers.md)
+* [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
 
 # Reactive Programming
 
