@@ -6,6 +6,14 @@ uFrame comes with an example project. It's full of use cases to help you underst
 
 ## Diagram Graphs Overview
 
+### Main Diagram
+
+### Main Menu System
+
+### User Management System
+
+### Level System
+
 # Cookbook
 
 ### Main Menu

@@ -1,6 +1,2 @@
-default-project.md
-elements.md
-scene-types.md
-computed-property.md
-viewmodel.md
-enums.md
+getting-started-for-uframe-mvvm-16/tutorial-1.md
+services-vs-controllers.txt
