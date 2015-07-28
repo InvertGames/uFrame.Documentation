@@ -16,5 +16,9 @@ or you can use the `Publish` method:
 ViewModel.YourCommand.Publish(new CommandName() { // initialization } )
 ```
 
-This works the same way as `CommandName.OnNext()` but it only triggers _CommandName()_ and _CommandNameHandler()_ override methods in the controller.
+> It is recommended to always use OnNext, because Publish is not Type-Safe. 
+
+
+To avoid inheritance issues with controllers, 
+
 It does not trigger the handler function of a service, for that you need to use `this.Publish(new CommandName())`` from a controller, service, or a view.
