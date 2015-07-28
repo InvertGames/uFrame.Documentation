@@ -2,7 +2,7 @@
 
 While services can serve for almost any purpose, they can be used to seperate various features of uFrame, and your application. Examples might include, FacebookService, NetworkingService, AchievementsService, etc.
 
-Services are initialized by the [uFrame Kernel](kernel.md) and therefore must be first added to the _Services_ game object in the kernel prefab.
+Services are initialized by the [uFrame Kernel](uframe-kernel.md) and therefore must be first added to the _Services_ game object in the kernel prefab.
 
 ## Using a Service
 

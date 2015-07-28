@@ -154,3 +154,5 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
 When you enter play mode, first executed will be the `Start()` method which is responsible for loading the kernel. You can override the `KernelLoading()` method to execute custom code before the kernel starts loading and the `KernelLoaded()` to execute custom code after the kernel finish loading.
 
 After the kernel is loaded, a `SceneAwakeEvent` is published. Read more in the [Events](events.md) page.
+
+[SceneManagementService](scene-management-service.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.
