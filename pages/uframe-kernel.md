@@ -1,4 +1,4 @@
-# Kernel
+# uFrame Kernel
 
 The uFrame Kernel is an essential piece of uFrame, it handles loading scenes, subsystems and services. The kernel is nothing more than a prefab with these types of components attached to it in an organized manner.
 
