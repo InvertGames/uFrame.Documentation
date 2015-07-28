@@ -1,5 +1,3 @@
-scene-types.txt
-elements.txt
 default-project.md
 elements.md
 scene-types.md
