@@ -10,7 +10,7 @@ With traditional development in Unity, even a small project can sometimes become
 
 The **ViewModel** and **Controller** live "behind the scenes". They contain pure logic and don't necessarily know what's happening in your scene. The **View** gets attached to your game objects in Unity and are essentially the link between the game world and your data. This is an important concept when using uFrame: **ViewModels** and **Controllers** are pure logic, and your **Views** link them to your Unity game:
 
-![](http://i.imgur.com/6yd1htL.png)
+![](http://i.imgur.com/oVunJef.png)
 
 How the ViewModel, Controller, and View work together
 
