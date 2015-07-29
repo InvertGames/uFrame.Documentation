@@ -40,7 +40,7 @@ A JRPG from the heart of Europe. Tactical combat mixed with rich story and focus
 
 ### Gravipath
 
-![]()
+![](http://i.imgur.com/fJdYHYm.png)
 
 Gravipath is a gravity sandbox with custom levels editor!
 
