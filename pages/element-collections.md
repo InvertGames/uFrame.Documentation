@@ -31,9 +31,58 @@ public override void CreateEnemy (EnemyManagerViewModel enemyManager) {
     var enemy = this.CreateViewModel<EnemyViewModel>();
 
     // Add new enemy instance to the collection.
-    enemyManager.Enemies.Add(enemy); //add the ViewModel to our collection
+    enemyManager.Enemies.Add(enemy);
 }
 ```
+
+## Instantiating View
+
+If you add new enemy ViewModel to the collection, you may also want to instantiate a View for this VM on the scene.
+
+You can achieve that by creating a binding on the View node, with the name _CreateEnemiesView_.
+
+![](https://camo.githubusercontent.com/68bbb3747d6e62cca18af1a32ffb8ea07011efaf/687474703a2f2f692e696d6775722e636f6d2f545570305368562e706e67)
+
+It'll create a `CreateEnemyView()` method in the View class
+that will be called every time a new enemy VM is added to the collection.
+
+```csharp
+/// This binding will add or remove views based on an element/viewmodel collection.
+public override ViewBase CreateEnemyView(EnemyViewModel item) {
+    // Here you can specify a prefab to use, a ViewModel to associate with,
+    // and a starting position the prefab must be located in a Resources folder
+    // and have an EnemyView attached.
+    var view = InstantiateView(item);
+
+    return view;
+}
+```
+
+Here your prefab must:
+
+* Have a name that matches the name of your Element, for example `Enemy`.
+* Be located in a Resources folder. uFrame will try to find a prefab with a name that matches your element.
+* Have a View attached with the name _ElementNameView_, for example `EnemyView`.
+
+You can also specify a prefab manually:
+
+```csharp
+/// This binding will add or remove views based on an element/viewmodel collection.
+public override ViewBase CreateEnemyView(EnemyViewModel item) {
+    // Prefab must have an EnemyView attached.
+    var prefab = (GameObject)Resources.Load("SomeFolderWithinResources/PathToPrefab");
+    var view = InstantiateView(prefab, item);
+    return view;
+}
+```
+
+On your _EnemyManagerView_ you can then specify a parent for your game objects to spawn under.
+
+![](images/Screenshot_114.png)
+
+The _ViewFirst_ checkbox should be unchecked since you'll be instantiating VMs through code. Read more on the [Instantiation scenarios and methods](instantiation-scenarios-and-methods.md) page.
+
+## Removing View
 
 ## Scene first collections
 

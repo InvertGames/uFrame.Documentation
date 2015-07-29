@@ -19,7 +19,7 @@ public class MainMenuRootController : MainMenuRootControllerBase {
 }
 ```
 
-If you want to create an instance of a ViewModel of a different VM type, you can do this with an extension method:
+If you want to create an instance of a ViewModel of a different VM type, you can do this with a `CreateViewModel<>()` extension method:
 
 ```csharp
 public class MainMenuRootController : MainMenuRootControllerBase {
