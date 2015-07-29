@@ -10,7 +10,7 @@ Here's a list of games made in uFrame. It only includes titles that we know abou
 
 Designed to help you get up and running quickly with uFrame! Building a golf game has never been so easy. Learn how to use uFrame as well.
 
-[Link to Asset Store](https://www.assetstore.unity3d.com/en/#!/content/23272)
+[Asset Store](https://www.assetstore.unity3d.com/en/#!/content/23272)
 
 ### Obslashin'
 
@@ -18,7 +18,7 @@ Designed to help you get up and running quickly with uFrame! Building a golf gam
 
 Hack away at endless enemy hordes in Obslashin', the compulsive combat clicker! Slash through bosses, crash through barrels, and loot everything you can as you delve into the deepest dungeons. Upgrade your arsenal and level-up to make it further than any hero before!
 
-[itunes page](https://itunes.apple.com/us/app/obslashin/id929327628?ls=1&mt=8)
+[itunes](https://itunes.apple.com/us/app/obslashin/id929327628?ls=1&mt=8)
 
 ### Pushing The Envelope
 
@@ -26,7 +26,7 @@ Hack away at endless enemy hordes in Obslashin', the compulsive combat clicker! 
 
 Pushing the Envelope is a fun and addictive arcade style game where you play as a Hot Air Balloon operator. Collect money, and customize your balloon's in this fun filled adventure. Great for all ages.
 
-[Google Play link](https://play.google.com/store/apps/details?id=com.hashbanggames.pushingtheenvelope&hl=en)
+[Google Play](https://play.google.com/store/apps/details?id=com.hashbanggames.pushingtheenvelope&hl=en)
 
 ## Games in production
 
@@ -36,4 +36,12 @@ Pushing the Envelope is a fun and addictive arcade style game where you play as 
 
 A JRPG from the heart of Europe. Tactical combat mixed with rich story and focus on character development.
 
-[Facebook page](https://www.facebook.com/regaliagame)
+[Facebook](https://www.facebook.com/regaliagame)
+
+### Gravipath
+
+![]()
+
+Gravipath is a gravity sandbox with custom levels editor!
+
+[tumblr](http://kamaradostudios.tumblr.com/post/116846998992/gravipath-early-alpha)

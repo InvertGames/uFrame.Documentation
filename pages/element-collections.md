@@ -18,6 +18,8 @@ In your game you may want to have an _EnemyManager_ Element that holds reference
 
 > This is because it's best to modify ViewModel only through a specialised controller class so that in the feature you could easily find the code that changes the model.
 
+![](https://camo.githubusercontent.com/fb848ec664de460f744339463998272129633170/687474703a2f2f692e696d6775722e636f6d2f6f7959745037412e706e67)
+
 The implementation of the _CreateEnemy_ command in the _EnemyManagerController_ class could look like this:
 
 ```csharp
@@ -32,8 +34,6 @@ public override void CreateEnemy (EnemyManagerViewModel enemyManager) {
     enemyManager.Enemies.Add(enemy); //add the ViewModel to our collection
 }
 ```
-
-![](https://camo.githubusercontent.com/fb848ec664de460f744339463998272129633170/687474703a2f2f692e696d6775722e636f6d2f6f7959745037412e706e67)
 
 ## Scene first collections
 
