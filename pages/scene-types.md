@@ -17,7 +17,8 @@ uFrame will generate an empty class with the name of the scene type. You can add
 If you have multiple scene using the same Scene Type you may want to add a custom field that can be adjusted for each scene separately, for eg. weather conditions on the scene. [Scene Loader](scene-loader.md) can later read the data while loading the scene to make the scene reflect the specified weather conditions.
 
 [this code below should be a use case example documented with comments]
-```
+
+```csharp
 public class MainMenuScene : MainMenuSceneBase {
     // WeatherCondition enum.
     public WeatherCondition WeatherCondition; // This will be displayed int the inspector.

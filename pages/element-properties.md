@@ -1,4 +1,4 @@
-# Properties
+# Element Properties
 
 Properties are like C# class properties but more powerfull. When changed, they can invoke [State Machine](ReactiveStateMachines) transitions, [Computed Properties](ComputedProperties) and any other method that is subscribed to them (read more in the [Code section](#code)).
 
