@@ -9,7 +9,15 @@ The actual implementation of the command is not stored inside the ViewModel but 
 ## Executing commands
 If you have an Element with a `TakeDamage` command, you can call `ExecuteTakeDamage()` from your view.
 
-[example]
+```csharp
+this.ExecuteTakeDamage()
+```
+
+Or use a `ExecuteCommand()` method if you want to execute command on another ViewModel:
+
+```csharp
+this.ExecuteCommand(vm.command[, arg]);
+```
 
 You can also execute the command directy on the ViewModel with:
 

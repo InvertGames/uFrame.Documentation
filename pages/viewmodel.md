@@ -35,3 +35,10 @@ After you save and compile, your command execution will trigger both subscriptio
 ## Execution order
 
 [todo add content]
+
+## FAQ
+
+**How do I get a view from just a ViewModel?**
+
+ You don’t, because you’d be breaking the pattern; rethink your design.
+ A viewmodel doesn’t directly care about views at all, and is only concerned with its own data, so it doesn’t know if there are any views binding to it. The ViewModel can be thought of as existing outside of any game engine, in a virtual theoretical world, where it is a single object with its own set of properties and actions (commands). Further, when performing actions (commands), it allows its Controller to dictate the necessary logic that needs to happen to itself and the world around it.

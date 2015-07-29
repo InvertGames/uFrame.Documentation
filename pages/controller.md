@@ -58,12 +58,18 @@ public class MainMenuRootController : MainMenuRootControllerBase {
 
 ## Initializing ViewModels
 
-Typically you will use the relevant Controller's `Initialize{ElementName}`` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](scene-properties.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](viewmodel-manager.md).
+Typically you will use the relevant Controller's `Initialize{ElementName}()` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](scene-properties.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](viewmodel-manager.md).
 
-For convenience, you also have the option of Initializing a ViewModel from a particular View, by checking Initialize ViewModel on the View. This is particularly useful when setting up a scene before runtime or creating prefabs. 
+For convenience, you also have the option of Initializing a ViewModel from a particular View, by checking Initialize ViewModel on the View. This is particularly useful when setting up a scene before runtime or creating prefabs.
 
 ## ViewModel Manager
 
 By default every controller generates ViewModel manager property that keeps references to all ViewModel instances of the same type.
 
 [add example code and description]
+
+## FAQ
+
+**How do I access a view from a controller, to change sprites or meshes for example?**
+
+You DON’T! Controllers and Views should not know about each other. They interact loosely through the ViewModel layer, which keeps things clean and less prone to breaking each other.
