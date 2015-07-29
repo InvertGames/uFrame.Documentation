@@ -19,7 +19,7 @@ This document tends to be an extensive, up-to-date guide to uFrame, crafted by c
 - #### [Support](uframe-documentation/blob/master/support/home.md)
   Page, which covers all the sources of help
 
-- #### [Games made with uFrame](uframe-games.md)
+- #### [Games made with uFrame](uframe-documentation/blob/master/pages/uframe-games.md)
 
 
 ## Your input is invaluable!
