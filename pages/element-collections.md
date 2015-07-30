@@ -1,16 +1,14 @@
 # Element Collections
 
-Collections can store multiple elements of the same type. For example, you can store references to multiple menu screens that can be displayed/hidden on demand or multiple int values.
+Collections can store multiple elements of the same type. For example, you can store references to multiple ViewModels or int values.
 
-You can think of a Collection as a `IList<T>`. In fact, collections are implemented in a more advanced way.
+You can think of a Collection as a `IList<T>`. In reality, collections are implemented in a more advanced way, as a [ModelCollection](modelcollection.md) type.
 
 You can create collections on an [Element](elements.md) in the designer.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_95.png)
 
-You can subscribe to changes in the collections and execute custom actions when an element is added/removed from the list.
-
-[subscription example]
+You can subscribe to changes in the collections and execute custom actions when an element is added/removed from the list. See subscription example in the [Collections as Observables](#Collection as Observables) section.
 
 ## Collections of ViewModels
 
@@ -98,12 +96,11 @@ public override void EnemiesRemoved(uFrame.MVVM.ViewBase view) {
 
 ## Collections as Observables
 
-You can subscribe to a Collection with `ViewModelReference.CollectionName.Subscribe( _ => /* some handler */)`.
+You can subscribe to a Collection with `ViewModelReference.CollectionName.Subscribe( _ => /* some handler code */)`.
 
 Here's an example how to subscribe to a _MainMenuRoot_ VM from a service:
 
 ```csharp
-// Setup() inside a service.
 public override void Setup() {
     // Every time new Screen is added to the Screens collection, invoke ScreenAdded()
     // and pass the new screen.
@@ -114,7 +111,7 @@ public override void Setup() {
 }
 
 private void ScreenAdded(SubScreenViewModel screen) {
-    //if screen is of current type, activate it; else deactivate it
+    // If screen is of current type, activate it; else deactivate it.
     screen.IsActive = MainMenuRoot.CurrentScreenType == screen.GetType();
 }
 ```
