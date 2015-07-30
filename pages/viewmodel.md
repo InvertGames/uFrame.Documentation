@@ -2,18 +2,22 @@
 
 [ViewModel](ViewModel) is a class where all the data associated with a game entity is kept. You can also implement there [Computed Properties](ComputedProperties), initialize [State Machines](ReactiveStateMachines), implement your own serialization methods and define any other methods you need.
 
+## Initializing ViewModel
+
+You can initialize a ViewModel with custom data from the ViewModel's [Controller](controller.md).
+
 ## Commands
 
 You can execute commands defined on a ViewModel by using its `OnNext()` method:
 
 ```csharp
-ViewModel.CommandName.OnNext(new CommandName() { // initialization })
+ViewModel.CommandName.OnNext(new CommandName() { /* initialization */ })
 ```
 
 or you can use the `Publish` method:
 
 ```csharp
-ViewModel.YourCommand.Publish(new CommandName() { // initialization } )
+ViewModel.YourCommand.Publish(new CommandName() { /* initialization */ } )
 ```
 
 > It is recommended to always use OnNext, because Publish is not Type-Safe.
