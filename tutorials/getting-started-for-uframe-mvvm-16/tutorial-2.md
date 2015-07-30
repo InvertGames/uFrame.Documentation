@@ -38,7 +38,7 @@ As you can see you have 5 asset files here.
 1. `LevelSystem`
 2. `MainDiagram`
 3. `MainMenuSystem`
-4. `UserManagementService`
+4. `UserManagementSystem`
 
 All of those are graph files and can be opened inside of uFrame Designer.
 
