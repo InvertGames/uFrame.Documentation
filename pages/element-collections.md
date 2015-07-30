@@ -8,11 +8,11 @@ You can create collections on an [Element](elements.md) in the designer.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_95.png)
 
-You can subscribe to changes in the collections and execute custom actions when an element is added/removed from the list. See subscription example in the [Collections as Observables](#Collections as Observables) section.
+You can subscribe to changes in the collections and execute custom actions when an element is added/removed from the list. See subscription example in the _Collections as Observables_ section.
 
 ## Collections of ViewModels
 
-In your game you may want to have an _EnemyManager_ Element that holds references to all enemy ViewModels. To add elements to the collection you should create a [command](element-commands.md) _CreateEnemy_ and implement it in the _EnemyManagerController_.
+In your game you may want to have an _EnemyManager_ Element that holds references to all enemy ViewModels. To add elements to the collection you could create a [command](element-commands.md) _CreateEnemy_ and implement it in the _EnemyManagerController_.
 
 > This is because it's best to modify ViewModel only through a specialised controller class so that in the feature you could easily find the code that changes the model.
 
