@@ -12,32 +12,6 @@ Views are the so-called "presentation" layer, where a programmer will implement 
 
 All of these would typically want to bind to the same player ViewModel instance, such that they are said to share the same ViewModel, representing the data in different ways. The most important distinction is that each of these views should concern themselves with ONLY their own representation, meaning that the PlayerView in the above example should not be updating GUI elements, but rather leave that to the PlayerHUDView or possibly PlayerMapView. Views should be as independent as possible, handling just themselves and their own interactions. Since any number of Views can bind to the same ViewModel instance, it is up to you to determine how many Views are needed and what their individual responsibilities will be in representing that data inside Unity.
 
-## Execution Order
-
-There are actually several different entry points on generated Views. The usual order is:
-
-**For Views instantiated at runtime**
-
-Awake > OnEnable > PreBind > Bind > AfterBind > InitializeViewModel > Start > Update loop begins
-
-**For Views existing "SceneFirst" before runtime**
-
-Awake > OnEnable > CreateModel > InitializeViewModel > Start (before base call) > PreBind > Bind > AfterBind > Start (after base call)
-
-**When Destroying an object**
-
-OnDisable > OnDestroy (before base.OnDestroy() call) > UnBind > OnDestroy (after base.OnDestroy() call)
-
-## Help, my bindings have stopped working!
-
-There are a few methods that ALWAYS need their base.Method() calls intact, otherwise uFrame can easily produce unexpected results.
-
-These methods include a majority of the overridden standard Unity methods:
-
-- Awake(), Start(), OnEnable(), OnDisable(), OnDestroy(), Update(), LateUpdate()
-
-- PreBind(), Bind(), AfterBind(), UnBind(), InitializeViewModel()
-
 ## Important Methods
 
 When looking for more clarity on how uFrame builds upon Monobehaviour, it can be fairly useful to look through _ViewBase.cs_, as this is what all uFrame Views inherit from.
@@ -63,6 +37,32 @@ This is when SceneFirst Views request a proper ViewModel from the scene's Depend
 On a View, when the Initialize ViewModel option is checked in the inspector, this is where the base.InitializeViewModel() call will set the ViewModel's properties to the values of the View's matching properties (which are underscored in code on the View). This will usually never need to be overridden.
 
 `Awake(), Start(), OnEnable(), OnDisable(), OnDestroy(), Update(), LateUpdate()`
+
+## Help, my bindings have stopped working!
+
+There are a few methods that ALWAYS need their _base.Method()_ calls intact, otherwise uFrame can easily produce unexpected results.
+
+These methods include a majority of the overridden standard Unity methods:
+
+- Awake(), Start(), OnEnable(), OnDisable(), OnDestroy(), Update(), LateUpdate()
+
+- PreBind(), Bind(), AfterBind(), UnBind(), InitializeViewModel()
+
+## Execution Order
+
+There are actually several different entry points on generated Views. The usual order is:
+
+**For Views instantiated at runtime**
+
+Awake > OnEnable > PreBind > Bind > AfterBind > InitializeViewModel > Start > Update loop begins
+
+**For Views existing "SceneFirst" before runtime**
+
+Awake > OnEnable > CreateModel > InitializeViewModel > Start (before base call) > PreBind > Bind > AfterBind > Start (after base call)
+
+**When Destroying an object**
+
+OnDisable > OnDestroy (before base.OnDestroy() call) > UnBind > OnDestroy (after base.OnDestroy() call)
 
 ## Resoruces
 [uFrame 1.5 - Views Youtube video](https://www.youtube.com/watch?v=P4BX0SI9wBk)
