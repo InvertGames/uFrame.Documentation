@@ -8,7 +8,7 @@ You can create collections on an [Element](elements.md) in the designer.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_95.png)
 
-You can subscribe to changes in the collections and execute custom actions when an element is added/removed from the list. See subscription example in the [Collections as Observables](#Collection as Observables) section.
+You can subscribe to changes in the collections and execute custom actions when an element is added/removed from the list. See subscription example in the [Collections as Observables](#Collections as Observables) section.
 
 ## Collections of ViewModels
 
