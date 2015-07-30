@@ -1,8 +1,16 @@
 # Controller
 
-[Controller](Controller) is a class responsible for implementing logic behind the ViewModel. For any number of ViewModels there's only one Controller class instance. Any command that is specified in the graph Element will be implemented here. Controller is also responsible for creating and initializing ViewModel.
+[Controller](Controller) is a class responsible for implementing logic behind the ViewModel. For any number of [ViewModels](viewmodels.md) there's only one Controller class instance. Any command that is specified in the graph Element will be implemented there. Controller is also responsible for creating and initializing ViewModels.
 
-[Add example code]
+For details how Controllers are implemented check the `Controller.cs` file.
+
+## Setup
+
+The `Setup()` method is called when the controller is first created and has been injected. Use this to subscribe to any events on the [Event Aggregator](event-aggregator.md).
+
+```csharp
+public override void Setup() {}
+```
 
 ## Creating ViewModels
 

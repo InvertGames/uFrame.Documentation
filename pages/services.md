@@ -61,6 +61,16 @@ To access these managers, you can inject them into controllers and services usin
 
 Read more about [ViewModel managers](viewmodel-manager.md)
 
+## Accessing Controllers
+
+You can access any controller by injecting it:
+
+```csharp
+[inject] PlayerController PlayerController;
+```
+
+If your controller property gets value of null, check if all [System Loaders](system-loaders.md) are attached to the [kernel](uframe-kernel.md).
+
 ## Default Services
 
 These are the services that are available in uFrame by default.

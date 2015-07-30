@@ -60,9 +60,9 @@ public override ViewBase CreateEnemyView(EnemyViewModel item) {
 
 Here your prefab must:
 
-* Have a name that matches the name of your Element, for example `Enemy`.
+* Have a name that matches the name of your Element, for example _Enemy_.
 * Be located in a Resources folder. uFrame will try to find a prefab with a name that matches your element.
-* Have a View attached with the name _ElementNameView_, for example `EnemyView`.
+* Have a View attached with the name _ElementNameView_, for example _EnemyView_.
 
 You can also specify a prefab manually:
 
@@ -82,9 +82,19 @@ On your _EnemyManagerView_ you can then specify a parent for your game objects t
 
 The _ViewFirst_ checkbox should be unchecked since you'll be instantiating VMs through code. Read more on the [Instantiation scenarios and methods](instantiation-scenarios-and-methods.md) page.
 
+## Scene first collections
+
+Suppose you already have multiple enemy game object on your scene. Each has a _EnemyView_ component attached. If you select the _ViewFirst_ checkbox on the _EnemyManagerView_ (see pic. above) then all those game objects will be added to the collection when the game starts (in the `Bind()` method). Notice: All of the game object must be parented under the game object specified in the _Parent_ field.
+
 ## Removing View
 
-## Scene first collections
+When a enemy VM is removed from the collection, and you have the _EnemiesViewCollectionChanged_ View binding in place, in the View class you'll have a `EnemiesRemoved()` method. It'll be called when a VM gets removed from the collection. Use it to remove the View along with its game object.
+
+```csharp
+public override void EnemiesRemoved(uFrame.MVVM.ViewBase view) {
+    Destroy(view.gameObject);
+}
+```
 
 ## Collections as Observable
 
