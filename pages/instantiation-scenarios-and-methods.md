@@ -1,6 +1,6 @@
 # Instantiation scenarios and methods
 
-So when you are working with uFrame you have 2 main scenarios:
+So when you are working with uFrame you have 2 main scenarios; _Scene First_ and _Code First_.
 
 ## Scene First
 This is when you have a prefab with the view component applied within the scene already. Generally in this case you would be wanting to tick the "Initialize View Model" box as this will tell uFrame that you are going to want the View to instantiate the ViewModel's property values. This can be done within the InitializeViewModel method within the view.

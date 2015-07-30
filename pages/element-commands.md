@@ -1,4 +1,4 @@
-# Commands
+# Elements Commands
 
 Commands allow you to change the state of the ViewModel that the Element represents. If player gets damage, the TakeDamage command can be executed to decrease the player’s health. Usually, ViewModel data should not be changed directly but only through the use of the defined commands. There are however use cases where VMs data can be changed directly from the View with [Scene Properties](scene-properties.md) or [Services](services.md).
 
@@ -9,7 +9,15 @@ The actual implementation of the command is not stored inside the ViewModel but 
 ## Executing commands
 If you have an Element with a `TakeDamage` command, you can call `ExecuteTakeDamage()` from your view.
 
-[example]
+```csharp
+this.ExecuteTakeDamage()
+```
+
+Or use a `ExecuteCommand()` method if you want to execute command on another ViewModel:
+
+```csharp
+this.ExecuteCommand(vm.command[, arg]);
+```
 
 You can also execute the command directy on the ViewModel with:
 
