@@ -18,7 +18,7 @@ In your game you may want to have an _EnemyManager_ Element that holds reference
 
 > This is because it's best to modify ViewModel only through a specialised controller class so that in the feature you could easily find the code that changes the model.
 
-![](https://camo.githubusercontent.com/fb848ec664de460f744339463998272129633170/687474703a2f2f692e696d6775722e636f6d2f6f7959745037412e706e67)
+![](images/Screenshot_116.png)
 
 The implementation of the _CreateEnemy_ command in the _EnemyManagerController_ class could look like this:
 
@@ -41,7 +41,7 @@ If you add new enemy ViewModel to the collection, you may also want to instantia
 
 You can achieve that by creating a binding on the View node, with the name _CreateEnemiesView_.
 
-![](https://camo.githubusercontent.com/68bbb3747d6e62cca18af1a32ffb8ea07011efaf/687474703a2f2f692e696d6775722e636f6d2f545570305368562e706e67)
+![](images/Screenshot_115.png)
 
 It'll create a `CreateEnemyView()` method in the View class
 that will be called every time a new enemy VM is added to the collection.
