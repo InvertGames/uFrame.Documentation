@@ -39,7 +39,7 @@ public override void CreateEnemy (EnemyManagerViewModel enemyManager) {
 
 If you add new enemy ViewModel to the collection, you may also want to instantiate a View for this VM on the scene.
 
-You can achieve that by creating a binding on the View node, with the name _CreateEnemiesView_.
+You can achieve that by creating a binding on the View node, with the name _Enemies View Collection Changed_.
 
 ![](images/Screenshot_115.png)
 
@@ -88,7 +88,7 @@ Suppose you already have multiple enemy game object on your scene. Each has a _E
 
 ## Removing View
 
-When a enemy VM is removed from the collection, and you have the _EnemiesViewCollectionChanged_ View binding in place, in the View class you'll have a `EnemiesRemoved()` method. It'll be called when a VM gets removed from the collection. Use it to remove the View along with its game object.
+When a enemy VM is removed from the collection, and you have the _Enemies View Collection Changed_ View binding in place, in the View class you'll have a `EnemiesRemoved()` method. It'll be called when a VM gets removed from the collection. Use it to remove the View along with its game object.
 
 ```csharp
 public override void EnemiesRemoved(uFrame.MVVM.ViewBase view) {
@@ -96,6 +96,27 @@ public override void EnemiesRemoved(uFrame.MVVM.ViewBase view) {
 }
 ```
 
-## Collections as Observable
+## Collections as Observables
+
+You can subscribe to a Collection with `ViewModelReference.CollectionName.Subscribe( _ => /* some handler */)`.
+
+Here's an example how to subscribe to a _MainMenuRoot_ VM from a service:
+
+```csharp
+// Setup() inside a service.
+public override void Setup() {
+    // Every time new Screen is added to the Screens collection, invoke ScreenAdded()
+    // and pass the new screen.
+    MainMenuRoot.Screens
+        .Where(_ => _.Action == NotifyCollectionChangedAction.Add)
+        .Select(_ => _.NewItems[0] as SubScreenViewModel)
+        .Subscribe(ScreenAdded);
+}
+
+private void ScreenAdded(SubScreenViewModel screen) {
+    //if screen is of current type, activate it; else deactivate it
+    screen.IsActive = MainMenuRoot.CurrentScreenType == screen.GetType();
+}
+```
 
 ## Serialization
