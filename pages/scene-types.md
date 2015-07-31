@@ -156,4 +156,4 @@ When you enter play mode, first executed will be the `Start()` method which is r
 
 After the kernel is loaded, a `SceneAwakeEvent` is published. Read more in the [Events](events.md) page.
 
-[SceneManagementService](scene-management-service.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.
+[SceneManagementService](scenemanagementservice.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.
