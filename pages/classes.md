@@ -2,4 +2,4 @@
 
 List to detailed description of some of the uFrame classes.
 
-* [SceneState](scenestate.md)
+* [SceneState](classes/scenestate.md)
