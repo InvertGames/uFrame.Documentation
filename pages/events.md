@@ -1,5 +1,32 @@
 # Events
 
+Events are simple classes that contain simple data. It's similar to C# `EventArgs` class that you use to pass data along with the events.
+
+Example event used to pass a reference of a newly created enemy to a subscriber (for eg. a Service).
+
+```csharp
+public class EnemyCreatedEvent {
+
+    // Reference to a single Enemy instance.
+    public Enemy;
+}
+```
+
+Example subscription to the `EnemyCreatedEvent` inside the `EnemiesService` class.
+
+```csharp
+public List<Enemy> Enemies;
+
+public override void Setup() {
+    base.Setup();
+
+    // Adds new enemy to the Enemies list.
+    OnEvent<EnemyCreatedEvent>().Subscribe(evt => {
+        Enemies.Add(evt.Enemy)
+    })
+}
+```
+
 ## Default Events
 
 `SceneAwakeEvent`

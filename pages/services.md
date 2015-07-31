@@ -2,9 +2,13 @@
 
 While services can serve for almost any purpose, they can be used to seperate various features of uFrame, and your application. Examples might include, FacebookService, NetworkingService, AchievementsService, etc.
 
-Services are initialized by the [uFrame Kernel](uframe-kernel.md) and therefore must be first added to the _Services_ game object in the kernel prefab.
+There are two types of services:
 
-## Using a Service
+* Services that are MonoBehaviours. They are created from the designer by adding a [Service Node](service-node.md). Those Services are initialized by the [uFrame Kernel](uframe-kernel.md) and therefore must be first added to the _Services_ game object in the kernel prefab. Because it a MonoBehaviour you can use this type of Service to interact with the Unity engine.
+
+* Services created with code. In order to create a Service just inherit from the `SystemService` class.
+
+## Subscribing and publishing events
 
 Services can be accessed directly from any place in the codebase simply by injecting them into a class.
 
@@ -32,7 +36,7 @@ public override void Setup() {
     base.Setup();
 
     // Use the line below to subscribe to events.
-    // this.OnEvent<MyEvent>().Subscribe(myEventInstance=>{ Debug.Log("MyEvent was fired.") });
+    this.OnEvent<MyEvent>().Subscribe(myEventInstance => { Debug.Log("MyEvent was fired.") });
 }
 ```
 
