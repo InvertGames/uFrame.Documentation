@@ -8,7 +8,7 @@ In technical aspect Commands are the same as [Events](events.md). The only diffe
 
 ## Subscribing to Commands
 
-Commands work with [Event Aggregator](eventaggregator.md). You can subscribe to a command using `OnEvent()` method which is available in [Services](services.md) and any class that derives from [uFrameComponent](uframe-component.md).
+Commands work with [Event Aggregator](event-aggregator.md). You can subscribe to a command using `OnEvent()` method which is available in [Services](services.md) and any class that derives from [uFrameComponent](uframe-component.md).
 
 This is how the [SceneManagementService](scenemanagementservice.md) class subscribes to the `LoadSceneCommand`.
 

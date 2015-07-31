@@ -6,7 +6,23 @@ There are two types of services:
 
 * Services that are MonoBehaviours. They are created from the designer by adding a [Service Node](service-node.md). Those Services are initialized by the [uFrame Kernel](uframe-kernel.md) and therefore must be first added to the _Services_ game object in the kernel prefab. Because it a MonoBehaviour you can use this type of Service to interact with the Unity engine.
 
-* Services created with code. In order to create a Service just inherit from the `SystemService` class.
+* Services created with code. In order to create a Service just inherit from the `SystemService` class. You can register such service inside a [System Loader](system-loaders.md) class in the `Load()` method.
+
+Example of registering a custom _NotificationService_ class inside a System Loader:
+
+```csharp
+public override void Load() {
+    Container.RegisterService(new NotificationService());
+}
+```
+
+You can now access the _NotificationService_ directly anywhere from the code by injecting it:
+
+```csharp
+[inject] public NotificationService NotificationService;
+```
+
+Although probably a better idea would be to communicate with it through [Events](events.md) and [Commands](commands.md).
 
 ## Subscribing and publishing events
 
