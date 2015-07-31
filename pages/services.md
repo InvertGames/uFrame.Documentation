@@ -95,6 +95,6 @@ If your controller property gets value of null, check if all [System Loaders](sy
 
 These are the services that are available in uFrame by default.
 
-* [View Service](pages/view-service.md)
+* [View Service](pages/viewservice.md)
 * [Scene Management Service](pages/scenemanagementservice.md)
 * [System Service](pages/system-service.md)
