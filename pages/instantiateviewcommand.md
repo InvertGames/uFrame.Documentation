@@ -30,4 +30,4 @@ var cmd = new InstantiateViewCommand() {
 
     // Initlalize ViewModel with data specified in the View inspector.
     instantiatedView.InitializeViewModel(ViewModelReference);
-```
+```In order to initialize a ViewModel with the View's inspector data, use `View.InitializeData(ViewModel)` on the instantiated View.

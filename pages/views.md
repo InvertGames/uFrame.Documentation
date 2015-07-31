@@ -36,6 +36,8 @@ This is when SceneFirst Views request a proper ViewModel from the scene's Depend
 
 On a View, when the Initialize ViewModel option is checked in the inspector, this is where the base.InitializeViewModel() call will set the ViewModel's properties to the values of the View's matching properties (which are underscored in code on the View). This will usually never need to be overridden.
 
+If you want to initialize ViewModel with the inspector data manually, use `View.InitializeData(ViewModel)` which is a public wrapper for `View.InitializeViewMode(VM)`.
+
 `Awake(), Start(), OnEnable(), OnDisable(), OnDestroy(), Update(), LateUpdate()`
 
 ## Help, my bindings have stopped working!
