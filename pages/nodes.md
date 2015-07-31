@@ -12,3 +12,4 @@ Nodes that you can create in the designer:
 * [Command](command-node.md)
 * [Computed Property](computed-properties.md)
 * [State Machine](reactive-state-machines.md)
+* [MVVM Kernel Graph](mvvm-kernel-graph-node.md)

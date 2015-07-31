@@ -1,6 +1,6 @@
 # SceneState Enum
 
-_SceneState_ values are used in `SceneLoaderEvent` to define current state that the scene is in.
+_SceneState_ values are used with `SceneLoaderEvent` to define current state that the scene is in.
 
 _SceneState_ values:
 
@@ -34,4 +34,4 @@ State used when a scene finish unloading with the `UnloadScene()` method of a Sc
 
 * Destructed
 
-State used after a scene root game object was destroyed with the `Destroy()` method.
+State used when unloading a scene, after a scene root game object was destroyed with the `Destroy()` method.
