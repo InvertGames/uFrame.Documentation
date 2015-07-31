@@ -59,7 +59,7 @@ To access these managers, you can inject them into controllers and services usin
 [Inject] IViewModelManager<PlayerViewModel> AllPlayers { get;set; }
 ```
 
-Read more about [ViewModel managers](viewmodel-manager.md)
+Read more about [ViewModel managers](viewmodelmanager.md)
 
 ## Accessing Controllers
 

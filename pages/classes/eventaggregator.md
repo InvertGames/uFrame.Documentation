@@ -2,6 +2,6 @@
 
 ## FAQ
 
-** Is it possible to call Publish() from some random Monobehaviour?
+** Is it possible to call `Publish()` from some random MonoBehaviour?
 
-You can inherit your Monobehaviour from a [uFrameComponent](uframecomponent.md) to get references to event aggregator and also get callbacks for [KernelLoadedEvent](kernelloadedevent.md) and loading [events](events.md).
+You can inherit your MonoBehaviour from a [uFrameComponent](classes/uframecomponent.md) to get references to event aggregator and also get callbacks for [KernelLoadedEvent](classes/kernelloadedevent.md) and loading [events](events.md).
