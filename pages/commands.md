@@ -30,6 +30,5 @@ Publish.(new LoadSceneCommand() {
 
 ## Default Commands
 
-[LoadSceneCommand](loadscenecommand.md)
-
-[InstantiateViewCommand](instantiateviewcommand.md)
+* [LoadSceneCommand](loadscenecommand.md)
+* [InstantiateViewCommand](instantiateviewcommand.md)
