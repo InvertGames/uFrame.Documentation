@@ -9,6 +9,6 @@ Nodes that you can create in the designer:
 * [Simple Class](simple-classes.md)
 * [Subsystem](subsystems.md)
 * [Type Reference](type-references.md)
-* [Command](commands.md)
+* [Command](element-commands.md)
 * [Computed Property](computed-properties.md)
 * [State Machine](reactive-state-machines.md)

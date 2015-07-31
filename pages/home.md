@@ -16,7 +16,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Nodes](nodes.md)
 * [uFrame Kernel](uframe-kernel.md)
 * [Events](events.md)
-* [Commands](element-commands.md)
+* [Commands](commands.md)
 * [Services](services.md)
 * [System Loaders](system-loaders.md)
 * [Scene Loaders](scene-loaders.md)
