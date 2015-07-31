@@ -60,3 +60,7 @@ This event is published in the `Start()` method of every [Scene Type](scene-type
 `SceneLoaderEvent`
 
 An event published by the `SceneManagementService` and `uFrameKernel` classes. `SceneLoaderEvent` has a `State` property of type [SceneState](scenestate.md) that holds the current state of the scene.
+
+`ViewCreatedEvent`
+
+`ViewModelDestroyedEvent`
