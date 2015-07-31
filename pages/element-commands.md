@@ -43,7 +43,7 @@ Then executed will be the `Execute{CommandName}` method in the related view clas
 
 [example]
 
-You can also make a command to be published to the [Event Aggregator](event-aggregator.md) and this way execute handlers that subscribe to this command.
+You can also make a command to be published to the [Event Aggregator](eventaggregator.md) and this way execute handlers that subscribe to this command.
 
 [explain how to do it]
 

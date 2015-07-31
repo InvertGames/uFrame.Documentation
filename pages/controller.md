@@ -6,7 +6,7 @@ For details how Controllers are implemented check the `Controller.cs` file.
 
 ## Setup
 
-The `Setup()` method is called when the controller is first created and has been injected. Use this to subscribe to any events on the [Event Aggregator](event-aggregator.md).
+The `Setup()` method is called when the controller is first created and has been injected. Use this to subscribe to any events on the [Event Aggregator](eventaggregator.md).
 
 ```csharp
 public override void Setup() {}

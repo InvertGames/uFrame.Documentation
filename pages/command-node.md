@@ -30,7 +30,7 @@ public partial class ApplyDamageCommand : ViewModelCommand {
 }
 ```
 
-The main difference between a [Command](commands.md) and a Command Node is that Command can be published to [Event Aggregator](event-aggregator.md) and handled by any class that subscribes to it. While Node Commands are only used to pass data to the Controller.
+The main difference between a [Command](commands.md) and a Command Node is that Command can be published to [Event Aggregator](eventaggregator.md) and handled by any class that subscribes to it. While Node Commands are only used to pass data to the Controller.
 
 You can make Command Node behave like a Command by right-clicking on the Command Node and selecting the _Publish_ option. It'll make the command to be published as a regular Event which can be handled by any Service.
 
