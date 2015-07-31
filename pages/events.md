@@ -56,3 +56,7 @@ Published when the kernel finish loading.
 `SceneAwakeEvent`
 
 This event is published in the `Start()` method of every [Scene Type](scene-types.md) MonoBehaviour. It'll pass the scene name as an argument. It'll be published only after the [kernel](uframe-kernel.md) if fully loaded. Check `Scene.Start()` method for implementation details.
+
+`SceneLoaderEvent`
+
+An event published by the `SceneManagementService` and `uFrameKernel` classes. `SceneLoaderEvent` has a `State` property of type [SceneState](scenestate.md) that holds the current state of the scene.

@@ -23,3 +23,15 @@ Publish(new LoadSceneCommand() {
 ```
 
 When the scene loads, you can make use of those settings from the `LoadScene()` method of the scene's loader class.
+
+## Creating your own settings class
+
+You can create you own settings class by inheriting from `SceneSettings<T>`.
+
+```csharp
+public class MyCustomSceneSettings : SceneSettings<MyCustomScene> {
+
+    // Value to be passed to the loaded scene.
+    public int MyCustomValue;
+}
+```
