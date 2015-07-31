@@ -26,6 +26,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Collections](element-collections.md)
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)
+* [uFrame Classes](classes.md)
 
 # Advanced Concepts
 
