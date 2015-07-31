@@ -1,4 +1,4 @@
-# ViewModel manager
+# ViewModel Manager
 
 By default uFrame keeps up with viewmodels for us. It maintains a manager for each type of viewmodel you create.
 
