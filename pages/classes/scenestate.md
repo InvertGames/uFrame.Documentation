@@ -4,34 +4,34 @@ _SceneState_ values are used in `SceneLoaderEvent` to define current state that 
 
 _SceneState_ values:
 
-`Instantiating`
+* Instantiating
 
 State used while a scene is loaded asynchronously with the Unity `Application.LoadLevelAdditiveAsync()` method. The `SceneLoaderEvent` with this state will be published every 0.1 sec. during the async scene load.
 
-`Instantiated`
+* Instantiated
 
 Instantiated is invoked after new scene is constructed with all it's objects but the Scene Loader wasn't invoked yet.
 
-`Loading`
+* Loading
 
 Reserved for future usage.
 
-`Update`
+* Update
 
 This state is used every time you call the `progressDelegate` in the `LoadScene()` method of a [Scene Loader](scene-loaders.md) class.
 
-`Loaded`
+* Loaded
 
 State used when a scene finish loading with the `LoadScene()` method of a Scene Loader class.
 
-`Unloading`
+* Unloading
 
 This state is used every time you call the `progressDelegate` in the `UnloadScene()` method of a [Scene Loader](scene-loaders.md) class.
 
-`Unloaded`
+* Unloaded
 
 State used when a scene finish unloading with the `UnloadScene()` method of a Scene Loader class.
 
-`Destructed`
+* Destructed
 
 State used after a scene root game object was destroyed with the `Destroy()` method.
