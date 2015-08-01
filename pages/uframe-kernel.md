@@ -8,7 +8,7 @@ In the image above you can see the scene _BasicsProjectKernelScene_. This scene 
 
 You should not add the kernel prefab to your scenes. It'll be added automatically by the [Scene Type](scene-types.md) script attached to your root game object. The kernel game object is set to not destroy when loading other scenes with Unity's `DontDestroyonLoad()` method.
 
-Important Note: All SystemLoaders, Services, and SceneLoaders are MonoBehaviours attached their corresponding child game-objects in the kernel prefab.
+Important Note: All SystemLoaders, Services, and SceneLoaders are MonoBehaviours attached to corresponding child game-objects in the kernel prefab.
 
 ![](images/Screenshot_113.png)
 
@@ -27,7 +27,7 @@ When you enter play mode, the Scene Type script will load additively the kernel 
 The `Startup()` method will do:
 
 * Search for all [System Loaders](system-loaders.md) attached to child game objects.
-* Execute `Load()` method on each system loader. `SystemLoaderEvent` with argument `SystemState.Loading` will be published before each load and after with argument `SystemState.Loaded`.
+* Execute `Load()` method on each System Loader to register Services in the [DI Container](di-ioc-container.md). `SystemLoaderEvent` with argument `SystemState.Loading` will be published before each load and after with argument `SystemState.Loaded`.
 * Search for all [Services](services.md) attached to child game objects.
 * Register each service in the [Container](di-ioc-container.md).
 * Inject container instances to properties (in all classes) that used the `[Inject]` attribute.

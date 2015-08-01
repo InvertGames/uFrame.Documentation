@@ -14,7 +14,7 @@ public override void Setup() {}
 
 ## Creating ViewModels
 
-You can create a new ViewModel simply by using the `Create{ViewModel}()` method. The new instance will be automatically saved to the [ViewModelManager](viewmodel-manager.md) of this Controller.
+You can create a new ViewModel simply by using the `Create{ViewModel}()` method. The new instance will be automatically saved to the [ViewModelManager](viewmodelmanager.md) of this Controller.
 
 ```csharp
 public class MainMenuRootController : MainMenuRootControllerBase {
@@ -66,7 +66,17 @@ public class MainMenuRootController : MainMenuRootControllerBase {
 
 ## Initializing ViewModels
 
-Typically you will use the relevant Controller's `Initialize{ElementName}()` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](scene-properties.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](viewmodel-manager.md).
+Typically you will use the relevant Controller's `Initialize{ElementName}()` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](scene-properties.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](viewmodelmanager.md).
+
+Example _LevelRoot_ VM's initialization method in `LevelRootController.cs` file.
+
+```csharp
+public override void InitializeLevelRoot(LevelRootViewModel viewModel) {
+    base.InitializeLevelRoot(viewModel);
+}
+```
+
+[todo add example of subscribing to state and scene property changes]
 
 For convenience, you also have the option of Initializing a ViewModel from a particular View, by checking Initialize ViewModel on the View. This is particularly useful when setting up a scene before runtime or creating prefabs.
 

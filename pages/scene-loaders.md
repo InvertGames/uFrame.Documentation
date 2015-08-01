@@ -65,3 +65,13 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
     MenuScreen.SomeProperty = scene.SomePublicField;
 }
 ```
+
+## Creating custom Scene Loader
+
+You can create custom Scene Loader class by inheriting from `SceneLoader<T>`.
+
+```csharp
+public class MyCustomSceneLoader : SceneLoader<MyCustomScene> {
+    
+}
+```
