@@ -16,6 +16,13 @@ theory and also shows how to do a simple change to the Example Project.
 * [Part II](getting-started-for-uframe-mvvm-16/tutorial-2.md)  
 * [Part III](getting-started-for-uframe-mvvm-16/tutorial-3.md)  
 * [Part IV](getting-started-for-uframe-mvvm-16/tutorial-4.md)  
+* [Part V](getting-started-for-uframe-mvvm-16/tutorial-5.md)
+* [Part VI](getting-started-for-uframe-mvvm-16/tutorial-6.md)  [Incomplete]
+* [Part VII](getting-started-for-uframe-mvvm-16/tutorial-7.md)  [Incomplete]
+* [Part VIII](getting-started-for-uframe-mvvm-16/tutorial-8.md)  [Incomplete]
+* [Part IX](getting-started-for-uframe-mvvm-16/tutorial-9.md)  [Incomplete]
+* [Part X](getting-started-for-uframe-mvvm-16/tutorial-10.md)  [Incomplete]
+
 
 ## uFrame ECS
 ## uFrame Kernel
