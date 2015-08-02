@@ -63,4 +63,8 @@ An event published by the `SceneManagementService` and `uFrameKernel` classes. `
 
 `ViewCreatedEvent`
 
+`ViewModelCreatedEvent`
+
+Published by Controller when new ViewModel is created with `Create()` method.
+
 `ViewModelDestroyedEvent`

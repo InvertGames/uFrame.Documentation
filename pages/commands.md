@@ -1,5 +1,7 @@
 # Commands
 
+[If you look for Element Commands, go [here](element-commands.md).]
+
 Commands are simple classes with data. You can use them to publish a "command" to do something, for. eg. `LoadSceneCommand` will allow you to load a scene specified in one of this command's properties.
 
 Notice that commands described here are different from [ViewModel Commands](viewmodel-commands.md) and [command nodes](command-node.md).
