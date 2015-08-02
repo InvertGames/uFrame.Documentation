@@ -80,6 +80,20 @@ public override void InitializeLevelRoot(LevelRootViewModel viewModel) {
 
 For convenience, you also have the option of Initializing a ViewModel from a particular View, by checking Initialize ViewModel on the View. This is particularly useful when setting up a scene before runtime or creating prefabs.
 
+## Initializing ViewModels (Base class)
+
+The base version of the `Initialize{ViewModelName}` will assign a handler method to all specified commands and add the VM to the _ViewModel Manager_.
+
+Example initialization method:
+
+```csharp
+public virtual void InitializeSubScreen(SubScreenViewModel viewModel) {
+   // This is called when a SubScreenViewModel is created
+   viewModel.Close.Action = this.CloseHandler;
+   SubScreenViewModelManager.Add(viewModel);
+}
+```
+
 ## ViewModel Manager
 
 By default every controller generates ViewModel manager property that keeps references to all ViewModel instances of the same type.

@@ -49,6 +49,10 @@ You can also make a command to be published to the [Event Aggregator](event-aggr
 
 [add example]
 
+## Publishing Commands
+
+You can make a Command to be published to the [Event Aggregator](event-aggregator.md) after it is handled by the Controller. In the designer, right-click on the command and select _Publish_ option.
+
 ## Command internal implementation
 
-Commands are defined in the [ViewModel](viewmodel.md) classes as properties of type [`Signal`](signal.md). It makes it possible to subscribe to them and execute custom code when the command is executed.
+Commands are defined in the [ViewModel](viewmodel.md) classes as properties of type [Signal](signal.md). It makes it possible to subscribe to them and execute custom code when the command is executed.
