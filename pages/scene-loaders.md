@@ -55,7 +55,7 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
 }
 ```
 
-Using the `scene` parameter in the example above you can access members defined in the [scene type](scene-types) class.
+Using the `scene` parameter in the example above you can access members defined in the [scene type](nodes/scene-types) class.
 
 ```csharp
 // Inject ViewModel that you want to update with data defined in the scene type.
@@ -72,6 +72,6 @@ You can create custom Scene Loader class by inheriting from `SceneLoader<T>`.
 
 ```csharp
 public class MyCustomSceneLoader : SceneLoader<MyCustomScene> {
-    
+
 }
 ```

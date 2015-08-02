@@ -4,7 +4,7 @@ Collections can store multiple elements of the same type. For example, you can s
 
 You can think of a Collection as a `IList<T>`. In reality, collections are implemented in a more advanced way, as a [ModelCollection](modelcollection.md) type.
 
-You can create collections on an [Element](elements.md) in the designer.
+You can create collections on an [Element](nodes/elements.md) in the designer.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_95.png)
 

@@ -7,7 +7,7 @@ To put it simple:
 * Element logic that deals only with itself typically = Controller usage.
 * Element logic that deals with other elements and interactions typically = Service usage.
 
-So [Commands](viewmodel-commands.md) are still handled in Controller, but there are also cases where it will be cleaner to let a Service listen for and handle that Command event (so you would publish it, read more on the [Command Node](command-node.md) page).
+So [Commands](viewmodel-commands.md) are still handled in Controller, but there are also cases where it will be cleaner to let a Service listen for and handle that Command event (so you would publish it, read more on the [Command Node](nodes/command-node.md) page).
 
 For example, a _TakeDamage_ command on an _RTSUnit_ element is typically going to be concerned internally, changing its own _RTSUnit_ properties, so the Controller would be handling that logic (even though you may also want to publish the command to [Event Aggregator](event-aggregator.md) as well, so something else can listen and keep track of statistics or something, etc.).
 

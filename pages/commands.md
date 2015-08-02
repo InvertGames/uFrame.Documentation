@@ -4,7 +4,7 @@
 
 Commands are simple classes with data. You can use them to publish a "command" to do something, for. eg. `LoadSceneCommand` will allow you to load a scene specified in one of this command's properties.
 
-Notice that commands described here are different from [ViewModel Commands](viewmodel-commands.md) and [command nodes](command-node.md).
+Notice that commands described here are different from [ViewModel Commands](viewmodel-commands.md) and [command nodes](nodes/command-node.md).
 
 In technical aspect Commands are the same as [Events](events.md). The only difference is their purpose. Events are to inform about some occurence and Command to trigger some behavior (or multiple behaviors).
 
