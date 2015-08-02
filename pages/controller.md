@@ -100,7 +100,11 @@ The default handler will then call appropriate custom command implementation met
 public virtual void CloseHandler(CloseCommand command) {
     this.Close(command.Sender as SubScreenViewModel);
 }
+```
 
+`SubScreenController.cs`:
+
+```csharp
 public override void Close(SubScreenViewModel viewModel) {
     base.Close(viewModel);
 
