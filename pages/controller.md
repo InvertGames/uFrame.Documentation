@@ -82,7 +82,7 @@ For convenience, you also have the option of Initializing a ViewModel from a par
 
 ## Initializing ViewModels (Base class)
 
-The base version of the `Initialize{ViewModelName}` will assign a handler method to all specified commands and add the VM to the _ViewModel Manager_.
+The base version of the `Initialize{ViewModelName}` will assign a default handler method to all specified commands and add the VM to the _ViewModel Manager_.
 
 Example initialization method:
 
@@ -91,6 +91,20 @@ public virtual void InitializeSubScreen(SubScreenViewModel viewModel) {
    // This is called when a SubScreenViewModel is created
    viewModel.Close.Action = this.CloseHandler;
    SubScreenViewModelManager.Add(viewModel);
+}
+```
+
+The default handler will then call appropriate custom command implementation method in the Controller.
+
+```csharp
+public virtual void CloseHandler(CloseCommand command) {
+    this.Close(command.Sender as SubScreenViewModel);
+}
+
+public override void Close(SubScreenViewModel viewModel) {
+    base.Close(viewModel);
+
+    // Custom implementation here.
 }
 ```
 
