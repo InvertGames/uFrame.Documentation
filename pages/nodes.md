@@ -4,6 +4,7 @@ Nodes that you can create in the designer:
 * [View](nodes/view-node.md)
 * [View Component](nodes/view-component-node.md)
 * [Enum](nodes/enum-node.md)
+* [Collections](nodes/element-collections.md)
 * [Scene Type](nodes/scene-type-node.md)
 * [Service](nodes/service-node.md)
 * [Simple Class](nodes/simple-class-node.md)

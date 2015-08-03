@@ -23,7 +23,6 @@ The following pages should help you get familiar with the core concepts of uFram
 * [ViewModels](viewmodel.md)
 * [Controllers](controller.md)
 * [Scene Properties](scene-properties.md)
-* [Collections](element-collections.md)
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)
 * [uFrame Classes](classes.md)
