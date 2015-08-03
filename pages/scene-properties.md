@@ -8,7 +8,7 @@ Scene Properties are two-way bindings, and allows for a View to calculate and se
 
 * `ResetPosition()`
 
-`ResetPosition()`` is mostly used to initialize the binding, is called in the View's base `Bind()` method, and typically doesn't need to be overridden and altered.
+`ResetPosition()` is mostly used to initialize the binding, is called in the View's base `Bind()` method, and typically doesn't need to be overridden and altered.
 
 * `CalculatePosition()`
 
