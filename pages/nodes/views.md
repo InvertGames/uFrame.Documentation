@@ -40,6 +40,48 @@ If you want to initialize ViewModel with the inspector data manually, use `View.
 
 `Awake(), Start(), OnEnable(), OnDisable(), OnDestroy(), Update(), LateUpdate()`
 
+## Bindings
+
+* {Name}Changed
+
+[todo add content]
+
+* {Name}State Changed
+
+Binding to a state property creates methods for each state, and in the designer code will property call the each state's method when it changes.
+
+* {Name}Collection Changed
+
+Collection bindings bind to a collection giving you two methods, {CollectionName}Added, and {CollectionName}Removed, override these methods to execute something when the collection is modified.
+
+* {Name}View Collection Changed
+
+The view collection changed binding automatically creates views for each element's viewmodel when created.
+
+* {Name}Executed
+
+The executed binding is for listening to when a command is invoked on a view. It will provide you with a method in the format `{CommandName}Executed({CommandClass} data)_`.
+
+* {Name}To Input Field
+
+Binds a string property to an uGUI input field. A field will be created on the view for specifying the uGUI field.
+
+* {Name}To Button
+
+The ButtonToCommand binding will create a reference to a uGUI button on the view and automatically wire the click event to invoke the command.
+
+* {Name}To Toggle
+
+Bind toggle to property will bind a boolean property directly to a uGUI toggle box.
+
+* {Name}To Text
+
+Binds a string property to a uGUI text label.
+
+* {Name}To Slider
+
+Binds a slider to a float value.
+
 ## Help, my bindings have stopped working!
 
 There are a few methods that ALWAYS need their _base.Method()_ calls intact, otherwise uFrame can easily produce unexpected results.
