@@ -2,7 +2,7 @@
 
 [Controller](Controller) is a class responsible for implementing logic behind the ViewModel. For any number of [ViewModels](viewmodels.md) there's only one Controller class instance. Any command that is specified in the graph Element will be implemented there. Controller is also responsible for creating and initializing ViewModels.
 
-For details how Controllers are implemented check the `Controller.cs` file.
+Internally, each Controller is a [Service](services.md). For details how Controllers are implemented check the `Controller.cs` file and its parent classes.
 
 ## Setup
 
@@ -117,6 +117,14 @@ public override void Close(SubScreenViewModel viewModel) {
 By default every controller generates ViewModel manager property that keeps references to all ViewModel instances of the same type.
 
 [add example code and description]
+
+## Execution order
+
+First all System Loaders are loaded inside the [uFrame Kernel](uframe-kernel.md).
+
+Controller classes of a particular [Subsystem](Subsystems.md) are instantiated inside [System Loader](system-loaders.md) class of that Subsystem. The instantiation happens right before the instantes are registered in the [DI Container](di-ioc-container.md).
+
+Next, the Kernel initializes all Services, both those that are MonoBehaviours and of `SystemService` type. Because Controllers inherit from `SystemService`, they'll also be initialized with the `Setup()` and `SetupAsync()` methods.
 
 ## FAQ
 

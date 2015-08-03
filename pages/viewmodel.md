@@ -38,7 +38,17 @@ After you save and compile, your command execution will trigger both subscriptio
 
 ## Execution order
 
-[todo add content]
+ViewModels added to the _Instances_ section in the [Subsystem node](nodes/subsystem-node) will be instantiated and added to the [DI Container](di-ioc-container.md) inside the `Setup()` method of the related [System Loader](system-loaders.md).
+
+## ViewModel (Base Class)
+
+A short description of how a `{Name}ViewModelBase` class is constructed from the designer Element data.
+
+`FillProperties()`
+
+containes a little bit of meta information about all the properties declared on the view model
+
+This is used for inspectors, and also can be used for copying ViewModel and many other things, which require a bit of reflection.
 
 ## FAQ
 
