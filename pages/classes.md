@@ -5,7 +5,6 @@ List to detailed description of some of the uFrame classes.
 ## Events
 
 * [KernelLoadedEvent](classes/kernelloadedevent.md)
-
 * [ViewCreatedEvent](classes/viewcreatedevent.md)
 * [ViewDestroyedEvent](classes/viewdestroyedevent.md)
 
