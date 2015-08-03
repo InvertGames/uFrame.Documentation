@@ -38,7 +38,7 @@ On a View, when the Initialize ViewModel option is checked in the inspector, thi
 
 If you want to initialize ViewModel with the inspector data manually, use `View.InitializeData(ViewModel)` which is a public wrapper for `View.InitializeViewMode(VM)`.
 
-`Awake(), Start(), OnEnable(), OnDisable(), OnDestroy(), Update(), LateUpdate()`
+`Awake()`, `Start()`, `OnEnable()`, `OnDisable()`, `OnDestroy()`, `Update()`, `LateUpdate()`
 
 ## Bindings
 
@@ -60,7 +60,7 @@ The view collection changed binding automatically creates views for each element
 
 `{Name}Executed()`
 
-The executed binding is for listening to when a command is invoked on a view. It will provide you with a method in the format `{CommandName}Executed({CommandClass} data)_`.
+The executed binding is for listening to when a command is invoked on a view. It will provide you with a method in the format `{CommandName}Executed({CommandClass} data)`.
 
 `{Name}ToInputField()`
 
@@ -70,7 +70,7 @@ Binds a string property to an uGUI input field. A field will be created on the v
 
 The ButtonToCommand binding will create a reference to a uGUI button on the view and automatically wire the click event to invoke the command.
 
-`{Name}ToToggle()``
+`{Name}ToToggle()`
 
 Bind toggle to property will bind a boolean property directly to a uGUI toggle box.
 
@@ -78,7 +78,7 @@ Bind toggle to property will bind a boolean property directly to a uGUI toggle b
 
 Binds a string property to a uGUI text label.
 
-`{Name}ToSlider()``
+`{Name}ToSlider()`
 
 Binds a slider to a float value.
 
