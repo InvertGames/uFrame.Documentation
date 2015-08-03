@@ -1,10 +1,10 @@
 # Commands
 
-[If you look for Element Commands, go [here](element-commands.md).]
+[If you look for Element Commands, go to [Element Commands](nodes/element-commands.md).]
 
 Commands are simple classes with data. You can use them to publish a "command" to do something, for. eg. `LoadSceneCommand` will allow you to load a scene specified in one of this command's properties.
 
-Notice that commands described here are different from [ViewModel Commands](viewmodel-commands.md) and [command nodes](nodes/command-node.md).
+Notice that commands described here are different from [ViewModel Commands](nodes/viewmodel-commands.md) and [command nodes](nodes/command-node.md).
 
 In technical aspect Commands are the same as [Events](events.md). The only difference is their purpose. Events are to inform about some occurence and Command to trigger some behavior (or multiple behaviors).
 
@@ -12,7 +12,7 @@ In technical aspect Commands are the same as [Events](events.md). The only diffe
 
 Commands work with [Event Aggregator](event-aggregator.md). You can subscribe to a command using `OnEvent()` method which is available in [Services](services.md) and any class that derives from [uFrameComponent](uframe-component.md).
 
-This is how the [SceneManagementService](scenemanagementservice.md) class subscribes to the `LoadSceneCommand`.
+This is how the [SceneManagementService](classes/scenemanagementservice.md) class subscribes to the `LoadSceneCommand`.
 
 ```csharp
 this.OnEvent<LoadSceneCommand>().Subscribe(_ => {
@@ -32,5 +32,5 @@ Publish.(new LoadSceneCommand() {
 
 ## Default Commands
 
-* [LoadSceneCommand](loadscenecommand.md)
-* [InstantiateViewCommand](instantiateviewcommand.md)
+* [LoadSceneCommand](classes/loadscenecommand.md)
+* [InstantiateViewCommand](classes/instantiateviewcommand.md)
