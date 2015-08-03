@@ -6,11 +6,11 @@ Usually a property binding is a one-way stream of information, where a View is s
 
 Scene Properties are two-way bindings, and allows for a View to calculate and set a property on its ViewModel. For example, adding a Position scene property on a PlayerView will result in these underlying base methods:
 
-`ResetPosition()`
+* `ResetPosition()`
 
 `ResetPosition()`` is mostly used to initialize the binding, is called in the View's base `Bind()` method, and typically doesn't need to be overridden and altered.
 
-`CalculatePosition()`
+* `CalculatePosition()`
 
 `CalculatePosition()` is the main method you would override on your generated PlayerView, where you would return a _Vector3_ to give the player's position.
 
@@ -20,7 +20,7 @@ protected override Vector3 CalculatePosition() {
 }
 ```
 
-`GetPositionObservable()`
+* `GetPositionObservable()`
 
 `GetPositionObservable()` should only be overridden in cases where you have a more convenient or performant method of observing the scene property change, because as you see, this calculation is happening every Update by default. In this case, we know that ViewBase is already monitoring a TransformChangedObservable (and specifically a PositionChangedObservable as well), so on our PlayerView we would override the GetPositionObservable like this:
 
