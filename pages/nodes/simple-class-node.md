@@ -1,6 +1,6 @@
 # Simple Classes
 
-[ More uses ]
+These are basically simple classes that automatically implement `INotifyPropertyChanged`, which can help when quickly encapsulating portable data and bridging uFrame with other Unity assets, libraries, and frameworks. Class nodes can be used as Element node properties and command parameters, which adds a whole new level of flexibility. 
 
 ## Defining custom events
 
