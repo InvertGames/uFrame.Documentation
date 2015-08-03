@@ -76,7 +76,7 @@ Read more on the [Scene Settings](scene-settings.md) page.
 
 A scene loader is generated for every scene type that exists in the graph.
 
-Scene loaders live as game objects on the [uFrame Kernel](uFrame Kernel).
+Scene loaders live as game objects on the [uFrame Kernel](../uframe-kernel.md).
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_103.png)
 
@@ -136,4 +136,4 @@ When you enter play mode, first executed will be the `Start()` method which is r
 
 After the kernel is loaded, a `SceneAwakeEvent` is published. Read more in the [Events](events.md) page.
 
-[SceneManagementService](scenemanagementservice.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.
+[SceneManagementService](../classes/scenemanagementservice.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.

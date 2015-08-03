@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Elements represent the [ViewModel](ViewModel) in the [MVVM pattern](MVVMPattern). In the game world it can be a player, weapon, menu screen or any other game entity. Elements hold only the data associated with the game’s entity. For example, Player element could contain information about player properties like health, running speed, obtained weapons or actions; Shoot, TakeDamage or Die.
+Elements represent the [ViewModel](../viewmodel.md) in the [MVVM pattern](../mvvm-pattern.md). In the game world it can be a player, weapon, menu screen or any other game entity. Elements hold only the data associated with the game’s entity. For example, Player element could contain information about player properties like health, running speed, obtained weapons or actions; Shoot, TakeDamage or Die.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_90.png)
 
@@ -12,7 +12,7 @@ Technically, an Element is a node defined in the graph that contains information
 
 Elements in itself doesn’t contain any logic. They are also completely game engine independent meaning that they have no knowledge of Unity related elements like game objects or components.
 
-Each element can be represented in the game world through a [View](Views). View is a MonoBehaviour that will take the data from an element and represent it in the game. For example, it’ll play the die animation when the player’s health reaches zero.
+Each element can be represented in the game world through a [View](view-node.md). View is a MonoBehaviour that will take the data from an element and represent it in the game. For example, it’ll play the die animation when the player’s health reaches zero.
 
 ## Element Attributes
 
@@ -26,7 +26,7 @@ Commands allows you to change the state of the ViewModel. Read more about [Comma
 
 ## Linking Nodes
 
-I you make a connection from a property to another node then the node’s type will become type of the property. The same is true for Collections. You can also link a Property to a View and create a [Scene Property](SceneProperties).
+I you make a connection from a property to another node then the node’s type will become type of the property. The same is true for Collections. You can also link a Property to a View and create a [Scene Property](scene-property-node.md).
 
 If you make a connection from a Command to another node, then the command will have a parameter of a type of that node. If there's no link from the Command, it'll have no parameters.
 
@@ -42,11 +42,11 @@ You have separate context menu for the node header and its attributes. Most of t
 
 After creating an Element and recompiling, uFrame will create two editable files: _{ElementName}ViewModel_ and _{ElementName}Controller_.
 
-Read more about [ViewModels](viewmodel.md) and [Controllers](controller.md).
+Read more about [ViewModels](../viewmodel.md) and [Controllers](../controller.md).
 
 Each of those files is empty by default and is intended to by filled with implementation by the user. All the attributes specified in the diagram and the MVVM code are inherited from their base classes.
 
-Read more about [ViewModelBase](ViewModelBase) and [ControllerBase](ControllerBase) base classes.
+Read more about [ViewModelBase](../classes/viewmodelbase.md) and [ControllerBase](ControllerBase) base classes.
 
 ## Inheritance
 

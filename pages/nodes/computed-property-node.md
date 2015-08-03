@@ -28,7 +28,7 @@ For every Computed Property there exists
 
 `public override IEnumerable<IObservableProperty> GetComputedNameDependents()`
 
-which you can override to define other [Observable Properties](Observable-Property) which the Computed Property is reliant on.
+which you can override to define other [Observable Properties](../classes/signal.md) which the Computed Property is reliant on.
 
 Example:
 Add this to your ViewModel implementation, replace _ComputedName_ with the computed property name and _CollectionName_ with collection property name you are binding to.

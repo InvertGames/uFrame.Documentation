@@ -26,3 +26,4 @@ List to detailed description of some of the uFrame classes.
 * [ModelCollection](classes/modelcollection.md)
 * [uFrameComponent](classes/uframecomponent.md)
 * [ViewModelManager](classes/viewmodelmanager.md)
+* [Signal<T>](classes/signal.md)
