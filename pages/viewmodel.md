@@ -40,6 +40,12 @@ After you save and compile, your command execution will trigger both subscriptio
 
 ViewModels added to the _Instances_ section in the [Subsystem node](nodes/subsystem-node) will be instantiated and added to the [DI Container](di-ioc-container.md) inside the `Setup()` method of the related [System Loader](system-loaders.md).
 
+ViewModels that are not added to the DI Container will be created by the [View Service](view-service.md) along with the Views.
+
+When a View is created with the [InstantiateViewCommand](classes/instantiateviewcommand.md), the command handler inside the `ViewService` will publish a [ViewCreatedEvent](classes/viewcreatedevent.md) which will be again handled by the `ViewService` to create a ViewModel (if does not exists already).
+
+Views that were added to the scene in edit mode will use its `KernelLoaded()` method to publish the `ViewCreatedEvent` and therefore obtain the ViewModel.
+
 ## ViewModel (Base Class)
 
 A short description of how a `{Name}ViewModelBase` class is constructed from the designer Element data.
