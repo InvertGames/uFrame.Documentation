@@ -1,6 +1,6 @@
 # ViewModel
 
-[ViewModel](ViewModel) is a class where all the data associated with a game entity is kept. You can also implement there [Computed Properties](ComputedProperties), initialize [State Machines](ReactiveStateMachines), implement your own serialization methods and define any other methods you need.
+[ViewModel](viewmodel.md) is a class where all the data associated with a game entity is kept. You can also implement there [Computed Properties](nodes/computed-property-node.md), initialize [State Machines](nodes/reactive-state-machine-node.md), implement your own serialization methods and define any other methods you need.
 
 ## Initializing ViewModel
 
@@ -38,7 +38,7 @@ After you save and compile, your command execution will trigger both subscriptio
 
 ## Execution order
 
-ViewModels added to the _Instances_ section in the [Subsystem node](nodes/subsystem-node) will be instantiated and added to the [DI Container](di-ioc-container.md) inside the `Setup()` method of the related [System Loader](system-loaders.md).
+ViewModels added to the _Instances_ section in the [Subsystem node](nodes/subsystem-node.md) will be instantiated and added to the [DI Container](di-ioc-container.md) inside the `Setup()` method of the related [System Loader](system-loaders.md).
 
 ViewModels that are not added to the DI Container will be created by the [View Service](view-service.md) along with the Views.
 

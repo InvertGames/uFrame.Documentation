@@ -1,8 +1,8 @@
 # Scene Loader
 
-For each [Scene Type](scene-type) defined in the graph there is a scene loader class generated. For example, _LevelScene_ scene type will have a corresponding `LevelSceneLoader` class.
+For each [Scene Type](nodes/scene-type-node.md) defined in the graph there is a scene loader class generated. For example, _LevelScene_ scene type will have a corresponding `LevelSceneLoader` class.
 
-Scene loaders live as game objects on the [uFrame Kernel](uFrame Kernel).
+Scene loaders live as game objects on the [uFrame Kernel](uframe-kernel.md).
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_103.png)
 
