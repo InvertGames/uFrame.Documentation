@@ -42,43 +42,43 @@ If you want to initialize ViewModel with the inspector data manually, use `View.
 
 ## Bindings
 
-* {Name}Changed
+`{Name}Changed()`
 
 [todo add content]
 
-* {Name}State Changed
+`{Name}StateChanged()`
 
 Binding to a state property creates methods for each state, and in the designer code will property call the each state's method when it changes.
 
-* {Name}Collection Changed
+`{Name}CollectionChanged()`
 
 Collection bindings bind to a collection giving you two methods, {CollectionName}Added, and {CollectionName}Removed, override these methods to execute something when the collection is modified.
 
-* {Name}View Collection Changed
+`{Name}ViewCollectionChanged()`
 
 The view collection changed binding automatically creates views for each element's viewmodel when created.
 
-* {Name}Executed
+`{Name}Executed()`
 
 The executed binding is for listening to when a command is invoked on a view. It will provide you with a method in the format `{CommandName}Executed({CommandClass} data)_`.
 
-* {Name}To Input Field
+`{Name}ToInputField()`
 
 Binds a string property to an uGUI input field. A field will be created on the view for specifying the uGUI field.
 
-* {Name}To Button
+`{Name}ToButton()`
 
 The ButtonToCommand binding will create a reference to a uGUI button on the view and automatically wire the click event to invoke the command.
 
-* {Name}To Toggle
+`{Name}ToToggle()``
 
 Bind toggle to property will bind a boolean property directly to a uGUI toggle box.
 
-* {Name}To Text
+`{Name}ToText()`
 
 Binds a string property to a uGUI text label.
 
-* {Name}To Slider
+`{Name}ToSlider()``
 
 Binds a slider to a float value.
 
