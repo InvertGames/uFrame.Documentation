@@ -44,7 +44,7 @@ ViewModels that are not added to the DI Container will be created by the [View S
 
 When a View is created with the [InstantiateViewCommand](classes/instantiateviewcommand.md), the command handler inside the `ViewService` will publish a [ViewCreatedEvent](classes/viewcreatedevent.md) which will be again handled by the `ViewService` to create a ViewModel (if does not exists already).
 
-Views that were added to the scene in edit mode will use its `KernelLoaded()` method to publish the `ViewCreatedEvent` and therefore obtain the ViewModel.
+Views that were added to the scene in edit mode will use their `KernelLoaded()` method to publish the `ViewCreatedEvent` and therefore obtain the ViewModel.
 
 ## ViewModel (Base Class)
 
