@@ -23,3 +23,14 @@ To create a custom system loader, derive from SystemLoader, override the load me
 Data of each subsystem is held in a folder with the same name as the name of the subsystem.
 
 [picture here]
+
+## Designer
+
+You can create subsystem in two ways:
+
+1. From the _MainGraph_ (the graph that contains the _MVVM Kernel Graph_ node).
+2. With the _Create Subsystem Graph_ button (at the top toolbar).
+
+The only difference between Subsystems created with those methods is that the Subsystems created with the _Create Subsystem Graph_ button become exporable ie. you can export them to a separate file.
+
+Also, Subsystem cannot contain another Subsystems.
