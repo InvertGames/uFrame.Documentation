@@ -8,15 +8,15 @@ This document tends to be an extensive, up-to-date guide to uFrame, crafted by c
 
 ## Sections
 
-- #### [uFrame Guide](blob/master/pages/home.md)
+- #### [uFrame Guide](uframe-documentation/blob/master/pages/home.md)
   An up-to-date information about uFrame MVVM and uFrame Graph Designer
 
 
-- #### [Tutorials](blob/master/tutorials/home.md)
+- #### [Tutorials](uframe-documentation/blob/master/tutorials/home.md)
   A list of all the available tutorials.
 
 
-- #### [Support](blob/master/support/home.md)
+- #### [Support](uframe-documentation/blob/master/support/home.md)
   Page, which covers all the sources of help
 
 - #### [Games made with uFrame](uframe-documentation/blob/master/pages/uframe-games.md)
