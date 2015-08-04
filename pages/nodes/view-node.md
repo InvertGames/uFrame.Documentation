@@ -52,7 +52,7 @@ Binding to a state property creates methods for each state, and in the designer 
 
 `{Name}CollectionChanged()`
 
-Collection bindings bind to a collection giving you two methods, {CollectionName}Added, and {CollectionName}Removed, override these methods to execute something when the collection is modified.
+Collection bindings bind to a collection giving you two methods, ``{CollectionName}Added`, and `{CollectionName}Removed`, override these methods to execute something when the collection is modified.
 
 `{Name}ViewCollectionChanged()`
 
@@ -68,7 +68,7 @@ Binds a string property to an uGUI input field. A field will be created on the v
 
 `{Name}ToButton()`
 
-The ButtonToCommand binding will create a reference to a uGUI button on the view and automatically wire the click event to invoke the command.
+The _ButtonToCommand_ binding will create a reference to a uGUI button on the view and automatically wire the click event to invoke the command.
 
 `{Name}ToToggle()`
 
