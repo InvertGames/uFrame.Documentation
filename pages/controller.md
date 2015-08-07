@@ -12,6 +12,16 @@ The `Setup()` method is called when the controller is first created and has been
 public override void Setup() {}
 ```
 
+## Accessing Controllers
+
+You can access Controllers anywhere in your code by injecting them:
+
+```csharp
+[inject] ControllerType ControllerType { get; set; };
+```
+
+Check [System Loaders](system-loaders.md) to see how Controllers are registered to the [DI Container](di-ioc-container.md).
+
 ## Creating ViewModels
 
 You can create a new ViewModel simply by using the `Create{ViewModel}()` method. The new instance will be automatically saved to the [ViewModelManager](classes/viewmodelmanager.md) of this Controller.
