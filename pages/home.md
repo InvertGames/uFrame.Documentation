@@ -37,7 +37,7 @@ The following pages should help you get familiar with the core concepts of uFram
 # Reactive Programming
 
 * [UniRX Main Page](https://github.com/neuecc/UniRx)
-* [UniRX Rundown (pdf)](../files/unirx_rundown_-_aahz.pdf)
+* [UniRX Rundown (pdf)](https://drive.google.com/file/d/0B3lJMdHzE05YUWxSR2lNZHZRUXc)
 * [Observable Examples](observable-examples.md)
 
 # Additional Resources
