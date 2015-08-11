@@ -6,7 +6,11 @@ Scene loaders live as game objects on the [uFrame Kernel](uframe-kernel.md).
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_103.png)
 
+## Scene Loader and Scene Type
+
 When a scene with the corresponding _Scene Type_ is loaded, the scene loader will get a reference to the _Scene Type_ instance and pass it to the `LoadScene()` method. There you can use those settings to setup the scene properly. That gives a very fine grained control on how scenes are loaded and unloaded.
+
+## Auto-generated Scene Loader
 
 Below is an example of a loader class generated automatically for the _UISceneType_. It has two methods:
 
