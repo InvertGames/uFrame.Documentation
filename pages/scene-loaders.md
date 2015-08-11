@@ -79,3 +79,7 @@ public class MyCustomSceneLoader : SceneLoader<MyCustomScene> {
 
 }
 ```
+
+## Accessing other types
+
+From Scene Loader you can access any type registered in the [DI Container](di-ioc-container.md) using the `[Inject]` attribute. Those can be all [Controllers](controller.md), globaly registered [ViewModels](viewmodel.md), [Services](services.md) and others.
