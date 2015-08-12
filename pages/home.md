@@ -34,6 +34,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [DI / IoC Container](di-ioc-container.md)
 * [Services vs Controllers](services-vs-controllers.md)
 * [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
+* [Code Generation Templates](code-generation-templates.md)
 
 # Reactive Programming
 
