@@ -97,4 +97,3 @@ These are the services that are available in uFrame by default.
 
 * [View Service](classes/viewservice.md)
 * [Scene Management Service](classes/scenemanagementservice.md)
-* [System Service](classes/systemservice.md)
