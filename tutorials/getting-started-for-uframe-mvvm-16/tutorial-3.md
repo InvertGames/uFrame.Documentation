@@ -22,7 +22,7 @@ This tutorial tends to explain how settings screen works. It explains direct way
 
 ###### uFrame event system explained.
 
-Open MainMenuService.cs and locate lines 38-41:
+Open MenuScreenView.cs and locate lines 38-41:
 
 ```cs
 
