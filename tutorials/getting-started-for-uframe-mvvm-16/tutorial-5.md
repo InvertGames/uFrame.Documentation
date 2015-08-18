@@ -253,3 +253,50 @@ Now this view will bind to the registered ViewModel and display its information.
 Start the game from MainMenuScene and type in the correct credentials (uframe/uframe). Click `Sign In`. Your text object should show the correct username.
 
 ![](images/img_tut5_0014.png)
+
+If you have TextMeshPro then this is how to amend uFrame to enable bindings for it such that they can be used in this tutorial.
+
+In UGUIBindings.cs add the following:
+```cs
+public static IDisposable BindTextMeshProUGUIToProperty(this ViewBase viewBase, TextMeshProUGUI input, P<string> property)
+		{
+			if (input != null)
+			{
+				input.text = property.Value ?? string.Empty;
+			}
+			
+			var d1 = property.Subscribe(value =>
+			                            {
+				if (input != null) input.text = value;
+			});
+			
+			return d1.DisposeWith(viewBase);
+		}
+
+
+public static IDisposable BindTextMeshProUGUIToProperty<T>(this ViewBase viewBase, TextMeshProUGUI input, P<T> property,
+		                                                Func<T, string> selector)
+		{
+			
+			var d1 = property.Subscribe(value =>
+			                            {
+				input.text = selector(value);
+			});
+			
+			input.text = selector(property.Value);
+			
+			return d1.DisposeWith(viewBase);
+		}
+```
+
+In uFrameTemplates.cs add the following:
+```cs
+	container.AddBindingMethod(typeof (UGUIExtensions), "BindTextMeshProUGUIToProperty",
+			                   _ => _ is PropertiesChildItem && _.RelatedTypeName == typeof (string).Name)
+			        	    .SetDescription("Binds a string property to a TextMeshProUGUI text label.")
+					        .SetNameFormat("{0} To TextMeshProUGUI");
+```
+
+That should be it.
+
+This should enable you to enact the binding in the uFrame Designer because it will appear as an option when you click to add a binding.  Once compiled it will allow you to drag a TextMeshProUGUI object from the hierarchy to the field in the Inspector on the view that is bound to the variable you set up in the Designer.
