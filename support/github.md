@@ -2,7 +2,7 @@
 
 ## Editing pages
 
-Open page that you want to edit press the edit button.
+Open page that you want to edit, press the edit button.
 
 ![](../images/Screenshot_124.png)
 
