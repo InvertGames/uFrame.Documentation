@@ -28,4 +28,4 @@ How the ViewModel, Controller, and View work together
     3. Create AIPlayerViewModels, adding them to gameViewModel.AIPlayers
     4. Set the gameViewModel.State property to GameState.Playing, triggering any View collection, and triggering a possible CreateAIPlayersView() binding on the GameView, which invokes InstantiateView(aiPlayer)logic that may be binded to the gameViewModel.State property (ie.- UI transitions, HUD pop-ups, etc.)
 
-4. GameController: Done executing, and commands are void so nothing else to do. Game logic has been carried out, viewmodel properties may have been changed, and viewmodels may have been instantiated (all triggering any further View bindings)
+4. GameController: Done executing, and commands are void so nothing else to do. Game logic has been carried out, viewmodel properties may have been changed, and viewmodels may have been instantiated (all triggering any further View bindings).

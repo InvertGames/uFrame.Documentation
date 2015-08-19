@@ -6,7 +6,7 @@ The uFrame Kernel is an essential piece of uFrame, it handles loading scenes, su
 
 In the image above you can see the scene _BasicsProjectKernelScene_. This scene will always always contain the _BasicsProjectKernel_ prefab and any other things that need to live throughout the entire lifecycle of your application.
 
-You should not add the kernel prefab to your scenes. It'll be added automatically by the [Scene Type](scene-types.md) script attached to your root game object. The kernel game object is set to not destroy when loading other scenes with Unity's `DontDestroyonLoad()` method.
+You should not add the kernel prefab to your scenes. It'll be added automatically by the [Scene Type](nodes/scene-type-node.md) script attached to your root game object. The kernel game object is set to not destroy when loading other scenes with Unity's `DontDestroyonLoad()` method.
 
 Important Note: All SystemLoaders, Services, and SceneLoaders are MonoBehaviours attached to corresponding child game-objects in the kernel prefab.
 

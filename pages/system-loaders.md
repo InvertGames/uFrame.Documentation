@@ -2,13 +2,13 @@
 
 System Loaders are classes responsible for registering ViewModels and Controllers into [DI Container](di-ioc-container.md) as a part of the [uFrame Kernel](uframe-kernel.md) loading process.
 
-Each [Subsystem](subsystems.md) graph in the designer will have a [Subsystem](subsystem-node.md) node in it.
+Each [Subsystem](subsystems.md) graph in the designer will have a [Subsystem](nodes/subsystem-node.md) node in it.
 
 [todo subsystem node picture]
 
 Each _Subsystem_ node has a _Instances_ field that allows you to register any ViewModel from any other system into the DI Container.
 
-Subsystem also registers all Controllers and [ViewModelManagers](viewmodelmanager.md) of all Elements existing in the Subsystem by default.
+Subsystem also registers all Controllers and [ViewModelManagers](classes/viewmodelmanager.md) of all Elements existing in the Subsystem by default.
 
 ## Generated System Loaders From Subsystems
 

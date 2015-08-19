@@ -4,7 +4,7 @@ _Type Reference_ is a node type that allows you to specify a new type that you c
 
 For example, you can create your custom class `LevelDescriptor` and then use the _Type Reference_ node to specify the type of the `CurrentLevel` property.
 
-![](/images/screenshot_112.png)
+![](images/screenshot_112.png)
 
 ```csharp
 /*

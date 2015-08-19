@@ -29,38 +29,44 @@ public override void Setup() {
 
 ## Default Events
 
-`SceneAwakeEvent`
+* `SceneAwakeEvent`
 
 Published after the kernel is loaded (read more on the [Execution Order](execution-order.md) page). It'll pass a reference to the currently active scene type monobehaviour.
 
-`SystemLoaderEvent`
+* `SystemLoaderEvent`
 
 Published before and after a System Loader gets loaded. Read more in [uFrame Kernel](uframe-kernel.md).
 
-`ServiceLoaderEvent`
+* `ServiceLoaderEvent`
 
 Published before and after a Service gets setup (including async setup).
 
-`SystemLoadedEvent`
+* `SystemLoadedEvent`
 
 Published after all System Loaders are loaded and Services setup.
 
-`KernelLoadedEvent`
+* `KernelLoadedEvent`
 
 Published after all System Loaders are loaded and Services setup.
 
-`GameReadyEvent`
+* `GameReadyEvent`
 
 Published when the kernel finish loading.
 
-`SceneAwakeEvent`
+* `SceneAwakeEvent`
 
-This event is published in the `Start()` method of every [Scene Type](scene-types.md) MonoBehaviour. It'll pass the scene name as an argument. It'll be published only after the [kernel](uframe-kernel.md) if fully loaded. Check `Scene.Start()` method for implementation details.
+This event is published in the `Start()` method of every [Scene Type](nodes/scene-type-node.md) MonoBehaviour. It'll pass the scene name as an argument. It'll be published only after the [Kernel](uframe-kernel.md) if fully loaded. Check `Scene.Start()` method for implementation details.
 
-`SceneLoaderEvent`
+* `SceneLoaderEvent`
 
-An event published by the `SceneManagementService` and `uFrameKernel` classes. `SceneLoaderEvent` has a `State` property of type [SceneState](scenestate.md) that holds the current state of the scene.
+An event published by the `SceneManagementService` and `uFrameKernel` classes. `SceneLoaderEvent` has a `State` property of type [SceneState](classes/scenestate.md) that holds the current state of the scene.
 
-`ViewCreatedEvent`
+* `ViewCreatedEvent`
 
-`ViewModelDestroyedEvent`
+[todo add content]
+
+* `ViewModelCreatedEvent`
+
+Published by Controller when new ViewModel is created with `Create()` method.
+
+* `ViewModelDestroyedEvent`

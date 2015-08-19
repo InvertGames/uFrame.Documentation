@@ -4,9 +4,9 @@ Welcome to the uFrame Guide.
 
 # Download and Installation
 
-You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.com/en/#!/content/14381). For installation instructions see the [Getting Started Tutorial](getting-started-for-uframe-mvvm-16/tutorial-1.md).
+You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.com/en/#!/content/14381). For installation instructions see the [Getting Started Tutorial](../tutorials/getting-started-for-uframe-mvvm-16/tutorial-1.md).
 
-# The Basics
+# Basics
 
 The following pages should help you get familiar with the core concepts of uFrame and setting up your first project.
 
@@ -23,10 +23,10 @@ The following pages should help you get familiar with the core concepts of uFram
 * [ViewModels](viewmodel.md)
 * [Controllers](controller.md)
 * [Scene Properties](scene-properties.md)
-* [Collections](element-collections.md)
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)
 * [uFrame Classes](classes.md)
+* [FAQ](faq.md)
 
 # Advanced Concepts
 
@@ -34,10 +34,12 @@ The following pages should help you get familiar with the core concepts of uFram
 * [DI / IoC Container](di-ioc-container.md)
 * [Services vs Controllers](services-vs-controllers.md)
 * [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
+* [Code Generation Templates](code-generation-templates.md)
 
 # Reactive Programming
 
 * [UniRX Main Page](https://github.com/neuecc/UniRx)
+* [UniRX Rundown (pdf)](https://drive.google.com/file/d/0B3lJMdHzE05YUWxSR2lNZHZRUXc)
 * [Observable Examples](observable-examples.md)
 
 # Additional Resources

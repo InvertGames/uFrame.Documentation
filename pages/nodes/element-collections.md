@@ -2,9 +2,9 @@
 
 Collections can store multiple elements of the same type. For example, you can store references to multiple ViewModels or int values.
 
-You can think of a Collection as a `IList<T>`. In reality, collections are implemented in a more advanced way, as a [ModelCollection](modelcollection.md) type.
+You can think of a Collection as a `IList<T>`. In reality, collections are implemented in a more advanced way, as a [ModelCollection](../classes/modelcollection.md) type.
 
-You can create collections on an [Element](elements.md) in the designer.
+You can create collections on an [Element](element-node.md) in the designer.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_95.png)
 
@@ -12,7 +12,7 @@ You can subscribe to changes in the collections and execute custom actions when 
 
 ## Collections of ViewModels
 
-In your game you may want to have an _EnemyManager_ Element that holds references to all enemy ViewModels. To add elements to the collection you could create a [command](element-commands.md) _CreateEnemy_ and implement it in the _EnemyManagerController_.
+In your game you may want to have an _EnemyManager_ Element that holds references to all enemy ViewModels. To add elements to the collection you could create a [Command](element-commands.md) _CreateEnemy_ and implement it in the _EnemyManagerController_.
 
 > This is because it's best to modify ViewModel only through a specialised controller class so that in the feature you could easily find the code that changes the model.
 
@@ -78,7 +78,7 @@ On your _EnemyManagerView_ you can then specify a parent for your game objects t
 
 ![](images/Screenshot_114.png)
 
-The _ViewFirst_ checkbox should be unchecked since you'll be instantiating VMs through code. Read more on the [Instantiation scenarios and methods](instantiation-scenarios-and-methods.md) page.
+The _ViewFirst_ checkbox should be unchecked since you'll be instantiating VMs through code. Read more on the [Instantiation scenarios and methods](../instantiation-scenarios-and-methods.md) page.
 
 ## Scene First Collections
 

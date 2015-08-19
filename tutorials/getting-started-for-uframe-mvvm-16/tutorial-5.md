@@ -3,7 +3,7 @@
 
 ### Overall Idea
 
-This tutorial tends to explain registered instances. It explains the purpose of registered viewmodels and shows how to bind certain view to a registered instance. Finally it shows how to make a simple change: how to show local user information inside of MainMenu.
+This tutorial attempts to explain registered instances. It explains the purpose of registered ViewModels and shows how to bind a View to a registered instance. Finally it shows how to make a simple change: how to show local user information inside of MainMenu.
 
 ### Steps
 
@@ -23,15 +23,15 @@ This tutorial tends to explain registered instances. It explains the purpose of 
 
 ###### SubSystem node explained in details
 
-From the graph perspective, subsystem node serves mainly to incorporate elements which are semantically related to each other.
-User may want to create a CarSystem which holds elements to describe the car itself and all the related parts, like wheels, engines and others.
+From the graph perspective, a subsystem node serves mainly to incorporate elements which are semantically related to each other.
+Suppose the user may create a CarSystem which holds elements to describe the car itself and all the related parts, like wheels, engines and others.
 
 ![](images/img_tut5_0001.png)
 
-From the code perspective SubSystem is represented with so called SystemLoader. The purspose of SystemLoader is to load different parts of your architecture, which are not MonoBehaviors. Unity makes it extremely easy to setup classes which are MonoBehaviors, you just drag and drop them into your scene. But sometimes MonoBehavior is not the case and you need to setup instances, which have nothing to do with Unity in general. For example, Controllers and ViewModels are not MonoBehaviors. To effectively load them into your environment, uFrame generates SystemLoaders.
+From the code perspective a SubSystem is represented by a SystemLoader. The purpose of a SystemLoader is to load different parts of your architecture which are not Monobehaviors. Unity makes it extremely easy to setup classes which are MonoBehaviors: you just drag and drop them into your scene. But sometimes MonoBehavior is not desired and you need to setup class instances which have nothing to do with Unity in general. For example, Controllers and ViewModels are not MonoBehaviors. To effectively load them into your environment, uFrame generates SystemLoaders.
 
-It is deadly simple: it just registers non-monobehavior instances in the container.
-Here is an example of CarSystemLoaderBase class:
+A base SystemLoader is dead simple: it just registers non-Monobehavior instances in the Container.
+Here is an example of a CarSystemLoaderBase class:
 
 ```cs
 
@@ -72,20 +72,20 @@ namespace uFrame.ExampleProject {
 ```
 
 
-###### Learn how to register instance of a viewmodel inside of SubSystem node
+###### Learn how to register an instance of a viewmodel inside of a SubSystem node
 
-Sometimes, you will need, so called, globally registered ViewModel.
+Sometimes you may need a globally-registered ViewModel.
 
-> Such ViewModel is often refered to as 'Named' instance, 'Shared' instance or 'Globally Registered' instance.
+> Such a ViewModel is often referred to as 'Named' instance, 'Shared' instance or 'Globally Registered' instance.
 
-Such instance will have a unique name, when registered in the container, and that is why, any part of your application can get
-access to it, by means of dependency injection.
+Such an instance will have a unique name when registered in the container. That is how any part of your application can get
+access to it by means of dependency injection.
 
-Locate and open UserManagementSystem graph. Locate UserManagementSystem graph node and expand it.
+Locate and open the UserManagementSystem graph. Locate the UserManagementSystem graph node and expand it.
 
 ![](images/img_tut5_0000.png)
 
-Locate `Instances` section. This section containes one item called `LocalUser` and has type of UserViewModel. You can use plus button to introduce more items in this section. Remember: there should be no items with both same name and same type. If you want to introduce another registered instance of type `User`, you have to pickup the unique name, for example, `RemoteUser`.
+Locate the `Instances` section. This section containes one item called `LocalUser` of type UserViewModel. You can use the plus button to add more items to this section. Remember: there should be no items with both the same name and same type. If you want to introduce another registered instance of type `User`, you have to use a unique name, for example, `RemoteUser`.
 
 ###### Learn how to inject registered ViewModel instance
 
@@ -122,33 +122,33 @@ namespace uFrame.ExampleProject
 
 ```
 
-This line shows how to inject named instances.
+This line demonstrates how to inject named instances.
 
 ```cs
 [Inject("LocalUser")] public UserViewModel LocalUser;
 ```
 
-uFrame will automatically set the values of this field for you, when setting up the service.
+uFrame will automatically set the values of this field for you when setting up the service.
 
-> The same approach will work in Controllers, Services, SceneLoaders and SystemLoaders. uFrame also exposes an option to Inject views. This may come in handy when you have services related to the visual side of your game, like `SoundService`.
+> The same approach will work in Controllers, Services, SceneLoaders and SystemLoaders. uFrame also exposes an option to Inject Views. This may come in handy when you have services related to the presentation side of your game, like `SoundService`.
 
-After you injected the instance, you can do whatever you want with it. For example, UserManagementService uses it to store up-to-date authorization information.
+After you inject the instance you can do whatever you want with it. For example, UserManagementService uses the named instance of UserViewModel to store up-to-date authorization information for the local user.
 
 
 ###### Learn how to modify UserManagementService
 
-Open UserManagementSystem graph and locate User element node. Expand it.
+Open the UserManagementSystem graph and locate the User element node. Expand it.
 
 ![](images/img_tut5_0002.png)
 
-Add a new propertz to User element node. Name it `Username`, make sure the type is string.
+Add a new property to the User element node. Name it `Username` and make sure the type is string.
 
 ![](images/img_tut5_0003.png)
 
 Save and compile.  
 Locate and open `Assets/ExampleProject/UserManagementSystem/Services/UserManagementService.cs`
 
-Let us change authorization logic a little bit to save the given username into the LocalUser ViewModel, if given information is correct.
+Let us change the authorization logic a little bit to save the given username into the LocalUser ViewModel if the given information is correct.
 
 ```cs
 
@@ -180,26 +180,26 @@ namespace uFrame.ExampleProject
 
 ```
 
-At this point, any time we succesfully log in, system will remember the information about the credentials.
+Now any time we succesfully log in the system will remember the user's username.
 
 ###### Learn how to create Views
 
-Our ultimate goal is to show user information inside of main menu. The correct approach would be defining new view for the UserViewModel. However, we will go even further and make it correct from the architecture standpoint.
+Our ultimate goal is to show user information inside of the main menu. The correct approach would be defining  new View for the UserViewModel. However, we will go even further and make it correct from the architecture standpoint.
 
-When it comes to good design, you want different pieces of your game to be reusable. So if we start a new project with a different game, we want to reuse the same UserManagementSystem with all the services and view models. This will save us a lot of time.
+When it comes to good design, you want different pieces of your game to be reusable. So if we start a new project with a different game, we want to reuse the same UserManagementSystem with all the Services and ViewModels. This will save us a lot of time.
 
-But on the other, we want to define a View for UserViewModel which is specific for this particular game: we want to show it in the main menu. uFrame allows you to keep views and elements in different graphs.
+But on the other hand, we want to define a View for the UserViewModel which is specific for this particular game: we want to show it in the main menu. uFrame allows you to keep Views and elements in different graphs.
 
 Naviage to `MainMenuSystem`, right-click on the empty space on the graph and select
 `Show Item` -> `UserManagementSystem` -> `User`.
 
 ![](images/img_tut5_0004.png)
 
-A User element node will appear. However, it will have a different look and feel, because it comes from the other graph.
+A User element node will appear. However, it will have a different look and feel because it comes from the other graph.
 
 ![](images/img_tut5_0005.png)
 
-In such a state, you are not able to modify User element node. However, you can still go inside of it, by double-clicking it's header. Being inside of User element node, we are still working with MainMenuSystem graph. This means that you cannot break UserManagementSystem or User element by any means.
+In such a state, you are not able to modify the User element node. However, you can still go inside of it by double-clicking its header. Despite being inside of User element node, we are still working within the MainMenuSystem graph. This means that we cannot accidentally break the UserManagementSystem or User element by any means.
 
 Right-click on empty space and select `Add View`
 
@@ -207,12 +207,12 @@ Right-click on empty space and select `Add View`
 ![](images/img_tut5_0006.png)
 
 
-Rename view node to MainMenuUserView.
-Now we need to plug output connector of User element node into input connector of MainMenuUserView node called `Element`
+Rename the View node to MainMenuUserView.
+Now we need to plug the output connector of the User element node into the input connector of the MainMenuUserView node called `Element`
 
 ![](images/img_tut5_0007.png)
 
-We have succesfully created new view for the User element ouside of UserManagementService.
+We have succesfully created a new view for the User element ouside of UserManagementService.
 
 Now we need to add a binding to MainMenuUserView called `Username To Text`.
 
@@ -220,25 +220,25 @@ Now we need to add a binding to MainMenuUserView called `Username To Text`.
 
 It is time for us to save and compile.
 
-###### Learn how to place View in the scene
+###### Learn how to place the View in the scene
 
-Open MainMenuScene. Locate `_MainMenuSceneRoot` object and add an empty child to this one.
-Call newly created object: `_MainMenuUserView`. Add a script to this object called MainMenuUserView.
+Open MainMenuScene. Locate the `_MainMenuSceneRoot` GameObject and add an empty child.
+Call the newly created GameObject `_MainMenuUserView`. Add a script to this GameObject called MainMenuUserView.
 
 ![](images/img_tut5_0009.png)
 
-Select `_MainMenuUserView` object and in the Unity inspector window, locate the editor for MainMenuUserView component. Locate Bindings section. Locate settings for Username. There will be a settings for Text object to bind to.
+Select `_MainMenuUserView` object and, in the Unity inspector window, locate the editor for the MainMenuUserView component. Locate the Bindings section. Locate the Username binding and the `Input` property for a Text object to bind to.
 
 ![](images/img_tut5_0010.png)
 
 At this point you should design how your visual representation will look like.
-When you are done, link Username binding input setting with the text object.
+When you are done, link the Username binding property with the text object.
 
 ![](images/img_tut5_0011.png)
 
-###### Learn how to bind View to a registered viewmodel instance
+###### Learn how to bind a View to a registered ViewModel instance
 
-Select `_MainMenuUserView` object and in the Unity inspector window, locate the editor for MainMenuUserView component. Find setting called `ViewModel Identifier`.
+Select the `_MainMenuUserView` GameObject and in the Unity inspector window, locate the editor for the MainMenuUserView component. Find the property called `ViewModel Identifier`.
 
 ![](images/img_tut5_0012.png)
 
@@ -246,10 +246,57 @@ You can either press the button on top of the field called "Use Registered 'Loca
 
 ![](images/img_tut5_0013.png)
 
-Now this view will bind to the registered ViewModel and display it's information. This is the same instance we use inside of UserManagementService to store authorization information.
+Now this view will bind to the registered ViewModel and display its information. This is the same instance we use inside of UserManagementService to store authorization information.
 
 ###### Perform final test
 
-Start the game from MainMenuScene and type in correct credentials. Click login. Your text object should show correct information.
+Start the game from MainMenuScene and type in the correct credentials (uframe/uframe). Click `Sign In`. Your text object should show the correct username.
 
 ![](images/img_tut5_0014.png)
+
+If you have TextMeshPro then this is how to amend uFrame to enable bindings for it such that they can be used in this tutorial.
+
+In UGUIBindings.cs add the following:
+```cs
+public static IDisposable BindTextMeshProUGUIToProperty(this ViewBase viewBase, TextMeshProUGUI input, P<string> property)
+		{
+			if (input != null)
+			{
+				input.text = property.Value ?? string.Empty;
+			}
+			
+			var d1 = property.Subscribe(value =>
+			                            {
+				if (input != null) input.text = value;
+			});
+			
+			return d1.DisposeWith(viewBase);
+		}
+
+
+public static IDisposable BindTextMeshProUGUIToProperty<T>(this ViewBase viewBase, TextMeshProUGUI input, P<T> property,
+		                                                Func<T, string> selector)
+		{
+			
+			var d1 = property.Subscribe(value =>
+			                            {
+				input.text = selector(value);
+			});
+			
+			input.text = selector(property.Value);
+			
+			return d1.DisposeWith(viewBase);
+		}
+```
+
+In uFrameTemplates.cs add the following:
+```cs
+	container.AddBindingMethod(typeof (UGUIExtensions), "BindTextMeshProUGUIToProperty",
+			                   _ => _ is PropertiesChildItem && _.RelatedTypeName == typeof (string).Name)
+			        	    .SetDescription("Binds a string property to a TextMeshProUGUI text label.")
+					        .SetNameFormat("{0} To TextMeshProUGUI");
+```
+
+That should be it.
+
+This should enable you to enact the binding in the uFrame Designer because it will appear as an option when you click to add a binding.  Once compiled it will allow you to drag a TextMeshProUGUI object from the hierarchy to the field in the Inspector on the view that is bound to the variable you set up in the Designer.

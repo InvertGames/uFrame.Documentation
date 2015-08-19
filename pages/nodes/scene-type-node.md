@@ -76,7 +76,7 @@ Read more on the [Scene Settings](scene-settings.md) page.
 
 A scene loader is generated for every scene type that exists in the graph.
 
-Scene loaders live as game objects on the [uFrame Kernel](uFrame Kernel).
+Scene loaders live as game objects on the [uFrame Kernel](../uframe-kernel.md).
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_103.png)
 
@@ -130,10 +130,14 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
 }
 ```
 
+## Designer
+
+After creating new Scene Type in the designer, remember to _Save & Compile_ and the press the _Scaffold/Update Kernel_ button to update the Kernel prefab with the new [Scene Loader](../scene-loaders.md).
+
 ## Execution Order
 
 When you enter play mode, first executed will be the `Start()` method which is responsible for loading the kernel. You can override the `KernelLoading()` method to execute custom code before the kernel starts loading and the `KernelLoaded()` to execute custom code after the kernel finish loading.
 
 After the kernel is loaded, a `SceneAwakeEvent` is published. Read more in the [Events](events.md) page.
 
-[SceneManagementService](scenemanagementservice.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.
+[SceneManagementService](../classes/scenemanagementservice.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.

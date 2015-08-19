@@ -1,8 +1,8 @@
 # Controller
 
-[Controller](Controller) is a class responsible for implementing logic behind the ViewModel. For any number of [ViewModels](viewmodels.md) there's only one Controller class instance. Any command that is specified in the graph Element will be implemented there. Controller is also responsible for creating and initializing ViewModels.
+[Controller](controller.md) is a class responsible for implementing logic behind the ViewModel. For any number of [ViewModels](viewmodel.md) there's only one Controller class instance. Any command that is specified in the graph Element will be implemented there. Controller is also responsible for creating and initializing ViewModels.
 
-For details how Controllers are implemented check the `Controller.cs` file.
+Internally, each Controller is a [Service](services.md). For details how Controllers are implemented check the `Controller.cs` file and its parent classes.
 
 ## Setup
 
@@ -12,9 +12,19 @@ The `Setup()` method is called when the controller is first created and has been
 public override void Setup() {}
 ```
 
+## Accessing Controllers
+
+You can access Controllers anywhere in your code by injecting them:
+
+```csharp
+[inject] ControllerType ControllerType { get; set; };
+```
+
+Check [System Loaders](system-loaders.md) to see how Controllers are registered to the [DI Container](di-ioc-container.md).
+
 ## Creating ViewModels
 
-You can create a new ViewModel simply by using the `Create{ViewModel}()` method. The new instance will be automatically saved to the [ViewModelManager](viewmodelmanager.md) of this Controller.
+You can create a new ViewModel simply by using the `Create{ViewModel}()` method. The new instance will be automatically saved to the [ViewModelManager](classes/viewmodelmanager.md) of this Controller.
 
 ```csharp
 public class MainMenuRootController : MainMenuRootControllerBase {
@@ -66,7 +76,7 @@ public class MainMenuRootController : MainMenuRootControllerBase {
 
 ## Initializing ViewModels
 
-Typically you will use the relevant Controller's `Initialize{ElementName}()` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](scene-properties.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](viewmodelmanager.md).
+Typically you will use the relevant Controller's `Initialize{ElementName}()` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](nodes/scene-property-node.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](classes/viewmodelmanager.md).
 
 Example _LevelRoot_ VM's initialization method in `LevelRootController.cs` file.
 
@@ -80,11 +90,51 @@ public override void InitializeLevelRoot(LevelRootViewModel viewModel) {
 
 For convenience, you also have the option of Initializing a ViewModel from a particular View, by checking Initialize ViewModel on the View. This is particularly useful when setting up a scene before runtime or creating prefabs.
 
+## Initializing ViewModels (Base class)
+
+The base version of the `Initialize{ViewModelName}` will assign a default handler method to all specified commands and add the VM to the _ViewModel Manager_.
+
+Example initialization method:
+
+```csharp
+public virtual void InitializeSubScreen(SubScreenViewModel viewModel) {
+   // This is called when a SubScreenViewModel is created
+   viewModel.Close.Action = this.CloseHandler;
+   SubScreenViewModelManager.Add(viewModel);
+}
+```
+
+The default handler will then call appropriate custom command implementation method in the Controller.
+
+```csharp
+public virtual void CloseHandler(CloseCommand command) {
+    this.Close(command.Sender as SubScreenViewModel);
+}
+```
+
+`SubScreenController.cs`:
+
+```csharp
+public override void Close(SubScreenViewModel viewModel) {
+    base.Close(viewModel);
+
+    // Custom implementation here.
+}
+```
+
 ## ViewModel Manager
 
 By default every controller generates ViewModel manager property that keeps references to all ViewModel instances of the same type.
 
 [add example code and description]
+
+## Execution order
+
+First all System Loaders are loaded inside the [uFrame Kernel](uframe-kernel.md).
+
+Controller classes of a particular [Subsystem](subsystems.md) are instantiated inside [System Loader](system-loaders.md) class of that Subsystem. The instantiation happens right before the instantes are registered in the [DI Container](di-ioc-container.md).
+
+Next, the Kernel initializes all Services, both those that are MonoBehaviours and of `SystemService` type. Because Controllers inherit from `SystemService`, they'll also be initialized with the `Setup()` and `SetupAsync()` methods.
 
 ## FAQ
 

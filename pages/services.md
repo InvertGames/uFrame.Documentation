@@ -79,7 +79,7 @@ To access these managers, you can inject them into controllers and services usin
 [Inject] IViewModelManager<PlayerViewModel> AllPlayers { get;set; }
 ```
 
-Read more about [ViewModel managers](viewmodelmanager.md)
+Read more about [ViewModel Managers](classes/viewmodelmanager.md)
 
 ## Accessing Controllers
 
@@ -89,7 +89,7 @@ You can access any controller by injecting it:
 [inject] PlayerController PlayerController;
 ```
 
-If your controller property gets value of null, check if all [System Loaders](system-loaders.md) are attached to the [kernel](uframe-kernel.md).
+If your controller property gets value of null, check if all [System Loaders](system-loaders.md) are attached to the [Kernel](uframe-kernel.md).
 
 ## Default Services
 
@@ -97,4 +97,3 @@ These are the services that are available in uFrame by default.
 
 * [View Service](classes/viewservice.md)
 * [Scene Management Service](classes/scenemanagementservice.md)
-* [System Service](classes/systemservice.md)
