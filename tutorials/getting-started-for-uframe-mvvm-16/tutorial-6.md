@@ -1,18 +1,20 @@
-uFrame MVVM 1.6 Getting Started VI
-Overall Idea
+# uFrame MVVM 1.6 Getting Started VI
 
-This tutorial tends to explain collection bindings. It show how LevelSelectScreen uses collection binding to show list of available levels. Finally it shows how to make a simple change: how to show local user information inside of MainMenu.
+### Overall Idea
 
-Steps
+This tutorial tends to explain Collections.
 
-SubSystem node explained in details
-Learn how to register instance of a viewmodel inside of SubSystem node
-Learn how to apply initial values to the ViewModel
-Learn how to modify UserManagementService
-Learn how to create Views
-Learn how to place View in the scene
-Learn how to bind View to a registered viewmodel instance.
-Perform final test.
-Average Time
+### Steps
+1. SubSystem node explained in details  
+2. Learn how to register instance of a ViewModel inside of SubSystem node  
+3. Learn how to apply initial values to the ViewModel  
+4. Learn how to modify UserManagementService  
+5. Learn how to create Views  
+6. Learn how to place View in the scene  
+7. Learn how to bind View to a registered ViewModel instance  
+8. Perform final test  
 
+### Average Time
 8-10 minutes
+
+## Transcription
