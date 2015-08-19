@@ -10,7 +10,7 @@ Add edits to the page. You'll also see this info box:
 
 ![](../images/Screenshot_125.png)
 
-Finish editing by pressing the green _Propose file change_ button. You can also add a custom title and description if necessary.
+Finish editing by pressing the green _Propose file change_ button. You can leave both fields empty.
 
 ![](../images/Screenshot_126.png)
 
@@ -18,6 +18,6 @@ Next, press the _Create pull request_ button.
 
 ![](../images/Screenshot_127.png)
 
-On the final page press _Create pull request_ again. That's it, your changes will be moderated and merged into the Wiki :)
+And press _Create pull request_ again. You can leave both fields empty. That's it, your changes will be moderated and merged into the Wiki :)
 
 ![](../images/Screenshot_128.png)
