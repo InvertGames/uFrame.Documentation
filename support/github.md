@@ -14,6 +14,10 @@ Finish editing by pressing the green _Propose file change_ button. You can also 
 
 ![](../images/Screenshot_126.png)
 
-On the final page press the _Create pull request_ button. That's it, your changes will be moderated and merged into the Wiki :)
+Next, press the _Create pull request_ button.
 
 ![](../images/Screenshot_127.png)
+
+On the final page press _Create pull request_ again. That's it, your changes will be moderated and merged into the Wiki :)
+
+![](../images/Screenshot_128.png)
