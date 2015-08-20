@@ -4,7 +4,7 @@
 
 ## About
 
-This document tends to be an extensive, up-to-date guide to uFrame, crafted by community members and developers of uFrame.
+This document intends to be an extensive, up-to-date guide to uFrame, crafted by community members and developers of uFrame.
 
 ## Sections
 
