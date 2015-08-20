@@ -28,6 +28,11 @@ theory and also shows how to do a simple change to the Example Project.
 ## uFrame Kernel
 ## Software Engineering
 ## Requests
+> **Area**: uFrame MVVM 
+> **Version**: 1.6.2f2 
+> **Topic**: Sample game 
+> **Description**: Sample game that utilizes all the features of uFrame and show the best pratice to implement it such as input capturing to control player, tie different enemies with its own enemy UI, update player inventory and etc. 
+> **Type**: Example Project 
 
 > **Area**: uFrame MVVM
 
