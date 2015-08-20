@@ -28,20 +28,17 @@ theory and also shows how to do a simple change to the Example Project.
 ## uFrame Kernel
 ## Software Engineering
 ## Requests
-> **Area**: uFrame MVVM 
-> **Version**: 1.6.2f2 
-> **Topic**: Sample game 
-> **Description**: Sample game that utilizes all the features of uFrame and show the best pratice to implement it such as input capturing to control player, tie different enemies with its own enemy UI, update player inventory and etc. 
-> **Type**: Example Project 
 
 > **Area**: uFrame MVVM
+> **Version**: 1.6.2f2
+> **Topic**: Sample game
+> **Description**: Sample game that utilizes all the features of uFrame and show the best pratice to implement it such as input capturing to control player, tie different enemies with its own enemy UI, update player inventory and etc.
 
-> **Version**: 1.6 
-
+> **Type**: Example Project
+> **Area**: uFrame MVVM
+> **Version**: 1.6
 > **Topic**: Services
-
 > **Description**: Describe how to create some examples of services, showing their main functions. 2 examples could be: (1) Simple achievement system and (2) how to replace a command executed from a different element with a Service.
-
 > **Type**: Video Tutorial preferred (or otherwise written tutorial)
 
 ## How to create tutorial request
