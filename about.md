@@ -25,6 +25,7 @@ This document intends to be an extensive, up-to-date guide to uFrame, crafted by
 ## Your input is invaluable!
 
 [Tutorial for Github](uframe-documentation/blob/master/support/github.md)
+You can update Github version of this Wiki [here](https://github.com/bartlomiejwolk/uFrame-Wiki/blob/master/pages/home.md).
 
 Please consider filling gaps and correcting mistakes in the guide.
 
