@@ -4,7 +4,6 @@
 
 Overview
 
-This tutorial shows how to install uFrame MVVM, shows the default package and proposes a simple change in the default project: creating an error message for login screen
 
 Steps
 
