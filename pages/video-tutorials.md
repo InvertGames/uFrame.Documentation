@@ -1,6 +1,4 @@
 # Video Tutorials
 
 * [Invert Playlists](https://www.youtube.com/user/invertgamestudios2/playlists)
-
-[todo link should reference a playlists section, not all videos]
-* [ Nalin Sharma Playlists](https://www.youtube.com/channel/UCmpy5thPmYbO1XvSf9LlASg/videos)
+* [Nalin Sharma Playlists](https://www.youtube.com/playlist?list=PLtoKD7bZSml_k0LG4magFyIB69wh2fwOe)
