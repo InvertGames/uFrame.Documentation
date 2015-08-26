@@ -40,9 +40,9 @@ Another thing to mention is that you can also instantiate multiple views for the
 This is a lot simpler when you are not using prefabs as you can just call `InstantiateView` and it will just create a default instance of that view in the scene, then you can manually do whatever you want to the views game object, such as attaching child game objects or however you express your view concerns.
 
 ## When using Scene Loader
-When you are using the scene loader you will have an exposed `LoadScene` method, within here you can create any instances of ViewModels *(via controllers)* and instantiate any views you need and add them to the scene.
+When you are using the [Scene Loader](scene-loaders.md) you will have a `LoadScene` method, within which you can create instance of any ViewModel *(via controller)* and instantiate any [View](nodes/view-node.md) you need and add them to the scene.
 
-The key thing here is how you instantiate the view, which will require you to publish an event and access the result within the command. The syntax would look something like this:
+The key thing here is how you instantiate the view, which will require you to publish an [Event](events.md) and access the result within the [Command](commands.md). The syntax would look something like this:
 
 ```
 public class InGameSceneLoader : InGameSceneLoaderBase
@@ -67,15 +67,15 @@ public class InGameSceneLoader : InGameSceneLoaderBase
         {
         	// Create the VM instance from controller
         	var viewModel = PlayerController.CreatePlayer();
-	
+
     		// Instantiate the view and add the scene parent
 			var playerView = CreatePlayerView(viewModel);
             playerView.ParentScene = scene;
 
             yield break;
-        }        
+        }
 ```
 
-The commented out Prefab line lets you pass in your own prefab for the view if you are not using the normal convention for view prefab names. You can also create multiple views here and then attach them to the view if needed.
+The commented-out Prefab line lets you pass in your own prefab for the View if you are not using the normal convention for View prefab names. You can also create multiple Views here and then attach them to the View if needed.
 
 There is also a video tutorial on this: https://www.youtube.com/watch?v=ULA24U2QMV0
