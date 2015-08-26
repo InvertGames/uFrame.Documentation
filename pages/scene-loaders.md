@@ -1,14 +1,16 @@
 # Scene Loader
 
-For each [Scene Type](nodes/scene-type-node.md) defined in the graph there is a scene loader class generated. For example, _LevelScene_ scene type will have a corresponding `LevelSceneLoader` class.
+For each [Scene Type](nodes/scene-type-node.md) defined in the graph there is generated a scene loader class. For example, _LevelScene_ scene type will have a corresponding `LevelSceneLoader` class.
 
-Scene loaders live as game objects on the [uFrame Kernel](uframe-kernel.md).
+Scene Loaders live as game objects on the [uFrame Kernel](uframe-kernel.md).
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_103.png)
 
 ## Scene Loader and Scene Type
 
-When a scene with the corresponding _Scene Type_ is loaded, the scene loader will get a reference to the _Scene Type_ instance and pass it to the `LoadScene()` method. There you can use those settings to setup the scene properly. That gives a very fine grained control on how scenes are loaded and unloaded.
+When a scene with the corresponding _Scene Type_ is loaded, the Scene Loader will get a reference to the _Scene Type_ instance and pass it to the `LoadScene()` method.
+
+[todo add more info]
 
 ## Auto-generated Scene Loader
 
@@ -75,9 +77,7 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
 You can create custom Scene Loader class by inheriting from `SceneLoader<T>`.
 
 ```csharp
-public class MyCustomSceneLoader : SceneLoader<MyCustomScene> {
-
-}
+public class MyCustomSceneLoader : SceneLoader<MyCustomScene> {}
 ```
 
 ## Accessing other types
