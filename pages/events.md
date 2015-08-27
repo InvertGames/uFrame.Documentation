@@ -15,6 +15,8 @@ public class EnemyCreatedEvent {
 Example subscription to the `EnemyCreatedEvent` inside the `EnemiesService` class.
 
 ```csharp
+using UniRx; // This is required for the extension method Subscribe
+
 public List<Enemy> Enemies;
 
 public override void Setup() {
