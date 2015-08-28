@@ -46,3 +46,4 @@ The following pages should help you get familiar with the core concepts of uFram
 
 * [Example Projects](example-projects.md)
 * [Video Tutorials](video-tutorials.md)
+* [Other](other-resources.md)
