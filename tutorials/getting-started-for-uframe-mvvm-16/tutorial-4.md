@@ -26,7 +26,7 @@ Open MainDiagram graph and locate LevelScene node:
 
 ![](images/img_tut4_0000.png)
 
-LevelNode scene is a SceneType node. SceneType nodes define different types of the scenes you may have in your game. You may have single main menu scene and multiple level scenes, and they all deserve their own scene type: LevelScene type for levels and MainMenuScene type for main menu.
+LevelScene scene is a SceneType node. SceneType nodes define different types of the scenes you may have in your game. You may have single main menu scene and multiple level scenes, and they all deserve their own scene type: LevelScene type for levels and MainMenuScene type for main menu.
 
 ###### Scene Loader, Scene Settings, and Scene Loaders explained  
 
