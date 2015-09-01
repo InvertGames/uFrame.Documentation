@@ -72,10 +72,11 @@ public class NotificationService : NotificationServiceBase {
 }
 ```
 
-Add the following snippet to your `using` statements. This will let us use UniRx specific constructs.
+Add the following snippet to your `using` statements. This will let us use UniRx specific constructs and unity UI.
 
 ```cs
 using UniRx;
+using UnityEngine.UI; 
 ```
 
 Our first step is to override Setup method. This method is invoked while kernel is loading.
@@ -240,7 +241,7 @@ public class NotificationService : NotificationServiceBase {
 
 ```
 
-The next step is obvious: read the UIContainer of NotificationUIScene and save it locally in the UIConainter field.
+The next step is obvious: read the UIContainer of NotificationUIScene and save it locally in the UIContainer field.
 
 ```cs
 public class NotificationService : NotificationServiceBase {
@@ -324,7 +325,7 @@ public class NotificationService : NotificationServiceBase {
 }
 ```
 
-Since we have entry point for diplaying the notification (NotifyCommandHandler method), we can implement all the visual details and display our message. This code snippet is heavily commented. Moreover, it is no much uFrame-related, so I will not explain it here.
+Since we have entry point for displaying the notification (NotifyCommandHandler method), we can implement all the visual details and display our message. This code snippet is heavily commented. Moreover, it is no much uFrame-related, so I will not explain it here.
 
 ```cs
 public class NotificationService : NotificationServiceBase {
@@ -378,7 +379,7 @@ public class NotificationService : NotificationServiceBase {
         //Set alpha to 0
         uiItemCanvas.alpha = 0;
 
-        //Set text to message
+        //Set message to text
         uiItemCanvas.GetComponentInChildren<Text>().text = notificationData.Message;
 
         //Parent object to the Container
@@ -410,9 +411,9 @@ public class NotificationService : NotificationServiceBase {
             //Time passed from start
             var elapsed = Time.time - start;
             //normalized time from 0..1
-            var normalisedTime = Mathf.Clamp((elapsed / time) * Time.deltaTime, 0, 1);
+            var normalizedTime = Mathf.Clamp((elapsed / time) * Time.deltaTime, 0, 1);
             //assign interpolated value
-            target.alpha = Mathf.Lerp(target.alpha, alpha, normalisedTime);
+            target.alpha = Mathf.Lerp(target.alpha, alpha, normalizedTime);
             yield return null;
         }
 
