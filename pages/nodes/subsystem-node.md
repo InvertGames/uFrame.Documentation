@@ -1,5 +1,5 @@
 # Subsystem Node
 
-[todo add subsystem node image]
+![](http://i.imgur.com/16gGYc5.jpg)
 
-Each [Subsystem](../subsystems.md) graph will have a single Subsystem node. You can use its _Instantec_ section to add [ViewModels](../viewmodel.md) to the [DI Container](../di-ioc-container.md).
+Each [Subsystem](../subsystems.md) graph will have a single Subsystem node. You can use its _Instances_ section to add [ViewModels](../viewmodel.md) to the [DI Container](../di-ioc-container.md).
