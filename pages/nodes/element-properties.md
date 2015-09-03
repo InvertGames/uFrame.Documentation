@@ -10,4 +10,4 @@ or you can drag another element, [Type Reference](nodes/type-reference-node.md),
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_94.png)
 
-Linking a property to a view can make it a [Scene Property](SceneProperties).
+Linking a property to a view can make it a [Scene Property](scene-properties.md).
