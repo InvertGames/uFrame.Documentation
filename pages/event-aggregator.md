@@ -2,7 +2,7 @@
 
 Event Aggregator is a class that allows you to subscribe to [Events](events.md) and publish them.
 
-Events are nothing more that a simple type with data like this `ServiceLoaderEvent`:
+Events are nothing more than a simple type with data like this `ServiceLoaderEvent`:
 
 ```csharp
 public class ServiceLoaderEvent {
