@@ -1,14 +1,14 @@
 # uFrame Kernel
 
-The uFrame Kernel is an essential piece of uFrame, it handles loading scenes, subsystems and services. The kernel is nothing more than a prefab with these types of components attached to it in an organized manner.
+The uFrame Kernel is an essential piece of uFrame, it handles services, subsystems and loading scenes. The kernel is nothing more than a prefab with these types of components attached to it in an organized manner.
 
 ![](http://i.imgur.com/5Rg2X25.png)
 
-In the image above you can see the scene _BasicsProjectKernelScene_. This scene will always always contain the _BasicsProjectKernel_ prefab and any other things that need to live throughout the entire lifecycle of your application.
+In the image above you can see the scene _BasicsProjectKernelScene_. This scene will always contain the _BasicsProjectKernel_ prefab and any other things that need to live throughout the entire lifecycle of your application.
 
 You should not add the kernel prefab to your scenes. It'll be added automatically by the [Scene Type](nodes/scene-type-node.md) script attached to your root game object. The kernel game object is set to not destroy when loading other scenes with Unity's `DontDestroyonLoad()` method.
 
-Important Note: All SystemLoaders, Services, and SceneLoaders are MonoBehaviours attached to corresponding child game-objects in the kernel prefab.
+Important Note: All Services, SystemLoaders and SceneLoaders are MonoBehaviours attached to corresponding child game-objects in the kernel prefab.
 
 ![](images/Screenshot_113.png)
 
@@ -16,7 +16,7 @@ Whenever a scene begins, uFrame will ensure that the kernel is loaded, if not it
 
 For convenience uFrame 1.6 makes the process of creating the kernel very easy and straightforward. By pressing the _Scaffold/Update_ Kernel button it will create a scene, and a prefab with all of the types created by the uFrame designer. You can freely modify the kernel, and updating it will only add anything that is not there.
 
-[add button picture]
+![](http://i.imgur.com/hq0CjJv.jpg)
 
 ## Execution order
 
