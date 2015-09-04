@@ -14,7 +14,7 @@ _Scene Type_ node defines how to load a scene and allows for unloading the scene
 
 uFrame will generate an empty class with the name of the scene type. You can add there custom fields and properties. Public fields will be displayed in the inspector.
 
-If you have multiple scene using the same Scene Type you may want to add a custom field that can be adjusted for each scene separately, for eg. weather conditions on the scene. [Scene Loader](scene-loader.md) can later read the data while loading the scene to make the scene reflect the specified weather conditions.
+If you have multiple scene using the same Scene Type you may want to add a custom field that can be adjusted for each scene separately, for eg. weather conditions on the scene. [Scene Loader](pages/scene-loaders.md) can later read the data while loading the scene to make the scene reflect the specified weather conditions.
 
 [this code below should be a use case example documented with comments]
 
@@ -70,7 +70,7 @@ public class UISceneBase : Scene {
 
 Scene Settings class is created along with the Scene Type. You can use it to pass data to the loaded scene.
 
-Read more on the [Scene Settings](scene-settings.md) page.
+Read more on the [Scene Settings](pages/scene-settings.md) page.
 
 ## Scene Loader
 
@@ -132,12 +132,12 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
 
 ## Designer
 
-After creating new Scene Type in the designer, remember to _Save & Compile_ and the press the _Scaffold/Update Kernel_ button to update the Kernel prefab with the new [Scene Loader](../scene-loaders.md).
+After creating new Scene Type in the designer, remember to _Save & Compile_ and then press the _Scaffold/Update Kernel_ button to update the Kernel prefab with the new [Scene Loader](../scene-loaders.md).
 
 ## Execution Order
 
 When you enter play mode, first executed will be the `Start()` method which is responsible for loading the kernel. You can override the `KernelLoading()` method to execute custom code before the kernel starts loading and the `KernelLoaded()` to execute custom code after the kernel finish loading.
 
-After the kernel is loaded, a `SceneAwakeEvent` is published. Read more in the [Events](events.md) page.
+After the kernel is loaded, a `SceneAwakeEvent` is published. Read more in the [Events](pages/events.md) page.
 
 [SceneManagementService](../classes/scenemanagementservice.md) will receive this event, find a Scene Loader for the Scene Type and call its `Load()` coroutine.
