@@ -132,7 +132,7 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
 
 ## Designer
 
-After creating new Scene Type in the designer, remember to _Save & Compile_ and the press the _Scaffold/Update Kernel_ button to update the Kernel prefab with the new [Scene Loader](../scene-loaders.md).
+After creating new Scene Type in the designer, remember to _Save & Compile_ and then press the _Scaffold/Update Kernel_ button to update the Kernel prefab with the new [Scene Loader](../scene-loaders.md).
 
 ## Execution Order
 
