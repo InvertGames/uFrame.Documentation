@@ -31,7 +31,7 @@ This is where the View actually creates property bindings, collection bindings, 
 
 This is called immediately after the View creates bindings to its ViewModel.
 
-`CreateModel()`
+`CreateModel()` (Obsolete)
 
 This is when SceneFirst Views request a proper ViewModel from the scene's Dependency Container. For the most part, this should be left alone.
 
