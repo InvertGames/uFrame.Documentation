@@ -69,7 +69,7 @@ If checked, you'll see more options in the inspector. Those will allow you to sp
 
 ## Bindings
 
-You can create bindings in the View node under _Bindings_ section. Each bindins will generate a method in the ViewBase class. Here are all methods that can be generated:
+You can create bindings in the View node under _Bindings_ section. Each bindings will generate a method in the ViewBase class. Here are all methods that can be generated:
 
 `{Name}Changed()`
 
