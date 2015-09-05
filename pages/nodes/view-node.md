@@ -31,7 +31,7 @@ This is where the View actually creates property bindings, collection bindings, 
 
 This is called immediately after the View creates bindings to its ViewModel.
 
-`CreateModel()`
+`CreateModel()` (Obsolete)
 
 This is when SceneFirst Views request a proper ViewModel from the scene's Dependency Container. For the most part, this should be left alone.
 
@@ -61,15 +61,15 @@ If checked, the View will get associated with a specified globally registered VM
 
 *Dispose On Destroy*
 
-If checked and the View gets destroyed, the associated VM will be disposed. Check [ViewDestroyedEvent](classes/viewdestroyedevent.md) for more info.
+If checked and the View gets destroyed, the associated VM will be disposed. Check [ViewDestroyedEvent](../classes/viewdestroyedevent.md) for more info.
 
-*Initialize View Mode*
+*Initialize ViewModel*
 
 If checked, you'll see more options in the inspector. Those will allow you to specify default values for the properties of the associated ViewModel.
 
 ## Bindings
 
-You can create bindings in the View node under _Bindings_ section. Each bindins will generate a method in the ViewBase class. Here are all methods that can be generated:
+You can create bindings in the View node under _Bindings_ section. Each bindings will generate a method in the ViewBase class. Here are all methods that can be generated:
 
 `{Name}Changed()`
 
