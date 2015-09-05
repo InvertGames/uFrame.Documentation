@@ -18,7 +18,7 @@ Reserved for future usage.
 
 * Update
 
-This state is used every time you call the `progressDelegate` in the `LoadScene()` method of a [Scene Loader](pages/scene-loaders.md) class.
+This state is used every time you call the `progressDelegate` in the `LoadScene()` method of a [Scene Loader](../scene-loaders.md) class.
 
 * Loaded
 
@@ -26,7 +26,7 @@ State used when a scene finish loading with the `LoadScene()` method of a Scene 
 
 * Unloading
 
-This state is used every time you call the `progressDelegate` in the `UnloadScene()` method of a [Scene Loader](pages/scene-loaders.md) class.
+This state is used every time you call the `progressDelegate` in the `UnloadScene()` method of a [Scene Loader](../scene-loaders.md) class.
 
 * Unloaded
 

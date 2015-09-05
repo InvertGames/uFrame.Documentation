@@ -76,7 +76,7 @@ public class MainMenuRootController : MainMenuRootControllerBase {
 
 ## Initializing ViewModels
 
-Typically you will use the relevant Controller's `Initialize{ElementName}()` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](nodes/scene-property-node.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](classes/viewmodelmanager.md).
+Typically you will use the relevant Controller's `Initialize{ElementName}()` method to initialize a newly created ViewModel with default values and references. It's a great place to subscribe to state changes and [Scene Property](scene-properties.md) changes, or possibly track a list of ViewModel instances ie. acting similarly to a [ViewModel Manager](classes/viewmodelmanager.md).
 
 Example _LevelRoot_ VM's initialization method in `LevelRootController.cs` file.
 
@@ -130,9 +130,9 @@ By default every controller generates ViewModel manager property that keeps refe
 
 ## Execution order
 
-First all System Loaders are loaded inside the [uFrame Kernel](uframe-kernel.md).
+First, all System Loaders are loaded inside the [uFrame Kernel](uframe-kernel.md).
 
-Controller classes of a particular [Subsystem](subsystems.md) are instantiated inside [System Loader](system-loaders.md) class of that Subsystem. The instantiation happens right before the instantes are registered in the [DI Container](di-ioc-container.md).
+Controller classes of a particular [Subsystem](subsystems.md) are instantiated inside [System Loader](system-loaders.md) class of that Subsystem. The instantiation happens right before the instances are registered in the [DI Container](di-ioc-container.md).
 
 Next, the Kernel initializes all Services, both those that are MonoBehaviours and of `SystemService` type. Because Controllers inherit from `SystemService`, they'll also be initialized with the `Setup()` and `SetupAsync()` methods.
 
