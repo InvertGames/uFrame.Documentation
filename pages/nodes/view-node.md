@@ -63,7 +63,7 @@ If checked, the View will get associated with a specified globally registered VM
 
 If checked and the View gets destroyed, the associated VM will be disposed. Check [ViewDestroyedEvent](../classes/viewdestroyedevent.md) for more info.
 
-*Initialize View Mode*
+*Initialize ViewModel*
 
 If checked, you'll see more options in the inspector. Those will allow you to specify default values for the properties of the associated ViewModel.
 
