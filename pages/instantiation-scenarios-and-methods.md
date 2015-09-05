@@ -40,7 +40,7 @@ Another thing to mention is that you can also instantiate multiple views for the
 This is a lot simpler when you are not using prefabs as you can just call `InstantiateView` and it will just create a default instance of that view in the scene, then you can manually do whatever you want to the views game object, such as attaching child game objects or however you express your view concerns.
 
 ## When using Scene Loader
-When you are using the [Scene Loader](scene-loaders.md) you will have a `LoadScene` method, within which you can create instance of any [ViewModel](viewmodel.md) *(via controller)* and instantiate any [View](nodes/view-node.md) you need and add them to the scene.
+When you are using the [Scene Loader](scene-loaders.md) you will have a `LoadScene` method, within which you can create instance of any [ViewModel](view-models.md) *(via controller)* and instantiate any [View](nodes/view-node.md) you need and add them to the scene.
 
 The key thing here is how you instantiate the View, which will require you to publish an [Event](events.md) and access the result within the [Command](commands.md). The syntax would look something like this:
 

@@ -1,6 +1,6 @@
 # Services vs Controllers
 
-Basically [Services](services.md) are [Controllers](controller.md) without [ViewModels](viewmodel.md). Although you may think, every Controller functionality could be replaced by a Service, there are many situations, when using Controllers and Commands make best practice over using Services and Events.
+Basically [Services](services.md) are [Controllers](controller.md) without [ViewModels](view-models.md). Although you may think, every Controller functionality could be replaced by a Service, there are many situations, when using Controllers and Commands make best practice over using Services and Events.
 
 To put it simple:
 
