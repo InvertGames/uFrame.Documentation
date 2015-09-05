@@ -130,9 +130,9 @@ By default every controller generates ViewModel manager property that keeps refe
 
 ## Execution order
 
-First all System Loaders are loaded inside the [uFrame Kernel](uframe-kernel.md).
+First, all System Loaders are loaded inside the [uFrame Kernel](uframe-kernel.md).
 
-Controller classes of a particular [Subsystem](subsystems.md) are instantiated inside [System Loader](system-loaders.md) class of that Subsystem. The instantiation happens right before the instantes are registered in the [DI Container](di-ioc-container.md).
+Controller classes of a particular [Subsystem](subsystems.md) are instantiated inside [System Loader](system-loaders.md) class of that Subsystem. The instantiation happens right before the instances are registered in the [DI Container](di-ioc-container.md).
 
 Next, the Kernel initializes all Services, both those that are MonoBehaviours and of `SystemService` type. Because Controllers inherit from `SystemService`, they'll also be initialized with the `Setup()` and `SetupAsync()` methods.
 
