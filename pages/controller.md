@@ -1,6 +1,6 @@
 # Controller
 
-[Controller](controller.md) is a class responsible for implementing logic behind the ViewModel. For any number of [ViewModels](viewmodel.md) there's only one Controller class instance. Any command that is specified in the graph Element will be implemented there. Controller is also responsible for creating and initializing ViewModels.
+[Controller](controller.md) is a class responsible for implementing logic behind the ViewModel. For any number of [ViewModels](view-models.md) there's only one Controller class instance. Any command that is specified in the graph Element will be implemented there. Controller is also responsible for creating and initializing ViewModels.
 
 Internally, each Controller is a [Service](services.md). For details how Controllers are implemented check the `Controller.cs` file and its parent classes.
 

@@ -1,6 +1,6 @@
 # ViewModel
 
-[ViewModel](viewmodel.md) is a class where all the data associated with a game entity is kept. You can also implement there [Computed Properties](nodes/computed-property-node.md), initialize [State Machines](nodes/reactive-state-machine-node.md), implement your own serialization methods and define any other methods you need.
+[ViewModel](view-models.md) is a class where all the data associated with a game entity is kept. You can also implement there [Computed Properties](nodes/computed-property-node.md), initialize [State Machines](nodes/reactive-state-machine-node.md), implement your own serialization methods and define any other methods you need.
 
 ## Initializing ViewModel
 

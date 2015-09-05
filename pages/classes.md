@@ -24,6 +24,6 @@ List to detailed description of some of the uFrame classes.
 * [SceneState](classes/scenestate.md)
 * [ModelCollection](classes/modelcollection.md)
 * [uFrameComponent](classes/uframecomponent.md)
-* [ViewBase](../viewbase.md)
+* [ViewBase](classes/viewbase.md)
 * [ViewModelManager](classes/viewmodelmanager.md)
 * [Signal<T>](classes/signal.md)

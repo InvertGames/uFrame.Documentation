@@ -23,7 +23,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Scene Loaders](scene-loaders.md)
 * [Scene Properties](scene-properties.md)
 * [Scene Settings](scene-settings.md)
-* [ViewModels](viewmodel.md)
+* [ViewModels](view-models.md)
 * [Controllers](controller.md)
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)

@@ -55,4 +55,4 @@ You can make a Command to be published to the [Event Aggregator](../event-aggreg
 
 ## Command internal implementation
 
-Commands are defined in the [ViewModel](../viewmodel.md) classes as properties of type [Signal](../classes/signal.md). It makes it possible to subscribe to them and execute custom code when the command is executed.
+Commands are defined in the [ViewModel](../view-models.md) classes as properties of type [Signal](../classes/signal.md). It makes it possible to subscribe to them and execute custom code when the command is executed.

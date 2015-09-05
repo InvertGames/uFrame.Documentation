@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Elements represent the [ViewModel](../viewmodel.md) in the [MVVM pattern](../mvvm-pattern.md). In the game world it can be a player, weapon, menu screen or any other game entity. Elements hold only the data associated with the game’s entity. For example, Player element could contain information about player properties like health, running speed, obtained weapons or actions; Shoot, TakeDamage or Die.
+Elements represent the [ViewModel](../view-models.md) in the [MVVM pattern](../mvvm-pattern.md). In the game world it can be a player, weapon, menu screen or any other game entity. Elements hold only the data associated with the game’s entity. For example, Player element could contain information about player properties like health, running speed, obtained weapons or actions; Shoot, TakeDamage or Die.
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_90.png)
 
@@ -42,7 +42,7 @@ You have separate context menu for the node header and its attributes. Most of t
 
 After creating an Element and recompiling, uFrame will create two editable files: _{ElementName}ViewModel_ and _{ElementName}Controller_.
 
-Read more about [ViewModels](../viewmodel.md) and [Controllers](../controller.md).
+Read more about [ViewModels](../view-models.md) and [Controllers](../controller.md).
 
 Each of those files is empty by default and is intended to by filled with implementation by the user. All the attributes specified in the diagram and the MVVM code are inherited from their base classes.
 
