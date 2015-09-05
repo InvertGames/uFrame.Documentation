@@ -61,7 +61,7 @@ If checked, the View will get associated with a specified globally registered VM
 
 *Dispose On Destroy*
 
-If checked and the View gets destroyed, the associated VM will be disposed. Check [ViewDestroyedEvent](classes/viewdestroyedevent.md) for more info.
+If checked and the View gets destroyed, the associated VM will be disposed. Check [ViewDestroyedEvent](../classes/viewdestroyedevent.md) for more info.
 
 *Initialize View Mode*
 
