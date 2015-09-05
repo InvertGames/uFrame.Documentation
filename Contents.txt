@@ -1,1 +1,1 @@
-pages/viewbase.md
+pages/classes/viewbase.md
