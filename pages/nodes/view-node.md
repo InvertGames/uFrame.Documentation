@@ -17,7 +17,7 @@ All of these would typically want to bind to the same player ViewModel instance,
 
 ## Important Methods
 
-All Views inherit from a [ViewBase](classes/viewbase.md) class. Here are the most important methods. You can override all of them.
+All Views inherit from a [ViewBase](../classes/viewbase.md) class. Here are the most important methods. You can override all of them.
 
 `PreBind()`
 
