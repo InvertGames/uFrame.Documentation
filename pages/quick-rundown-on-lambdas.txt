@@ -1,6 +1,6 @@
 # Quick Rundown on Lambdas (=>)
 
-Lambdas are used a lot in uFrame, which may be confusing for a large amount of beginners/intermediates.  They're really nothing to be scared of, and once you're used to them, they can be very handy.  Lambdas are a way of defining an _anonymous_ method, meaning it's a block of instructions, but it doesn't have a name like regular functions (ie- DoSomething()).  When you declare the lambda, the left side is parameters, and the right side is the block of instructions, whatever you want it to do with those parameters.
+Lambdas are used a lot in uFrame, which may be confusing for a large amount of beginners/intermediates.  They're really nothing to be scared of, and once you're comfortable with them, they can be very handy.  Lambdas are a way of defining an _anonymous_ method, meaning it's a block of instructions, but it doesn't have a name like regular functions (ie- DoSomething()).  When you declare the lambda, the left side is parameters, and the right side is the block of instructions, whatever you want it to do with those parameters.
 
 > .Subscribe(**someInt** => Debug.Log("The integer is "+**someInt**));
 
