@@ -29,6 +29,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Execution Order](execution-order.md)
 * [uFrame Classes](classes.md)
 * [FAQ](faq.md)
+* [Quick Rundown on Lambdas =>](quick-rundown-on-lambdas.md)
 
 # Advanced Concepts
 
