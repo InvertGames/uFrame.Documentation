@@ -1,1 +1,1 @@
-quick-rundown-on-lambdas.txt
+pages/quick-rundown-on-lambdas.txt
