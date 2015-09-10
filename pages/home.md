@@ -39,6 +39,10 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Code Generation Templates](code-generation-templates.md)
 * [Quick Rundown on Lambdas](quick-rundown-on-lambdas.md)
 
+# Maintenance
+
+* [Moving Nodes Between Graphs](moving-nodes-between-graphs.md)
+
 # Reactive Programming
 
 * [UniRX Main Page](https://github.com/neuecc/UniRx)
