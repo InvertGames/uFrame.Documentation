@@ -1,170 +1,260 @@
 # uFrame MVVM 1.6 Getting Started IV
 
+### Overall Idea
+
+This tutorial tends to explain what is scene type. It explains the purpose of this node as well as the responsibility of generated classes. Finally it shows how to make a simple change: how to add new level to the game.
+
+### Steps
+
+1. Scene Type node explained in details
+2. Scene Loader and Scene Loaders explained
+3. Learn how to create scene using Scene Type
+4. Learn how to setup Level Scene
+5. LevelManagementService explained
+6. Learn how register new Level scene in LevelManagementService
+7. Perform final test.
+
+### Average Time
+
+8-10 minutes
+
+## Transcript
+
+###### Scene Type node explained in details
+
+Open MainDiagram graph and locate LevelScene node:
+
+![](images/img_tut4_0000.png)
+
+LevelScene scene is a SceneType node. SceneType nodes define different types of the scenes you may have in your game. You may have single main menu scene and multiple level scenes, and they all deserve their own scene type: LevelScene type for levels and MainMenuScene type for main menu.
+
+###### Scene Loader, Scene Settings, and Scene Loaders explained  
+
+Right-click on the header of LevelScene node and select `Open` -> `MainDiagram/Scenes/LevelScene.cs`
+
+![](images/img_tut4_0001.png)
+
+This should open your IDE with LevelScene class.
+
+```cs
+namespace uFrame.ExampleProject
+{
+
+    /*
+     * This is a script which defines SCENE TYPE. In this case it is LevelScene.
+     * You define scene type for the scene by attaching such script to the root of the scene.
+     * You can add any propeties specific for the Scene instance to this class
+     * You can modify LevelSceneLoader class to change how such scene loads.
+     */
+    public class LevelScene : LevelSceneBase
+    {
+        /*
+         * An ID to be used to get meta information for this level
+         */
+        public int Id;
 
 
-Overview
+        private LevelRootViewModel _levelRoot;
 
-This tutorial shows how to install uFrame MVVM, shows the default package and proposes a simple change in the default project: creating an error message for login screen
+        /*
+         * When requested, finds LevelRootView in the hierarchy, extracts the viewmodel and caches it
+         */
 
-Steps
-
-Learn how to install uFrame MVVM
-Learn how to setup example project
-Learn how to add property to the element
-Learn how to add binding to the view
-Learn how to change logic in controllers
-Learn how to connect view with GUI
-Perform final test
-
-Average Time
-
-6-8 minutes
-
-
-Transcript
-Introduction:
-Hello and welcome to uFrame 1.6 getting started series.
-This part will show how to install uFrame MVVM and how to setup default project. It also shows how to make one simple change to the default project.
-
-How to install uFrame MVVM
-Using asset store, you can install uFrame MVVM just like any other asset: simply import it.
-
-<<<PICTURE OF IMPORT BUTTON>>>
-
-As for uFrame MVVM 1.6, you will find folder called uFrameMVVM inside of your assets folder. It contains 2 other packages with different uFrame MVVM versions. Version 1.5 is shipped for backwards compatibility. If you are new to uFrame MVVM, please stick with version 1.6. Import the version you want by double clicking on the corresponding package.
-
-Picture with 2 assets
-
-You can safely remove uFrameMVVM folder after this step. This tutorial shows basics of uFrame MVVM 1.6. Tutorials for version 1.5 are available on Invert Games Studios website.
-<<<URL TO WEBSITE
-
-Learn how to setup default project
-
-Once you import uFrameMVVM 1.6, Welcome Screen will show up. To manually open Welcome Screen, select uFrame -> Welcome Screen in the menu panel.
-
-<<PICTURE OF uFrame -> Welcome Screen>>
-
-In the Welcome Window, navigate to Example and click “SETUP EXAMPLE PROJECT” button.
-
-<<PICTURE OF NAVIGATION>>
-
-
-
-Follow the instructions. Example Package will be deployed into your Assets Folder, all the needed scene will be added to your build settings. Finally intro scene will be opened and run.
-<<<PICTURE OF FINAL STATE>>>
-
-Learn how to add property to the element
-Open uFrame Designer Window using menu panel Windows -> uFrame Designer.
-
-<<<PICTURE OF Windows -> uFrame Designer
-
-First of all you need to open MainMenuSystem graph. Check opened graph tabs:
-
-<<<<INSERT PICTURE WHICH SHOWS TABS>>>>
-
-If it contains MainMenuSystem, simply click it.
-If MainMenuSystem tab is not there, click Graph selection control and select MainMenuSystem:
-
-<<<<INSERT PICTURE WHICH HOW TO OPEN EXISTING GRAPH>>>>
-
-MainMenuSystem graph should open, and you should be able to locate MainMenuSystem graph tab.
-<<< PICTURE OF FINAL STATE
-
-Just like with any other graph, MainMenuSystem graph contains nodes. Nodes can represent different information. uFrame MVVM nodes contain special sub-header (or tag) which shows what type of node it is:
-
-<<<<INSERT PICTURE WHICH SHOWS NODE TYPE>>>>
-
-In this step we are interested in Element node which is called LoginScreen.
-
-<<<<INSERT PICTURE WHICH SHOWS LoginScreen NODE>>>>
-
-Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. You can collapse or expand node by clicking arrow control in the bottom of the node.
-<<<<INSERT PICTURE WHICH SHOWS EXPAND/COLLAPSE CONTROL>>>>
-
-Expand LoginScreen. Let us add new property. For this we need to click + button near the Properties section.
-
-<<<<INSERT PICTURE WHICH SHOWS + button>>>>
-
-New node child item will be created. in the Properties section. Such child item will contain type in the left column and name in the right column.
-
-<<<<INSERT PICTURE WHICH SHOWS newly create prop>>>>
-
-Type represents type of the property and by default it is set to string. Name represents name of the property and by default it is set to “Properties”.
-
-We now need to change the name of the property by double clicking on the current name. Field will become editable and you can type in the name. Let us name it ErrorMessage.
-
-<<<<INSERT PICTURE WHICH SHOWS final ErrorMessage property>>>>
-
-This property will be of type string and we do not have to change. However, if you want to change the type of the property, you can click the current type and select desired type from the window which pops up.
-
-<<<<INSERT PICTURE WHICH SHOWS Show window and type selectio>>>>
-
-We have successfully added new property to the LoginScreen element.
-
-Learn how to add binding to the view
-Being on the MainMenuSystem graph, let us double click header of LoginScreen element node. This will let us get deeper into the details of the node. As a matter of fact, MVVM stands for Model View ViewModel. While Element node defines Model and ViewModel, View is expressed differently. In this example, View is represented using a View Node called LoginScreenView. It is important to note, that element can have unlimited number of views.
-
-<<<<INSERT PICTURE WHICH SHOWS LoginScreenView NODE>>>>
-
-We plug LoginScreen element node (A) into LoginScreenView element input (B), to express that LoginScreenView represents LoginScreen data. We can also see that LoginScreenView inherits from SubScreenView. You can read more about inheritance in the documentation.
-
-In this step we want to create a binding of ErrorMessageProperty to the Text GUI object.
-For that, we need to click plus button near the Bindings section on the LoginScreenView Node.
-
-<<<<INSERT PICTURE WHICH SHOWS + button on bindings>>>>
-
- A window will popup, with a list of all possible bindings. We need to select “ErrorMessage To Text”.
-
-<<<<INSERT PICTURE WHICH SHOWS bindings selection window>>>>
-
-Once we select it, it should appear in the list of existing bindings.
-
-We have successfully added binding to the LoginScreenView node.
-
-Learn how to change logic in controllers and services
-
-This step involves a little bit of programming. Since we have done some changes to the nodes, we need to Save and Compile our diagram using corresponding button in the top right corner.
-
-<<SHOW SAVE AND COMPILE BINDING
-
-Saving and Compiling process turns diagram items and nodes into CSharp code.
-
-Once the process is complete, we can start modifying the code.
-In the previous step we have introduces UI binding for the ErrorMessage property of LoginScreen. Now we want to specify how we set this property.
-
-Right click on the LoginScreen element node header. Select Open -> LoginScreenController.cs
-
-<<SHOW CONTEXT MENU PICTURE>>
-
-This will open your IDE with the corresponding generated file and let you modify the internals of it. Alternatively, you can manually locate LoginScreenController.cs file in your unity project
-
-We are interested in method called Login. It gets invoked when we try to log in. It delegates login procedure to the UserManagementService along with the Username and Password.
-
-<<GIST OF THE METHOD>>
-
-In the very end of the method body let us add the following code:
-
-if(UserManagementService.LocalUser.AuthorizationState != AuthorizationState.Authorized){
-	viewModel.ErrorMessage = “Failed to login! Incorrect username or password!”
-} else {
-	viewModel.ErrorMessage = string.Empty;
+        public LevelRootViewModel LevelRoot
+        {
+            get { return _levelRoot ?? (_levelRoot = GetComponentInChildren<LevelRootViewBase>().LevelRoot); }
+            private set { _levelRoot = value; }
+        }
+    }
 }
+```
 
-We have succesfully modified LoginScreenController to set ErrorMessage
-Learn how to connect view with GUI
-Our last step is creating a text object in the MainMenuScene to show ErrorMessage.
-Open MainMenuScene and in the scene hierarchy navigate to _MainMenuSceneRoot/MainMenuCanvas/LoginUI/LoginScreenPanel.
-Inside of this object create UGUI text object. Style it however you want.
+This class represents scene type. It may have different scene related properties. This script is a MonoBehavior. That is why you can have settings exposed in the Unity inspector window.
 
-<<<SHOW PICTURE WITH STRUCTURE>>>
+Once we use this script in a specific scene, for example, we can assign Id using `Id` property. Based on this this Id, we will be able to retrieve additional information about this level, which is not stored inside of this scene.
 
- Now navigate to _MainMenuSceneRoot/MainMenuRoot/LoginScreen. Select this object. In the inspector locate Binding section. Expand it. Locate setting for ErrorMessage property. Drag the text object you created earlier to the Input field.
+Right-click on the header of LevelScene node and select `Open` -> `MainDiagram/Scenes/LevelSceneLoader.cs`
+
+![](images/img_tut4_0002.png)
+
+This should open your IDE with LevelSceneLoader class.
+
+```cs
+namespace uFrame.ExampleProject
+{
+    public class LevelSceneLoader : LevelSceneLoaderBase
+    {
 
 
-<<<SHOW EXACTLY WHERE
-We have successfully setup ErrorMessage text object.
+        /*
+         *  Example of Scene Loader which sets up different ViewModel instances of the game in this scene
+         *  Here we assume that every LevelScene has a LevelRoot somewhere around (scene.LevelRoot in this case).
+         *  We want to make sure, that once scene is loaded, LevelRoot knows what the current level is.
+         *  
+         *  We do it specifically in the LevelSceneLoader, because this should happen when we load LevelScene.
+         *  With such a setup, it does not matter if we start from MainMenuScene, LevelScene or IntroScene.
+         */
 
-
-Perform final test
-Run the scene. Try to enter invalid data in the login screen and press Login. You should be able to see your message now.
-<<<SHOW FINAL RESULT
+        [Inject] public LevelManagementService LevelManagementService;
+
+        protected override IEnumerator LoadScene(LevelScene scene, Action<float, string> progressDelegate)
+        {
+            /*
+             * Old Chinese trick: When loading scene, some of the components in this scene may not be initialized by unity
+             * In this situation, object.GetComponent<>() will not work on some game objects.
+             * That is why we can just skip one frame and let unity finally do it's job.
+             */
+            yield return null;
+
+            /*
+             * When loading scene, make sure LevelRoot knows about what scene it is currently in.
+             * Find LevelDescriptor with the corresponding ID and assign it to the CurrentLevel property of the LevelRoot
+             */
+            scene.LevelRoot.CurrentLevel = LevelManagementService.Levels.FirstOrDefault(level => level.Id == scene.Id);
+            yield break;
+        }
+
+        protected override IEnumerator UnloadScene(LevelScene scene, Action<float, string> progressDelegate)
+        {
+            yield break;
+        }
+    }
+}
+```
+
+This class represents loader for level scene. uFrame generates loader for each scene type. Loader allows you to define any logic to load a specific scene. It exposes 2 methods: Load and Unload.
+
+Each method gets passed instance of scene type and a delegate, which you can use to report progress during the loading procedure.
+
+In general, scene loader may be used for absolutely any purpose: from generating worlds to downloading additional content needed for the scene.
+
+###### Learn how to create scene using Scene Type
+
+Open MainDiagram graph and locate LevelScene node:
+
+![](images/img_tut4_0000.png)
+
+Right-click on the header of LevelScene node and select `Create Scene`:
+
+![](images/img_tut4_0003.png)
+
+Save scene dialog will open. Please save your scene inside `Assets/Example Project/Scenes` folder as `Level4.scene`:
+
+![](images/img_tut4_0004.png)
+
+> By default, uFrame is trying to eliminate this step, by automatically creating a scene called `{SceneType}Scene`. If such scene does not exist, uFrame will create it automatically. So for LevelScene type, it may try to create LevelScene in `Assets/Example Project/Scenes`. In this case, Save scene dialog will not open. If that happened, please locate LevelScene and change it's name to Level 4  
+
+Newly created scene will open an the hierarchy will look like this:
+
+![](images/img_tut4_0006.png)
+
+Notice that `_LevelSceneRoot` object will contain LevelScene script. So, scene type scripts are used as roots for your scenes. **It is extremely important to keep all your scene objects under such root object**. If you leave any object outside, this object will stay in the game, when you unload the scene. Let us change the hierarchy and put `Main Camera` under as `_LevelSceneRoot` child. Also let us remove Directional Light:
+
+![](images/img_tut4_0007.png)
+
+
+###### Learn how to setup Level Scene
+
+Level scene structure is quite primitive. You need to place LevelRootView somewhere under scene root. The structure then may look like this:
+
+![](images/img_tut41_0000.png)
+
+In the inspector of LevelRootView, you will find a setting for `FinishCurrentLevel` binding:
+
+![](images/img_tut41_0001.png)
+
+It requires you to assign a button. When you press this button, Game will transition to main menu. Create a canvas, then create a button. Style it the way you want. Finally drag and drop the button to the `FinishCurrentLevel` binding setting. If Unity creates EventSystem object, remove it. This one will be automatically loaded when you start the game.
+
+![](images/img_tut41_0002.png)
+
+> Remember to keep canvas as a child of `_LevelSceneRoot`
+
+###### LevelManagementService explained
+
+Before we make final step and register newly created level in the game, let us explore how LevelManagementService works. Open `LevelSystem` graph and locate `LevelManagementService` node.
+
+![](images/img_tut41_0003.png)
+
+Open LevelManagementService.cs.
+
+```cs
+namespace uFrame.ExampleProject
+{
+    /*
+     * This service introduces example of interesting database.
+     * Check the kernel how LevelDescriptors live on a certain GameObject and this service reads them.
+     */
+
+    public class LevelManagementService : LevelManagementServiceBase
+    {
+        private List<LevelDescriptor> _levels;
+
+        //Game object holding LevelDescriptor components
+        public GameObject LevelsContainer;
+
+        // This list will hold all the registered levels
+        // You can add level descriptors dynamically by adding new LevelDescriptor
+        // component on the service object and calling UpdateLevels
+        public List<LevelDescriptor> Levels
+        {
+            get { return _levels ?? (_levels = new List<LevelDescriptor>()); }
+            set { _levels = value; }
+        }
+
+        public override void Setup()
+        {
+            base.Setup();
+            //On setup register levels initially
+            UpdateLevels();
+        }
+
+        private void UpdateLevels()
+        {
+            var levelDescriptorComponents = LevelsContainer.GetComponents<LevelDescriptor>().Except(Levels);
+                //Get all non registered level descriptors
+            Levels.AddRange(levelDescriptorComponents); //Add those to the list of registered levels
+        }
+    }
+}
+```
+
+This service manages all the registered Levels. Levels are represented using LevelDescriptor component. Such components are placed on a special gameobject. LevelManagementService then reads all the LevelDescriptors and registers each descriptor in list.
+
+###### Learn how register new Level scene in LevelManagementService
+
+It is time for us to find out where do all the services live.
+Open `Assets/ExampleProject/Scenes/ExampleProjectKernelScene.unity`:
+
+![](images/img_tut41_0004.png)
+
+> Do not forget to save previous scene!
+
+This scene is very special and it is called kernel scene. When you start your game in any scene, this scene will be loaded additively. Kernel scene contains all the dependencies for your game: services, system loaders and scene loaders. It may also contain any other dependency you specify, like `EventSystem` for Unity GUI.
+
+For example, `Services` object contains all the services mentioned in your project:
+
+![](images/img_tut41_0005.png)
+
+Notice `Levels` object in the hierarchy:
+
+![](images/img_tut41_0006.png)
+
+This one contains all the LevelDescriptors. Let us add new descriptor for the level we have created in the previous steps:
+
+![](images/img_tut41_0007.png)
+
+Do not forget to click apply, when you are finished with new level descriptor.
+Save the scene and open `Assets/Example Project/Scenes/Level4.unity` scene.
+Locate `_LevelSceneRoot` object and select it. Find Id property and enter the same Id you selected for the corresponding level descriptor:
+
+![](images/img_tut41_0012.png)
+
+Finally open build settings and check that `Assets/Example Project/Scenes/Level4.unity` is in the scenes list:
+
+![](images/img_tut41_0010.png)
+
+###### Perform final test
+
+Start your game in main menu and navigate to level selection screen. You should be able to locate your level in the list. If you click it, level scene will open. Once you click "Back To Menu" button, main menu will open again.
+
+![](images/img_tut41_0011.png)

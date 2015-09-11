@@ -1,6 +1,6 @@
 # Instantiation scenarios and methods
 
-So when you are working with uFrame you have 2 main scenarios:
+So when you are working with uFrame you have 2 main scenarios; _Scene First_ and _Code First_.
 
 ## Scene First
 This is when you have a prefab with the view component applied within the scene already. Generally in this case you would be wanting to tick the "Initialize View Model" box as this will tell uFrame that you are going to want the View to instantiate the ViewModel's property values. This can be done within the InitializeViewModel method within the view.
@@ -38,3 +38,44 @@ Another thing to mention is that you can also instantiate multiple views for the
 
 ## When not using prefab views
 This is a lot simpler when you are not using prefabs as you can just call `InstantiateView` and it will just create a default instance of that view in the scene, then you can manually do whatever you want to the views game object, such as attaching child game objects or however you express your view concerns.
+
+## When using Scene Loader
+When you are using the [Scene Loader](scene-loaders.md) you will have a `LoadScene` method, within which you can create instance of any [ViewModel](view-models.md) *(via controller)* and instantiate any [View](nodes/view-node.md) you need and add them to the scene.
+
+The key thing here is how you instantiate the View, which will require you to publish an [Event](events.md) and access the result within the [Command](commands.md). The syntax would look something like this:
+
+```
+public class InGameSceneLoader : InGameSceneLoaderBase
+    {
+        [Inject]
+        PlayerController PlayerController { get; set; }
+
+        private PlayerView CreatePlayerView(PlayerViewModel viewModel)
+        {
+            var createViewCommand = new InstantiateViewCommand
+            {
+                Identifier = "PlayerView",
+                ViewModelObject = viewModel
+                // Prefab = Resource.Load("yourPrefab")
+            };
+            Publish(createViewCommand);
+
+            return createViewCommand.Result as PlayerViewModel;
+        }
+
+        protected override IEnumerator LoadScene(InGameScene scene, Action<float, string> progressDelegate)
+        {
+        	// Create the VM instance from controller
+        	var viewModel = PlayerController.CreatePlayer();
+
+    		// Instantiate the view and add the scene parent
+			var playerView = CreatePlayerView(viewModel);
+            playerView.ParentScene = scene;
+
+            yield break;
+        }
+```
+
+The commented-out Prefab line lets you pass in your own prefab for the View if you are not using the normal convention for View prefab names. You can also create multiple Views here and then attach them to the View if needed.
+
+There is also a video tutorial on this: https://www.youtube.com/watch?v=ULA24U2QMV0

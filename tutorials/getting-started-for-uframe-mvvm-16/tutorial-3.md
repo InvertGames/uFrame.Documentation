@@ -22,7 +22,7 @@ This tutorial tends to explain how settings screen works. It explains direct way
 
 ###### uFrame event system explained.
 
-Open MainMenuService.cs and locate lines 38-41:
+Open MenuScreenView.cs and locate lines 38-41:
 
 ```cs
 
@@ -53,7 +53,7 @@ Finally third line publishes the event. At this point, event becomes available t
 Now you know how to publish events.
 Publish method is available in Services, Controllers and Views.
 
-Open MainMenuServiceBase.cs and locate line 32:
+Open `MainMenuSystem\Services.designer.cs` and locate the following line:
 
 ```cs
 

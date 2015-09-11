@@ -1,170 +1,302 @@
 # uFrame MVVM 1.6 Getting Started V
 
 
+### Overall Idea
 
-Overview
+This tutorial attempts to explain registered instances. It explains the purpose of registered ViewModels and shows how to bind a View to a registered instance. Finally it shows how to make a simple change: how to show local user information inside of MainMenu.
 
-This tutorial shows how to install uFrame MVVM, shows the default package and proposes a simple change in the default project: creating an error message for login screen
+### Steps
 
-Steps
+1. SubSystem node explained in details
+2. Learn how to register instance of a ViewModel inside of SubSystem node
+3. Learn how to inject registered ViewModel instance
+4. Learn how to modify UserManagementService
+5. Learn how to create Views
+6. Learn how to place View in the scene
+7. Learn how to bind View to a registered viewmodel instance.
+8. Perform final test.
 
-Learn how to install uFrame MVVM
-Learn how to setup example project
-Learn how to add property to the element
-Learn how to add binding to the view
-Learn how to change logic in controllers
-Learn how to connect view with GUI
-Perform final test
+### Average Time
+8-10 minutes
 
-Average Time
+##Transcript
 
-6-8 minutes
+###### SubSystem node explained in details
 
-
-Transcript
-Introduction:
-Hello and welcome to uFrame 1.6 getting started series.
-This part will show how to install uFrame MVVM and how to setup default project. It also shows how to make one simple change to the default project.
+From the graph perspective, a subsystem node serves mainly to incorporate elements which are semantically related to each other.
+Suppose the user may create a CarSystem which holds elements to describe the car itself and all the related parts, like wheels, engines and others.
 
-How to install uFrame MVVM
-Using asset store, you can install uFrame MVVM just like any other asset: simply import it.
+![](images/img_tut5_0001.png)
 
-<<<PICTURE OF IMPORT BUTTON>>>
+From the code perspective a SubSystem is represented by a SystemLoader. The purpose of a SystemLoader is to load different parts of your architecture which are not Monobehaviors. Unity makes it extremely easy to setup classes which are MonoBehaviors: you just drag and drop them into your scene. But sometimes MonoBehavior is not desired and you need to setup class instances which have nothing to do with Unity in general. For example, Controllers and ViewModels are not MonoBehaviors. To effectively load them into your environment, uFrame generates SystemLoaders.
 
-As for uFrame MVVM 1.6, you will find folder called uFrameMVVM inside of your assets folder. It contains 2 other packages with different uFrame MVVM versions. Version 1.5 is shipped for backwards compatibility. If you are new to uFrame MVVM, please stick with version 1.6. Import the version you want by double clicking on the corresponding package.
+A base SystemLoader is dead simple: it just registers non-Monobehavior instances in the Container.
+Here is an example of a CarSystemLoaderBase class:
 
-Picture with 2 assets
+```cs
 
-You can safely remove uFrameMVVM folder after this step. This tutorial shows basics of uFrame MVVM 1.6. Tutorials for version 1.5 are available on Invert Games Studios website.
-<<<URL TO WEBSITE
+namespace uFrame.ExampleProject {
 
-Learn how to setup default project
+    public class CarSystemLoaderBase : uFrame.Kernel.SystemLoader {
 
-Once you import uFrameMVVM 1.6, Welcome Screen will show up. To manually open Welcome Screen, select uFrame -> Welcome Screen in the menu panel.
+        private CarController _CarController;
 
-<<PICTURE OF uFrame -> Welcome Screen>>
+        private EngineController _EngineController;
 
-In the Welcome Window, navigate to Example and click “SETUP EXAMPLE PROJECT” button.
+        private WheelController _WheelController;
 
-<<PICTURE OF NAVIGATION>>
+        [uFrame.IOC.InjectAttribute()]
+        public virtual CarController CarController [...]
 
-
+        [uFrame.IOC.InjectAttribute()]
+        public virtual EngineController EngineController [...]
 
-Follow the instructions. Example Package will be deployed into your Assets Folder, all the needed scene will be added to your build settings. Finally intro scene will be opened and run.
-<<<PICTURE OF FINAL STATE>>>
+        [uFrame.IOC.InjectAttribute()]
+        public virtual WheelController WheelController [...]
 
-Learn how to add property to the element
-Open uFrame Designer Window using menu panel Windows -> uFrame Designer.
+        public override void Load()
+        {
 
-<<<PICTURE OF Windows -> uFrame Designer
-
-First of all you need to open MainMenuSystem graph. Check opened graph tabs:
-
-<<<<INSERT PICTURE WHICH SHOWS TABS>>>>
-
-If it contains MainMenuSystem, simply click it.
-If MainMenuSystem tab is not there, click Graph selection control and select MainMenuSystem:
-
-<<<<INSERT PICTURE WHICH HOW TO OPEN EXISTING GRAPH>>>>
-
-MainMenuSystem graph should open, and you should be able to locate MainMenuSystem graph tab.
-<<< PICTURE OF FINAL STATE
-
-Just like with any other graph, MainMenuSystem graph contains nodes. Nodes can represent different information. uFrame MVVM nodes contain special sub-header (or tag) which shows what type of node it is:
-
-<<<<INSERT PICTURE WHICH SHOWS NODE TYPE>>>>
-
-In this step we are interested in Element node which is called LoginScreen.
-
-<<<<INSERT PICTURE WHICH SHOWS LoginScreen NODE>>>>
-
-Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. You can collapse or expand node by clicking arrow control in the bottom of the node.
-<<<<INSERT PICTURE WHICH SHOWS EXPAND/COLLAPSE CONTROL>>>>
-
-Expand LoginScreen. Let us add new property. For this we need to click + button near the Properties section.
-
-<<<<INSERT PICTURE WHICH SHOWS + button>>>>
-
-New node child item will be created. in the Properties section. Such child item will contain type in the left column and name in the right column.
-
-<<<<INSERT PICTURE WHICH SHOWS newly create prop>>>>
-
-Type represents type of the property and by default it is set to string. Name represents name of the property and by default it is set to “Properties”.
-
-We now need to change the name of the property by double clicking on the current name. Field will become editable and you can type in the name. Let us name it ErrorMessage.
-
-<<<<INSERT PICTURE WHICH SHOWS final ErrorMessage property>>>>
-
-This property will be of type string and we do not have to change. However, if you want to change the type of the property, you can click the current type and select desired type from the window which pops up.
-
-<<<<INSERT PICTURE WHICH SHOWS Show window and type selectio>>>>
-
-We have successfully added new property to the LoginScreen element.
-
-Learn how to add binding to the view
-Being on the MainMenuSystem graph, let us double click header of LoginScreen element node. This will let us get deeper into the details of the node. As a matter of fact, MVVM stands for Model View ViewModel. While Element node defines Model and ViewModel, View is expressed differently. In this example, View is represented using a View Node called LoginScreenView. It is important to note, that element can have unlimited number of views.
-
-<<<<INSERT PICTURE WHICH SHOWS LoginScreenView NODE>>>>
-
-We plug LoginScreen element node (A) into LoginScreenView element input (B), to express that LoginScreenView represents LoginScreen data. We can also see that LoginScreenView inherits from SubScreenView. You can read more about inheritance in the documentation.
-
-In this step we want to create a binding of ErrorMessageProperty to the Text GUI object.
-For that, we need to click plus button near the Bindings section on the LoginScreenView Node.
-
-<<<<INSERT PICTURE WHICH SHOWS + button on bindings>>>>
-
- A window will popup, with a list of all possible bindings. We need to select “ErrorMessage To Text”.
-
-<<<<INSERT PICTURE WHICH SHOWS bindings selection window>>>>
-
-Once we select it, it should appear in the list of existing bindings.
-
-We have successfully added binding to the LoginScreenView node.
-
-Learn how to change logic in controllers and services
-
-This step involves a little bit of programming. Since we have done some changes to the nodes, we need to Save and Compile our diagram using corresponding button in the top right corner.
-
-<<SHOW SAVE AND COMPILE BINDING
-
-Saving and Compiling process turns diagram items and nodes into CSharp code.
-
-Once the process is complete, we can start modifying the code.
-In the previous step we have introduces UI binding for the ErrorMessage property of LoginScreen. Now we want to specify how we set this property.
-
-Right click on the LoginScreen element node header. Select Open -> LoginScreenController.cs
-
-<<SHOW CONTEXT MENU PICTURE>>
-
-This will open your IDE with the corresponding generated file and let you modify the internals of it. Alternatively, you can manually locate LoginScreenController.cs file in your unity project
-
-We are interested in method called Login. It gets invoked when we try to log in. It delegates login procedure to the UserManagementService along with the Username and Password.
-
-<<GIST OF THE METHOD>>
-
-In the very end of the method body let us add the following code:
-
-if(UserManagementService.LocalUser.AuthorizationState != AuthorizationState.Authorized){
-	viewModel.ErrorMessage = “Failed to login! Incorrect username or password!”
-} else {
-	viewModel.ErrorMessage = string.Empty;
+            //Register Controllers and Managers in the container.
+            Container.RegisterViewModelManager<CarViewModel>(new ViewModelManager<CarViewModel>());
+            Container.RegisterController<CarController>(CarController);
+            Container.RegisterViewModelManager<EngineViewModel>(new ViewModelManager<EngineViewModel>());
+            Container.RegisterController<EngineController>(EngineController);
+            Container.RegisterViewModelManager<WheelViewModel>(new ViewModelManager<WheelViewModel>());
+            Container.RegisterController<WheelController>(WheelController);
+        }
+    }
 }
 
-We have succesfully modified LoginScreenController to set ErrorMessage
-Learn how to connect view with GUI
-Our last step is creating a text object in the MainMenuScene to show ErrorMessage.
-Open MainMenuScene and in the scene hierarchy navigate to _MainMenuSceneRoot/MainMenuCanvas/LoginUI/LoginScreenPanel.
-Inside of this object create UGUI text object. Style it however you want.
 
-<<<SHOW PICTURE WITH STRUCTURE>>>
-
- Now navigate to _MainMenuSceneRoot/MainMenuRoot/LoginScreen. Select this object. In the inspector locate Binding section. Expand it. Locate setting for ErrorMessage property. Drag the text object you created earlier to the Input field.
+```
 
 
-<<<SHOW EXACTLY WHERE
-We have successfully setup ErrorMessage text object.
+###### Learn how to register an instance of a viewmodel inside of a SubSystem node
 
-
-Perform final test
-Run the scene. Try to enter invalid data in the login screen and press Login. You should be able to see your message now.
-<<<SHOW FINAL RESULT
+Sometimes you may need a globally-registered ViewModel.
+
+> Such a ViewModel is often referred to as 'Named' instance, 'Shared' instance or 'Globally Registered' instance.
+
+Such an instance will have a unique name when registered in the container. That is how any part of your application can get
+access to it by means of dependency injection.
+
+Locate and open the UserManagementSystem graph. Locate the UserManagementSystem graph node and expand it.
+
+![](images/img_tut5_0000.png)
+
+Locate the `Instances` section. This section containes one item called `LocalUser` of type UserViewModel. You can use the plus button to add more items to this section. Remember: there should be no items with both the same name and same type. If you want to introduce another registered instance of type `User`, you have to use a unique name, for example, `RemoteUser`.
+
+###### Learn how to inject registered ViewModel instance
+
+Locate and open `Assets/ExampleProject/UserManagementSystem/Services/UserManagementService.cs`
+
+
+```cs
+
+namespace uFrame.ExampleProject
+{
+    public class UserManagementService : UserManagementServiceBase
+    {
+
+        [Inject("LocalUser")] public UserViewModel LocalUser;
+
+        public override void Setup()
+        {
+            base.Setup();
+            LocalUser.AuthorizationState = AuthorizationState.Unauthorized;
+        }
+
+        public void AuthorizeLocalUser(string Username, string Password)
+        {
+            if (Username == "uframe" && Password == "uframe")
+            {
+                Debug.Log("authorized in service");
+                LocalUser.AuthorizationState = AuthorizationState.Authorized;
+            }
+        }
+
+
+    }
+}
+
+```
+
+This line demonstrates how to inject named instances.
+
+```cs
+[Inject("LocalUser")] public UserViewModel LocalUser;
+```
+
+uFrame will automatically set the values of this field for you when setting up the service.
+
+> The same approach will work in Controllers, Services, SceneLoaders and SystemLoaders. uFrame also exposes an option to Inject Views. This may come in handy when you have services related to the presentation side of your game, like `SoundService`.
+
+After you inject the instance you can do whatever you want with it. For example, UserManagementService uses the named instance of UserViewModel to store up-to-date authorization information for the local user.
+
+
+###### Learn how to modify UserManagementService
+
+Open the UserManagementSystem graph and locate the User element node. Expand it.
+
+![](images/img_tut5_0002.png)
+
+Add a new property to the User element node. Name it `Username` and make sure the type is string.
+
+![](images/img_tut5_0003.png)
+
+Save and compile.  
+Locate and open `Assets/ExampleProject/UserManagementSystem/Services/UserManagementService.cs`
+
+Let us change the authorization logic a little bit to save the given username into the LocalUser ViewModel if the given information is correct.
+
+```cs
+
+namespace uFrame.ExampleProject
+{
+    public class UserManagementService : UserManagementServiceBase
+    {
+
+        [Inject("LocalUser")] public UserViewModel LocalUser;
+
+        public override void Setup()
+        {
+            base.Setup();
+            LocalUser.AuthorizationState = AuthorizationState.Unauthorized;
+        }
+
+        public void AuthorizeLocalUser(string Username, string Password)
+        {
+            if (Username == "uframe" && Password == "uframe")
+            {
+                Debug.Log("authorized in service");
+                LocalUser.Username = Username; //This is how we save the username
+                LocalUser.AuthorizationState = AuthorizationState.Authorized;
+            }
+        }
+
+    }
+}
+
+```
+
+Now any time we succesfully log in the system will remember the user's username.
+
+###### Learn how to create Views
+
+Our ultimate goal is to show user information inside of the main menu. The correct approach would be defining  new View for the UserViewModel. However, we will go even further and make it correct from the architecture standpoint.
+
+When it comes to good design, you want different pieces of your game to be reusable. So if we start a new project with a different game, we want to reuse the same UserManagementSystem with all the Services and ViewModels. This will save us a lot of time.
+
+But on the other hand, we want to define a View for the UserViewModel which is specific for this particular game: we want to show it in the main menu. uFrame allows you to keep Views and elements in different graphs.
+
+Naviage to `MainMenuSystem`, right-click on the empty space on the graph and select
+`Show Item` -> `UserManagementSystem` -> `User`.
+
+![](images/img_tut5_0004.png)
+
+A User element node will appear. However, it will have a different look and feel because it comes from the other graph.
+
+![](images/img_tut5_0005.png)
+
+In such a state, you are not able to modify the User element node. However, you can still go inside of it by double-clicking its header. Despite being inside of User element node, we are still working within the MainMenuSystem graph. This means that we cannot accidentally break the UserManagementSystem or User element by any means.
+
+Right-click on empty space and select `Add View`
+
+
+![](images/img_tut5_0006.png)
+
+
+Rename the View node to MainMenuUserView.
+Now we need to plug the output connector of the User element node into the input connector of the MainMenuUserView node called `Element`
+
+![](images/img_tut5_0007.png)
+
+We have succesfully created a new view for the User element ouside of UserManagementService.
+
+Now we need to add a binding to MainMenuUserView called `Username To Text`.
+
+![](images/img_tut5_0008.png)
+
+It is time for us to save and compile.
+
+###### Learn how to place the View in the scene
+
+Open MainMenuScene. Locate the `_MainMenuSceneRoot` GameObject and add an empty child.
+Call the newly created GameObject `_MainMenuUserView`. Add a script to this GameObject called MainMenuUserView.
+
+![](images/img_tut5_0009.png)
+
+Select `_MainMenuUserView` object and, in the Unity inspector window, locate the editor for the MainMenuUserView component. Locate the Bindings section. Locate the Username binding and the `Input` property for a Text object to bind to.
+
+![](images/img_tut5_0010.png)
+
+At this point you should design how your visual representation will look like.
+When you are done, link the Username binding property with the text object.
+
+![](images/img_tut5_0011.png)
+
+###### Learn how to bind a View to a registered ViewModel instance
+
+Select the `_MainMenuUserView` GameObject and in the Unity inspector window, locate the editor for the MainMenuUserView component. Find the property called `ViewModel Identifier`.
+
+![](images/img_tut5_0012.png)
+
+You can either press the button on top of the field called "Use Registered 'LocalUser' Instance" or you can manually type in `LocalUser` into the field  
+
+![](images/img_tut5_0013.png)
+
+Now this view will bind to the registered ViewModel and display its information. This is the same instance we use inside of UserManagementService to store authorization information.
+
+###### Perform final test
+
+Start the game from MainMenuScene and type in the correct credentials (uframe/uframe). Click `Sign In`. Your text object should show the correct username.
+
+![](images/img_tut5_0014.png)
+
+If you have TextMeshPro then this is how to amend uFrame to enable bindings for it such that they can be used in this tutorial.
+
+In UGUIBindings.cs add the following:
+```cs
+public static IDisposable BindTextMeshProUGUIToProperty(this ViewBase viewBase, TextMeshProUGUI input, P<string> property)
+		{
+			if (input != null)
+			{
+				input.text = property.Value ?? string.Empty;
+			}
+			
+			var d1 = property.Subscribe(value =>
+			                            {
+				if (input != null) input.text = value;
+			});
+			
+			return d1.DisposeWith(viewBase);
+		}
+
+
+public static IDisposable BindTextMeshProUGUIToProperty<T>(this ViewBase viewBase, TextMeshProUGUI input, P<T> property,
+		                                                Func<T, string> selector)
+		{
+			
+			var d1 = property.Subscribe(value =>
+			                            {
+				input.text = selector(value);
+			});
+			
+			input.text = selector(property.Value);
+			
+			return d1.DisposeWith(viewBase);
+		}
+```
+
+In uFrameTemplates.cs add the following:
+```cs
+	container.AddBindingMethod(typeof (UGUIExtensions), "BindTextMeshProUGUIToProperty",
+			                   _ => _ is PropertiesChildItem && _.RelatedTypeName == typeof (string).Name)
+			        	    .SetDescription("Binds a string property to a TextMeshProUGUI text label.")
+					        .SetNameFormat("{0} To TextMeshProUGUI");
+```
+
+That should be it.
+
+This should enable you to enact the binding in the uFrame Designer because it will appear as an option when you click to add a binding.  Once compiled it will allow you to drag a TextMeshProUGUI object from the hierarchy to the field in the Inspector on the view that is bound to the variable you set up in the Designer.

@@ -3,7 +3,8 @@
 ![](images/callout_inprogress.png)
 
 ## About
-This document tends to be an extensive, up-to-date guide to uFrame, crafted by community members and developers of uFrame.
+
+This document intends to be an extensive, up-to-date guide to uFrame, crafted by community members and developers of uFrame.
 
 ## Sections
 
@@ -18,8 +19,13 @@ This document tends to be an extensive, up-to-date guide to uFrame, crafted by c
 - #### [Support](uframe-documentation/blob/master/support/home.md)
   Page, which covers all the sources of help
 
+- #### [Games made with uFrame](uframe-documentation/blob/master/pages/uframe-games.md)
+
 
 ## Your input is invaluable!
+
+[Tutorial for Github](uframe-documentation/blob/master/support/github.md)
+You can update Github version of this Wiki [here](https://github.com/bartlomiejwolk/uFrame-Wiki/blob/master/pages/home.md).
 
 Please consider filling gaps and correcting mistakes in the guide.
 

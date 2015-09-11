@@ -1,12 +1,18 @@
 # Scene Loader
 
-For each [Scene Type](scene-type) defined in the graph there is a scene loader class generated. For example, _LevelScene_ scene type will have a corresponding `LevelSceneLoader` class.
+For each [Scene Type](nodes/scene-type-node.md) defined in the graph there is generated a scene loader class. For example, _LevelScene_ scene type will have a corresponding `LevelSceneLoader` class.
 
-Scene loaders live as game objects on the [uFrame Kernel](uFrame Kernel).
+Scene Loaders live as game objects on the [uFrame Kernel](uframe-kernel.md).
 
 ![](https://dl.dropboxusercontent.com/u/75445779/uFrame_wiki/Screenshot_103.png)
 
-When a scene with the corresponding _Scene Type_ is loaded, the scene loader will get a reference to the _Scene Type_ instance and pass it to the `LoadScene()` method. There you can use those settings to setup the scene properly. That gives a very fine grained control on how scenes are loaded and unloaded.
+## Scene Loader and Scene Type
+
+When a scene with the corresponding _Scene Type_ is loaded, the Scene Loader will get a reference to the _Scene Type_ instance and pass it to the `LoadScene()` method.
+
+[todo add more info]
+
+## Auto-generated Scene Loader
 
 Below is an example of a loader class generated automatically for the _UISceneType_. It has two methods:
 
@@ -55,7 +61,7 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
 }
 ```
 
-Using the `scene` parameter in the example above you can access members defined in the [scene type](scene-types) class.
+Using the `scene` parameter in the example above you can access members defined in the [scene type](nodes/scene-types) class.
 
 ```csharp
 // Inject ViewModel that you want to update with data defined in the scene type.
@@ -65,3 +71,15 @@ protected override IEnumerator LoadScene(UIScene scene, Action<float, string> pr
     MenuScreen.SomeProperty = scene.SomePublicField;
 }
 ```
+
+## Creating custom Scene Loader
+
+You can create custom Scene Loader class by inheriting from `SceneLoader<T>`.
+
+```csharp
+public class MyCustomSceneLoader : SceneLoader<MyCustomScene> {}
+```
+
+## Accessing other types
+
+From Scene Loader you can access any type registered in the [DI Container](di-ioc-container.md) using the `[Inject]` attribute. Those can be all [Controllers](controller.md), globaly registered [ViewModels](view-models.md), [Services](services.md) and others.
