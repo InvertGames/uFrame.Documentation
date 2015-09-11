@@ -1,6 +1,6 @@
 # Events
 
-Events are simple classes that contain simple data. It's similar to C# `EventArgs` class that you use to pass data along with the events.
+Events are [Simple Classes](nodes/simple-class-node) that contain simple data. It's similar to C# `EventArgs` class that you use to pass data along with the events.
 
 Example event used to pass a reference of a newly created enemy to a subscriber (for eg. a Service).
 
