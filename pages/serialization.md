@@ -2,6 +2,7 @@
 
 
 
+
 ## {ViewModel}.SerializeToJSON
 
 
@@ -20,7 +21,7 @@ These are:
 - SimpleClass
 - TypeReferences
 
-You can modify what is serialized in your [ViewModel](view-models.md) if you overwrite the following ViewModel functions.
+You can modify what is serialized in your [ViewModel](view-models.md) if you overwrite the following functions.
 
 	public void Write(ISerializerStream stream)
     public void Read(ISerializerStream stream)
