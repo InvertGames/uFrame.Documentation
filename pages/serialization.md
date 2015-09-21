@@ -14,7 +14,7 @@ To serialize any [Element](element-node.md) to JSON you can use the following in
 
 ### Notice!
 
-Certain types are not serialized by `SerializeToJSON()`.
+Certain types are not serialized by default by `SerializeToJSON()`.
 
 These are:
 - string
