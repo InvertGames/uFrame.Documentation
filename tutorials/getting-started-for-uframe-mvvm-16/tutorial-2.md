@@ -321,7 +321,7 @@ namespace uFrame.ExampleProject
                 //Time passed from start
                 var elapsed = Time.time - start;
                 //normalized time from 0..1
-                var normalisedTime = Mathf.Clamp((elapsed / time) * Time.deltaTime, 0, 1);
+                var normalizedTime = Mathf.Clamp((elapsed / time), 0.0f, 1.0f);
                 //assign interpolated value
                 target.alpha = Mathf.Lerp(target.alpha, alpha, normalisedTime);
                 yield return null;
@@ -443,7 +443,7 @@ namespace uFrame.ExampleProject
                 //Time passed from start
                 var elapsed = Time.time - start;
                 //normalized time from 0..1
-                var normalisedTime = Mathf.Clamp((elapsed / time) * Time.deltaTime, 0, 1);
+                var normalizedTime = Mathf.Clamp((elapsed / time), 0.0f, 1.0f);
                 //assign interpolated value
                 target.alpha = Mathf.Lerp(target.alpha, alpha, normalisedTime);
                 yield return null;

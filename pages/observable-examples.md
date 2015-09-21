@@ -148,3 +148,61 @@ public override void UnsubscribeFromViewModel (ThisViewModel this, ThingyViewMod
     this.Thingy = null;
 }
 ```
+
+## Observable.Timer and Interval example, using just UGUI and UniRx
+
+Quick Rx example of a simple typewriter effect (typing 1 letter every X second) on a UGUI Text, which doesn't tap into Unity Update().  Create the _AahzTypewriter.cs_ file, copy/paste the code in, and slap the component on a gameobject that also has a UGUI Text component.  It will retype the text any time it is enabled/re-enabled at runtime.
+
+```csharp
+using System;
+using UniRx;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class AahzTypewriter : MonoBehaviour {
+    [SerializeField] private Text textComponent;
+    [SerializeField] private string fullText = "This is typing.";
+
+    [SerializeField, Range(0.0f, 10.0f)] private float waitToStart = 0.88f;
+    [SerializeField, Range(0.1f, 4.0f)] private float effectLength = 0.3f;
+
+    private Subject<string> text = new Subject<string>();
+    private int currentLength;
+
+    void OnEnable() {
+        // Check
+        if (textComponent == null) textComponent = this.GetComponent<Text>();
+
+        // Doublecheck
+        if (textComponent == null) {
+            Debug.LogError("AahzTypewriter: Text component could not be found, destroying Typewriter effect.");
+            Destroy(this);
+        }
+
+        // Grab anything already set on the text and re-write it
+        if (!string.IsNullOrEmpty(textComponent.text)) fullText = textComponent.text; 
+
+        // Bind text of TextComponent
+        text.TakeUntilDisable(this).Subscribe(s => textComponent.text = s);
+        text.OnNext(""); // Clear
+        currentLength = 0;
+
+        // Prevent division by 0
+        if (fullText.Length == 0) fullText = "No Division by Zero";
+        // Calculate how fast we need to type
+        var typeSpeed = effectLength / fullText.Length;
+
+        Observable.Timer(TimeSpan.FromSeconds(waitToStart))
+            .Subscribe(_ => Observable.Interval(TimeSpan.FromSeconds(typeSpeed))
+                .Take(fullText.Length + 1) // +1 to make sure component disables
+                .Subscribe(__ => UpdateText(++currentLength))
+            );
+    }
+
+    private void UpdateText(int i) {
+        if (i <= fullText.Length) 
+            text.OnNext(fullText.Substring(0, i));
+        else this.enabled = false;
+    }
+}
+```
