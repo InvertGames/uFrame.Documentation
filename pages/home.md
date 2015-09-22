@@ -27,6 +27,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Controllers](controller.md)
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)
+* [Serialization](serialization.md)
 * [uFrame Classes](classes.md)
 * [FAQ](faq.md)
 * [Quick Rundown on Lambdas =>](quick-rundown-on-lambdas.md)
