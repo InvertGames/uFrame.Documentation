@@ -35,3 +35,22 @@ public class MyCustomSceneSettings : SceneSettings<MyCustomScene> {
     public int MyCustomValue;
 }
 ```
+
+## Setting Skybox Ambient Lighting for Additive Scene Loads
+
+```csharp
+Material skybox = Resources.Load<Material> ("Skyboxes/MySkyBox");
+RenderSettings.skybox = skybox;
+
+//AMBIENT LIGHTING FOR THE SCENE WE ARE LOADING
+RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Skybox;
+RenderSettings.ambientIntensity = 2f;
+
+// OTHER STUFF YOU MAY WANT TO TWEAK
+RenderSettings.defaultReflectionMode = UnityEngine.Rendering.DefaultReflectionMode.Skybox;
+RenderSettings.defaultReflectionResolution = 256;
+RenderSettings.reflectionIntensity = 1f;
+RenderSettings.reflectionBounces = 1;
+LightmapSettings.lightmapsMode = LightmapsMode.CombinedDirectional;
+
+DynamicGI.UpdateEnvironment ();  // THIS IS THE IMPORTANT BIT! OTHERWISE SKYBOX WILL NOT CREATE AMBIENT LIGHTING IN ADDITIVELY LOADED SCENE, IT WILL ONLY USE FIRST SCENE AMBIENT PROBE (MUST PRESS BUILD TO GENERATE)
