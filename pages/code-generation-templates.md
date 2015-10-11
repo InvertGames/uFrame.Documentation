@@ -29,7 +29,7 @@ Now the `LoadPriority` indicates what order the plugin should load in, so this w
 
 The `Initialize` method is the bit we really care about though, as that is where we will register our templates against node types, so for example if we were to have:
 
-```
+```csharp
 public override void Initialize(UFrameContainer container)
 {
     RegisteredTemplateGeneratorsFactory.RegisterTemplate<PropertiesChildItem, SetPropertyActionsTemplate>();
@@ -98,7 +98,7 @@ This is basically telling it where you want your files to be put, if you are onl
 
 This is a very important one, as it lets you constrain when your templates are run for a given type. So for example lets say we are wanting to template ComputedProperties as we have been mentioning above, however we only want our template to run when the Computed Properties type is a `Boolean` in this bit you could do:
 
-```
+```csharp
 public bool CanGenerate
 {
     get { return Ctx.Data.RelatedTypeName == "Boolean"; }
@@ -133,7 +133,7 @@ protected void DoSomething()
 
 So this would output:
 
-```
+```csharp
 protected void DoSomething()
 {
     Debug.Log("Hello");
