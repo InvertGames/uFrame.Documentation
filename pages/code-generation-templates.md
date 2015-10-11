@@ -10,7 +10,7 @@ There are 2 parts to using codegen templates, to start with you need to make a c
 
 Your class should look something like this:
 
-```
+```csharp
 public class SomeDiagramPlugin : DiagramPlugin
 {
     public override decimal LoadPriority
@@ -38,7 +38,7 @@ public override void Initialize(UFrameContainer container)
 
 We would be telling it that we wish to run the `SetPropertyActionsTemplate` against all Properties within nodes, this by default would then run the `SetPropertyActionsTemplate` for each and every property within your graphs, be it on `SimpleClass` objects or `Elements`. You can specify nodes directy too such as:
 
-```
+```csharp
 RegisteredTemplateGeneratorsFactory.RegisterTemplate<ComputedPropertyNode, DoSomethingWithComputedPropertiesTemplate>();
 ```
 
@@ -49,13 +49,13 @@ So once you have created your plugin class above and registered any of your temp
 
 Once you have your plugin ready to host your templates you will need to make an implementation of `IClassTemplate<T>` making sure that your generic type matches the Node/Item type used when registering, so for example if I had registered a computed node template like shown in the plugin section:
 
-```
+```csharp
 RegisteredTemplateGeneratorsFactory.RegisterTemplate<ComputedPropertyNode, DoSomethingWithComputedPropertiesTemplate>();
 ```
 
 Then I would need to create an implementation of `IClassTemplate<ComputedPropertyNode>` which would look something like this:
 
-```
+```csharp
 [TemplateClass(TemplateLocation.DesignerFile, ClassNameFormat = "{0}Output")]
 public class SomeComputedPropertyTemplate : IClassTemplate<ComputedPropertyNode>
 {
@@ -123,7 +123,7 @@ So lets go over some common scenarios and how you would do it using the class te
 
 So one of the most common things in classes are methods, so you can generate a method in a couple of ways. The most expressive one is to make a method in your class template and then pass it attributes to explain to it how to generate.
 
-```
+```csharp
 [GenerateMethod]
 protected void DoSomething()
 {
@@ -142,7 +142,7 @@ protected void DoSomething()
 
 This is an overly simple example, but you can augment the method by either adding more attributes either like the `GenerateMethod` approach with an explicit attribute, or by telling the `Ctx` object to augment the current declaration. Here is an example of both ways.
 
-```
+```csharp
 [GenerateMethod, AsOverride]
 protected void OverrideSomeMethod()
 { }
@@ -158,7 +158,7 @@ protected void OverrideSomeMethod()
 
 Either of the above examples would output:
 
-```
+```csharp
 protected override OverrideSomeMethod()
 {}
 ```
@@ -171,14 +171,14 @@ As shown before you have multiple to make a property, and some ways to customize
 
 Here is an example:
 
-```
+```csharp
 [GenerateProperty, WithField]
 public string SomeProperty { get; set; }
 ```
 
 the above would output
 
-```
+```csharp
 private string _someProperty;
 
 public string SomeProperty
@@ -190,7 +190,7 @@ public string SomeProperty
 
 You can manually put your own code inside the getters like so:
 
-```
+```csharp
 [GenerateProperty]
 public string SomeProperty
 {
@@ -203,7 +203,7 @@ public string SomeProperty
 
 would output
 
-```
+```csharp
 public string SomeProperty
 {
     get { return 10; }
@@ -216,14 +216,14 @@ So you can write your own, or you can just let the attributes generate them for 
 
 There are some quirks with member generation, you would probably at first try to do something like:
 
-```
+```csharp
 [GenerateMember]
 public string MyField;
 ```
 
 however this would not generate anything, as the field generation has not entirely been completed yet from what I was told. However fear not there is a way around this, and this also shows you another way that you can generate class content without needing to use any attributes. So to begin we need to go back to our `TemplateSetup` method, and within there we can tell the `TemplateContext` to generate fields for us on the current class.
 
-```
+```csharp
 public void TemplateSetup()
 {
     Ctx.CurrentDeclaration._private_("string", "_data");
@@ -232,13 +232,13 @@ public void TemplateSetup()
 
 which would output the following on the class:
 
-```
+```csharp
 private string _data;
 ```
 
 You can use `_public_` as well if you want a public field, although if you want to have a protected field you need to jump through a hoop and manually add some meta data to the generation, which would look like so:
 
-```
+```csharp
 public void TemplateSetup()
 {
     var createdField = Ctx.CurrentDeclaration._private_("string", "_data");
@@ -254,7 +254,7 @@ So now we know how to create content within the class lets just go over the ways
 
 So the `TemplateContext` object has the notion of `CurrentDeclaration`, it also has `CurrentProperty`, `CurrentMember`, `CurrentMethod` etc, so you can use all these exposed properties to define how you want the context to operate, so if we wanted to augment the class we would add in our `TemplateSetup`:
 
-```
+```csharp
 public void TemplateSetup()
 {
     Ctx.CurrentDeclaration.IsPartial = true;
@@ -266,7 +266,7 @@ The above would tell the code generator to add `[RequireComponent(typeof(ViewBas
 
 You can also add namespace imports to class like so:
 
-```
+```csharp
 public void TemplateSetup()
 {
     Ctx.TryAddNamespace("uFrame.MVVM");
@@ -281,7 +281,7 @@ So we have covered most of the main stuff here, however there are some other hel
 
 You have access to `_ITEMTYPE_` which basically exposes the current itemtype as a class but when the codegen processes it, the type is dynamically replaced. Here is an example:
 
-```
+```csharp
 public class SomePropertyTemplate : IClassTemplate<PropertiesChildItem>
 {
     // assume mandatory stuff
@@ -293,7 +293,7 @@ public class SomePropertyTemplate : IClassTemplate<PropertiesChildItem>
 
 Now if we assume that we have a property of type `Boolean` then the outputted code would be:
 
-```
+```csharp
 public class SomePropertyTemplate : IClassTemplate<PropertiesChildItem>
 {
     // assume mandatory stuff
