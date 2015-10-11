@@ -27,23 +27,18 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Controllers](controller.md)
 * [Inheritance](inheritance.md)
 * [Execution Order](execution-order.md)
-* [Serialization](serialization.md)
 * [uFrame Classes](classes.md)
 * [FAQ](faq.md)
-* [Quick Rundown on Lambdas =>](quick-rundown-on-lambdas.md)
 
 # Advanced Concepts
 
+* [Serialization](serialization.md)
 * [Coupling and Cohesion](coupling-and-cohesion.md)
 * [DI / IoC Container](di-ioc-container.md)
 * [Services vs Controllers](services-vs-controllers.md)
 * [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
 * [Code Generation Templates](code-generation-templates.md)
 * [Quick Rundown on Lambdas](quick-rundown-on-lambdas.md)
-
-# Maintenance
-
-* [Moving Nodes Between Graphs](moving-nodes-between-graphs.md)
 
 # Reactive Programming
 
