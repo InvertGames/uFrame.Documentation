@@ -1,4 +1,29 @@
 # Release Notes
+## 1.0 Beta 7
+- Fix: Crash on TreeViewModel.cs:48 - InvalidOperationException due to invoking First() on an empty list
+- Fix: Graph Explorer does not refresh when the nodes in a graph change.
+- Fix: Check that names of Systems don't match Components?
+- Fix: If an output fails to connect to an input, uFrame shouldn't show the node selection window afterwards.
+- Fix: Created a handler, save, change to code handler. Error due to duplicate files.  Can ECS deal with this somehow?  Or guide the user?
+- Fix: Make sure namespaces are imported correctly on Events, Custom Actions, Components, Systems...etc
+- Fix: Enum switch node doesn't direct flow through any case branch.
+- Fix: Make a handler with a Unity property (Transform etc) and namespace can't be found in System generated code.
+- Fix: Unity crashes when selecting a property in a Property Changed handler.
+- Fix: Validation for duplicate properties, collections.
+- Fix: Property names should be committed as soon as their text field loses focus.
+- Fix: ArgumentException: Getting control 3's position in a group with only 3 controls when doing Repaint Aborting
+- Fix: Selecting an event handler after filtering down the event handler list: it ​*adds*​ the node to the db, but in the graph, it is hidden so you can’t see it or interact with it.
+- Fix: Can't rename TypeReference node.  Right click to rename, but can't type anything in.
+- Fix: When choosing a type for a property, the search box loses focus very easily.
+- Fix: Naming nodes inside of Event Handlers doesn't work
+- Fix: When saving & compiling a graph, the properties on a component appear to be sorted randomly.
+- Feature: Automatic input conversion
+- Feature: HideInInspector option on properties
+- Feature: Request: move properties in components up and down
+- Feature: Add Prop -> Type Select -> Rename
+- Feature: Request: Request: Comments.
+- Feature: Notes
+
 ## 1.0 Beta 6
 - Feature: Navigation System, back, and forward.
 - Feature: Request: Output hinting.
