@@ -12,7 +12,7 @@ Welcome to the uFrame Entity Component Documentation!
 - [Get More Actions](ThirdPartyActions.md)
 
 ## Developer API
-The Developet API documentation is located [here](CodeApi/Overview.md)
+The Developer API documentation is located [here](CodeApi/Overview.md)
 
 ## Tutorials
 - [Getting Started - Project Setup](https://youtu.be/uxivyGL5StA)
