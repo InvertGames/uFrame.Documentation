@@ -28,3 +28,17 @@ Other application of _Type References_ is to use them as handlers in services.
 [picture of a service node with a handler and a Type Reference node]
 
 [description of the picture above]
+
+## External Assembly References
+
+In some instances where your types come from an external assembly you would need to tell the generator how to access the type.
+
+To do this you need to:
+
+1) Create an editor folder in your uframe project
+2) Create a new plugin file, i.e. MyProjectPlugin.cs
+3) Make the plugin extend from `DiagramPlugin`
+4) Override the `Initialize` method
+5) Add the line ` InvertApplication.CachedAssemblies.Add(typeof (MyType).Assembly);`
+
+This will tell the code gen where to find your types when using external assemblies.
