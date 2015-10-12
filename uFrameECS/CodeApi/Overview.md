@@ -7,15 +7,17 @@
 |[EcsComponentService](EcsComponentService.md)|The main component service used to register and manage all components and groups.|
 |[EcsDispatcher](EcsDispatcher.md)|Used for dispatching entity events that come from standard unity messages/events.|
 |[EcsSystem](EcsSystem.md)|This is the base class for all systems.  It derives from SystemServiceMonoBehaviour which is part of the uFrame Kernel|
+|[EcsSystemExtensions](EcsSystemExtensions.md)|These extensions are for facilitating the construction of systems. Component Created/Destroyed, Property Changes, Collection Modifications..etc|
+|[GroupItem](GroupItem.md)|The base class for all group items, for example ReactiveGroup`TGroupItem`|
+|[IEcsComponentManager](IEcsComponentManager.md)|Manages components of a specific type|
 |[ISystemFixedUpdate](ISystemFixedUpdate.md)|This interface, when added to a system class, will be invoked every fixed update frame.|
 |[ISystemUpdate](ISystemUpdate.md)|This interface, when added to a system class, will be invoked every fixed update frame.|
+|[ReactiveGroup`1](ReactiveGroup`1.md)|Reactive Group is the base class of all group type components in ECS.|
 # uFrame.Kernel
 |Name |Description|
 |-----|------------|
-|[DefaultSceneLoader](DefaultSceneLoader.md)||
-|[GameReadyEvent](GameReadyEvent.md)||
-|[KernelLoadedEvent](KernelLoadedEvent.md)||
-|[LoadSceneCommand](LoadSceneCommand.md)||
+|[GameReadyEvent](GameReadyEvent.md)|The game ready event is invoked after the kernel has loaded and two addditional frames have occured.|
+|[KernelLoadedEvent](KernelLoadedEvent.md)|This is invoked directly after all scenes of |
 |[Scene](Scene.md)|The scene class is used to define a scene as a class,  this MonoBehaviour should live on a gameobject that is at the root level of the scene it is defining. When this type is loaded by unity, it will publish the SceneAwakeEvent.  The SceneManagementService (part of the kernel) will then find the scene loader associated with this scene and invoke its Load Co-Routine method.|
 |[SceneAwakeEvent](SceneAwakeEvent.md)|This class is used internally by the Scene class and the kernel to trigger scene loaders load method.|
 |[SystemService](SystemService.md)|This class is a generic base class for a systemservice, your probably looking for SystemServiceMonoBehaviour.|

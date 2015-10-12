@@ -7,15 +7,17 @@
 |[EcsComponentService](EcsComponentService.md)|The main component service used to register and manage all components and groups.|
 |[EcsDispatcher](EcsDispatcher.md)|Used for dispatching entity events that come from standard unity messages/events.|
 |[EcsSystem](EcsSystem.md)|This is the base class for all systems.  It derives from SystemServiceMonoBehaviour which is part of the uFrame Kernel|
+|[EcsSystemExtensions](EcsSystemExtensions.md)|These extensions are for facilitating the construction of systems. Component Created/Destroyed, Property Changes, Collection Modifications..etc|
+|[GroupItem](GroupItem.md)|The base class for all group items, for example ReactiveGroup`TGroupItem`|
+|[IEcsComponentManager](IEcsComponentManager.md)|Manages components of a specific type|
 |[ISystemFixedUpdate](ISystemFixedUpdate.md)|This interface, when added to a system class, will be invoked every fixed update frame.|
 |[ISystemUpdate](ISystemUpdate.md)|This interface, when added to a system class, will be invoked every fixed update frame.|
+|[ReactiveGroup`1](ReactiveGroup`1.md)|Reactive Group is the base class of all group type components in ECS.|
 # uFrame.Kernel
 |Name |Description|
 |-----|------------|
-|[DefaultSceneLoader](DefaultSceneLoader.md)||
-|[GameReadyEvent](GameReadyEvent.md)||
-|[KernelLoadedEvent](KernelLoadedEvent.md)||
-|[LoadSceneCommand](LoadSceneCommand.md)||
+|[GameReadyEvent](GameReadyEvent.md)|The game ready event is invoked after the kernel has loaded and two addditional frames have occured.|
+|[KernelLoadedEvent](KernelLoadedEvent.md)|This is invoked directly after all scenes of |
 |[Scene](Scene.md)|The scene class is used to define a scene as a class,  this MonoBehaviour should live on a gameobject that is at the root level of the scene it is defining. When this type is loaded by unity, it will publish the SceneAwakeEvent.  The SceneManagementService (part of the kernel) will then find the scene loader associated with this scene and invoke its Load Co-Routine method.|
 |[SceneAwakeEvent](SceneAwakeEvent.md)|This class is used internally by the Scene class and the kernel to trigger scene loaders load method.|
 |[SystemService](SystemService.md)|This class is a generic base class for a systemservice, your probably looking for SystemServiceMonoBehaviour.|
@@ -124,6 +126,64 @@ public override void Setup() {
 ```
 ## Loaded Method
 Invoked when all EcsSystem setup methods have been invoked
+# EcsSystemExtensions
+These extensions are for facilitating the construction of systems. Component Created/Destroyed, Property Changes, Collection Modifications..etc
+
+
+## OnComponentCreated Method
+Listens for when a component is created, this also works for groups sinces components and group items both derive from IEcsComponent
+## Parameters
+|Name | Description|
+|-----|------------|
+|system||
+## OnComponentDestroyed Method
+Listens for when a component is destroyed, this also works for groups sinces components and group items both derive from IEcsComponent
+## Parameters
+|Name | Description|
+|-----|------------|
+|system||
+## PropertyChanged Method
+Listens for when a property is changed and ensures that the subscription is properly disposed when the system disposes or when the component disposes.
+## Parameters
+|Name | Description|
+|-----|------------|
+|system|This system to install this listner on, it will get disposed with this one.|
+|select|A selector for the property observable on TComponentType that you wish to listen for.|
+|handler|The method that is invoked when the property changes.|
+|getImmediateValue|The lambda method for retreiving the primtive value, if this is not null, it will immedietly invoke the handler with this value.|
+|onlyWhenChanged|Only invoke the method when the value actually changes rather than when it is set.|
+## CollectionItemAdded Method
+Listens for when a Reactive Collection's item has been added, and ensures that the subscription properly disposed when the system disposes or when the component disposes.
+## Parameters
+|Name | Description|
+|-----|------------|
+|system|This system to install this listner on, it will get disposed with this one.|
+|select|The ReactiveCollection selector.|
+|handler|The method that is invoked when an item is added to the collection|
+|immediate|Should the handler be invoked for every item that is currently in the list?|
+## CollectionItemRemoved Method
+Listens for when a Reactive Collection's item has been removed, and ensures that the subscription properly disposed when the system disposes or when the component disposes.
+## Parameters
+|Name | Description|
+|-----|------------|
+|system|This system to install this listner on, it will get disposed with this one.|
+|select|The ReactiveCollection selector.|
+|handler|The method that is invoked when an item is added to the collection|
+# GroupItem
+The base class for all group items, for example ReactiveGroup`TGroupItem`
+
+## Properties
+|Name | Type | Description|
+|-----|------|------------|
+|EntityId|Int32|The entity id for the entity this group item belongs to|
+|Entity|Entity|The entity object that this groupitem belongs to|
+
+
+
+# IEcsComponentManager
+Manages components of a specific type
+
+
 # ISystemFixedUpdate
 This interface, when added to a system class, will be invoked every fixed update frame.
 
@@ -152,20 +212,36 @@ public class MySystem : EcsSystem, ISystemUpdate {
 
 ## SystemUpdate Method
 Called every frame
-# DefaultSceneLoader
+# ReactiveGroup`1
+Reactive Group is the base class of all group type components in ECS.
 
 
-
+## MatchAndSelect Method
+Does the given entity match this group filter, if so it will return the group item, otherwise, it will return null.
+## Parameters
+|Name | Description|
+|-----|------------|
+|entityId||
+## Install Method
+This method is used to determine **when** to check that a entity still belongs to this group. It should also initially store any component managers needed for matching. Ex. If a HealthComponent belongs to a PlayerGroup then it should return ComponentSystem.RegisterComponent'HealthComponent'.CreatedObservable.Select(p=>p.EntityId)  This method is invoked from the EcsComponentService after all groups have been registered.
+## Parameters
+|Name | Description|
+|-----|------------|
+|ecsComponentService|The component system that is intalling this reactive-group.|
+## UpdateItem Method
+Determine's wether or not an entity still belongs to this component or not and adjusts the list accordingly.
+## Parameters
+|Name | Description|
+|-----|------------|
+|entityId||
+## Select Method
+Selects the last successfully matched item.
 # GameReadyEvent
-
+The game ready event is invoked after the kernel has loaded and two addditional frames have occured.
 
 
 # KernelLoadedEvent
-
-
-
-# LoadSceneCommand
-
+This is invoked directly after all scenes of 
 
 
 # Scene
