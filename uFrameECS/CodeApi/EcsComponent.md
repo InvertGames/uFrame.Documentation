@@ -10,3 +10,4 @@ CachedTransform|Property|A lazy loaded cached reference to the transform
 Entity|Property|The actual entity component that this component belongs to.
 
 
+##### NOTE: This documentation has been generated, any edits will likely be overriden, to modify this, modify the doc comments in the source code.
