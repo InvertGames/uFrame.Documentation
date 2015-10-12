@@ -11,17 +11,17 @@ System.ComponentSystem
 EcsComponentService.Instance
 ```
 ## Properties
-Name | Type | Description
------|------|------------
-Instance|Property|The singleton instance property, this can be accessed from anywhere.
+|Name | Type | Description|
+|-----|------|------------|
+|Instance|Property|The singleton instance property, this can be accessed from anywhere.|
 
 
 ## RegisterComponent Method
 Registers a component type with the component system.
 ## Parameters
-Name | Description
------|------------
-componentType|The type of component to register
+|Name | Description|
+|-----|------------|
+|componentType|The type of component to register|
 ### Example
 ```cs
 var componentManager = System.ComponentSystem.RegisterComponent(typeof(PlayerComponent));
@@ -32,10 +32,10 @@ foreach (var item in componentManager) {
 ## RegisterComponentInstance Method
 This method should be used to add any entity to the ecs component system  > You can use this if you want to register components that aren't derived from EcsComponent which requires MonoBehaviour, but you won't be able to see it in the unity inspector.
 ## Parameters
-Name | Description
------|------------
-componentType|The type of component to register.
-instance|The actual instance that is being registered
+|Name | Description|
+|-----|------------|
+|componentType|The type of component to register.|
+|instance|The actual instance that is being registered|
 ### Example
 ```cs
 System.ComponentSystem.RegisterComponent(typeof(CustomComponent), new CustomComponent());
