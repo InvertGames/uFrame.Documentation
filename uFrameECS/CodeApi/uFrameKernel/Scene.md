@@ -4,10 +4,10 @@ The scene class is used to define a scene as a class,  this MonoBehaviour should
 ## Properties
 |Name | Type | Description|
 |-----|------|------------|
-|KernelScene|Property|The kernel scene property is so that this scene can load the correct kernel if it hasn't been loaded yet.|
-|DefaultKernelScene|Property|The default kernel scene is what is used if the "KernelScene" property is not set.  This is really used by the uFrame designer to remove the extra step of specifying the kernel scene each time a scene is created.|
-|Name|Property|The Name of this scene, this is set by the kernel so that it can reference back to it and destroy it when the Unload Scene Command is fired.|
-|_SettingsObject|Property|If this scene was loaded via a |
+|KernelScene|String|The kernel scene property is so that this scene can load the correct kernel if it hasn't been loaded yet.|
+|DefaultKernelScene|String|The default kernel scene is what is used if the "KernelScene" property is not set.  This is really used by the uFrame designer to remove the extra step of specifying the kernel scene each time a scene is created.|
+|Name|String|The Name of this scene, this is set by the kernel so that it can reference back to it and destroy it when the Unload Scene Command is fired.|
+|_SettingsObject|ISceneSettings|If this scene was loaded via a |
 
 
 ## Start Method

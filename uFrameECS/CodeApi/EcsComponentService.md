@@ -13,7 +13,7 @@ EcsComponentService.Instance
 ## Properties
 |Name | Type | Description|
 |-----|------|------------|
-|Instance|Property|The singleton instance property, this can be accessed from anywhere.|
+|Instance|EcsComponentService|The singleton instance property, this can be accessed from anywhere.|
 
 
 ## RegisterComponent Method

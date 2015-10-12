@@ -4,7 +4,7 @@ This is the base class for all systems.  It derives from SystemServiceMonoBehavi
 ## Properties
 |Name | Type | Description|
 |-----|------|------------|
-|ComponentSystem|Property|Access to the component system.  Use this to get/register components or groups.|
+|ComponentSystem|IComponentSystem|Access to the component system.  Use this to get/register components or groups.|
 
 
 ## Setup Method
