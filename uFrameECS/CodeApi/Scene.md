@@ -10,6 +10,7 @@ The scene class is used to define a scene as a class,  this MonoBehaviour should
 |_SettingsObject|ISceneSettings|If this scene was loaded via a |
 
 
+
 ## Start Method
 In this class we override the start method so that we can trigger the kernel to load if its not already.
 ##### NOTE: This documentation has been generated, any edits will likely be overriden, to modify this, modify the doc comments in the source code.

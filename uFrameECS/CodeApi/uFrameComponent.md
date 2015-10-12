@@ -1,6 +1,7 @@
 # uFrameComponent
 The uFrameComponent is a simple class that extends from MonoBehaviour, and is directly plugged into the kernel. Use this component when creating any components manually or if you need to plug existing libraries into the uFrame system.public class MyComponent : uFrameComponent { }
 
+
 ## OnEvent Method
 Wait for an Event to occur on the global event aggregator.
 ## Publish Method

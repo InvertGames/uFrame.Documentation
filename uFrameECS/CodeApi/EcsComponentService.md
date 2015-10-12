@@ -16,6 +16,7 @@ EcsComponentService.Instance
 |Instance|EcsComponentService|The singleton instance property, this can be accessed from anywhere.|
 
 
+
 ## RegisterComponent Method
 Registers a component type with the component system.
 ## Parameters

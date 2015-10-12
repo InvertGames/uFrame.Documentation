@@ -10,4 +10,5 @@ The base class for all ECS components, these components are nothing more than ju
 |Entity|Entity|The actual entity component that this component belongs to.|
 
 
+
 ##### NOTE: This documentation has been generated, any edits will likely be overriden, to modify this, modify the doc comments in the source code.
