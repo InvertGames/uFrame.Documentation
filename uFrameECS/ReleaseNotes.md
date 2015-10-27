@@ -1,4 +1,24 @@
 # Release Notes
+## 1.0 Beta 8
+- Feature: Custom Actions can be visualy scripted now.
+- Feature: Property changed events now have previous value.
+- Performance Enhancement: A new event aggregator has been implemented for drastic performance increases.
+- Fix: The event dispatcher UI is confusing
+- Fix: Breakpoints remain when set nodes are deleted.
+- Feature: Add new component to GO that doesn't have an entity. NRE results - no Entity component is automatically added like in editor.
+- Validation for empty groups + Issue types (Warning, Severe)
+- Fix: Connectors sometimes behaving oddly
+- Fix: The Library Search window's search field is cropped when the uFrame diagram window is small.
+- Fix: PropretyChanged Handler - property changed list shows duplicates of properties
+- Fix: Pickup and Copy seem to do the same thing, so one of them is redundant.
+- Fix: Deleting a string node (without disconnecting it from its input first) doesn't cause the underlying variable reference in the code to go away. (resulting in a compilation error - variable isn't declared anymore)
+- Fix: Nodes with dynamic branches that change with the input (such as enum switch) don't refresh unless you collapse and re-expand the node.
+- Fix: Component properties exposed in handler nodes behave strangely
+- Fix: PropertyChanged Handler - 'OnlyWhenChanged' flag doesn't seem to work with transforms.
+- Feature: Request: Allow for a way to use custom/external types as properties of components.
+- Fix: OSX Double click issue.
+- Fix: When searching the first item should be automatically selected
+
 ## 1.0 Beta 7
 - Fix: Crash on TreeViewModel.cs:48 - InvalidOperationException due to invoking First() on an empty list
 - Fix: Graph Explorer does not refresh when the nodes in a graph change.
