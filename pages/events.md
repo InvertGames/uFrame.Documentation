@@ -8,7 +8,7 @@ Example event used to pass a reference of a newly created enemy to a subscriber 
 public class EnemyCreatedEvent {
 
     // Reference to a single Enemy instance.
-    public Enemy;
+    public Enemy Enemy;
 }
 ```
 
