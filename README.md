@@ -1,8 +1,8 @@
-# Invert Game Studios Wiki
+# Invert Games Wiki
 
 Here you can find docs for all Invert products.
 
-## Products 
+## Products
 
 * [uFrame MVVM]()
 * [uFrame ECS]()
