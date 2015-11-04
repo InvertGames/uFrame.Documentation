@@ -4,6 +4,8 @@ Welcome to the uFrame MVVM Wiki. You'll find here detailed informations on every
 
 NOTE: It's still work in progress. Contributions are highly appreciated.
 
+Github offers an [issue system](https://github.com/InvertGames/uFrame.Documentation/issues). Use it to ask questions, discuss proposals and solve framework related problems. If there're any rules about how to use it properly, you'll find them [here](issues-rules.md).
+
 # Download and Installation
 
 You can download uFrame from the [Asset Store](https://www.assetstore.unity3d.com/en/#!/content/14381). For installation instructions see the [Getting Started Tutorial](../tutorials/getting-started-for-uframe-mvvm-16/tutorial-1.md).
