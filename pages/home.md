@@ -1,6 +1,6 @@
 # uFrame MVVM Wiki
 
-Welcome to the uFrame MVVM Wiki. You'll find here detailed info on every aspect of the framework. Feel free to [contribute](contribute.md).
+Welcome to the uFrame MVVM Wiki. You'll find here detailed informations on every aspect of the framework. Feel free to [contribute](contribute.md).
 
 NOTE: It's still work in progress. Contributions are highly appreciated.
 
