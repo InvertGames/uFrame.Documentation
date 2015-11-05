@@ -4,7 +4,7 @@
 
 Open page that you want to edit, press the edit button.
 
-![](images/Screenshot_124.png)
+![](../images/Screenshot_124.png)
 
 Add edits to the page. You'll also see this info box:
 
