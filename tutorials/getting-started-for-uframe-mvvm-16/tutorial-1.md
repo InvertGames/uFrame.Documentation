@@ -78,7 +78,7 @@ Just like with any other graph, MainMenuSystem graph contains nodes. Nodes can r
 
 Element node defines entities of your games in terms of data they hold. For example LoginScreen contains information about Username and Password, which user enters to login into the system. Such data is revealed when you expand the node. You can expand or collapse a node by clicking arrow control in the bottom of the node (1):
 
-![Expand/Collapse control shown](../../images\img_tut1_0000.png)
+![Expand/Collapse control shown](../../images/img_tut1_0000.png)
 
 Expand LoginScreen. Let us add new property. For this we need to click + button near the Properties section (1):
 
