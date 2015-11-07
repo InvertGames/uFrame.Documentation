@@ -41,6 +41,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
 * [Code Generation Templates](code-generation-templates.md)
 * [Quick Rundown on Lambdas](quick-rundown-on-lambdas.md)
+* [Integrations](integrations.md)
 
 # Reactive Programming
 
