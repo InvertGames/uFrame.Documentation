@@ -8,7 +8,7 @@ NOTE: The wiki is still considered to be a work in progress.
 
 ## Products
 
-* [uFrame MVVM](pages/home.md)
+* [uFrame MVVM](uFmameMVVM/pages/home.md)
 * [uFrame ECS](uFrameECS/Overview.md)
 
 ## Your input is invaluable!
