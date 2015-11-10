@@ -1,5 +1,5 @@
-![](images/callout_codeheavy.png)
-![](images/callout_inprogress.png)
+![](../../images/callout_codeheavy.png)
+![](../../images/callout_inprogress.png)
 
 
 # uFrame MVVM 1.6 Getting Started VII
@@ -30,23 +30,23 @@ Locate and open `MainDiagram` graph.
 Right-click somewhere on empty space and select `Add Service`
 New service node will appear. Rename to NotificationService.
 
-![](images/img_tut7_00000.png)
+![](../../images/img_tut7_00000.png)
 
 Right-click somewhere on empty space and select `Add Scene Type`
 New SceneType node will appear. Rename to NotificationUIScene.
 
-![](images/img_tut7_0000.png)
+![](../../images/img_tut7_0000.png)
 
 Move inside of NotificationService node by double-clicking the header of this node.
 Right-click somewhere on empty space and select `Add SimpleClass`
 New SimpleClass node will appear. Rename to NotifyCommand.
 Finally add a property to NotifyCommand node. Let it be `Message` of type `string`
 
-![](images/img_tut7_0004.png)
+![](../../images/img_tut7_0004.png)
 
 Locate NotificationService node. Add new item in the `Handlers` section. Selection list will appear. Find `MainDiagram : NotifyCommand` and click it
 
-![](images/img_tut7_0005.png)
+![](../../images/img_tut7_0005.png)
 
 Now you have to Save and Compile. This will generate all the new classes. After that, you need to update the kernel using corresponding button.
 
@@ -54,11 +54,11 @@ Now you have to Save and Compile. This will generate all the new classes. After 
 > **InvalidOperationException: Operation is not valid due to the current state of the object**  
 > This error is harmless and will be fixed in one of upcoming updates
 
-![](images/img_tut7_0006.png)
+![](../../images/img_tut7_0006.png)
 
 Finally let's create a scene from NotificationUIScene node. `Assets/Example Project/Scenes/NotificationUIScene.unity` will be generate. We will set this scene up later.
 
-![](images/img_tut7_0007.png)
+![](../../images/img_tut7_0007.png)
 
 ###### Learn how to load scene when game is ready
 
@@ -427,58 +427,58 @@ public class NotificationService : NotificationServiceBase {
 This section describe (mostly) uFrame-unrelated things, like setting up the UI for notifications.
 First of all locate and open `Assets/Example Project/Scenes/NotificationUIScene.unity`
 By default the scene will look like this:
-![](images/img_tut7_0008.png)
+![](../../images/img_tut7_0008.png)
 
 Remove all the objects except `_NotificationUISceneRoot`
-![](images/img_tut7_0009.png)
+![](../../images/img_tut7_0009.png)
 
 Create the following structure of objects.
 > Please, remove EventSystem, if Unity generates one. EventSystem will be loaded along with the kernel.
 
-![](images/img_tut7_0010.png)
+![](../../images/img_tut7_0010.png)
 
 The next images show object-by-object setup
 While setting up `_NotificationUISceneRoot`, do not forget to assign UIContainer object.
-![](images/img_tut7_0011.png)
+![](../../images/img_tut7_0011.png)
 
 For the Canvas, do not forget to select `Screen Space - Overlay` render mode.
 This will make all the notifications to appear on top of any other UI objects.
 
-![](images/img_tut7_0012.png)
+![](../../images/img_tut7_0012.png)
 
 While setting up UIContainer, pay attention to the anchors. Do not forget to add Vertical Layout Group component and set it up as shown on the image.
 
-![](images/img_tut7_0013.png)
+![](../../images/img_tut7_0013.png)
 
 NotificationItemPrefab requires LayoutElement component and CanvasGroup component. LayoutElement will let us tweak layout settings, while CanvasGroup will allow us to modify transparency.
 
-![](images/img_tut7_0022.png)
+![](../../images/img_tut7_0022.png)
 
 Finally setup some text. Pay attention to the anchors.
 
-![](images/img_tut7_0015.png)
+![](../../images/img_tut7_0015.png)
 
 As a little test, duplicate your NotificationItemPrefab. All the items should stack on top of each other.
 
-![](images/img_tut7_0016.png)
+![](../../images/img_tut7_0016.png)
 
 Create a prefab out of NotificationItemPrefab.
 
-![](images/img_tut7_0017.png)
+![](../../images/img_tut7_0017.png)
 
 And clear your scene from any items.
 > **Do not forget to save the scene!**
 
-![](images/img_tut7_0018.png)
+![](../../images/img_tut7_0018.png)
 
 Now we need to setup NotificationService to use our prefab.
 Locate and open `Assets/Example Project/Scenes/ExampleProjectKernelScene`
 
-![](images/img_tut7_0019.png)
+![](../../images/img_tut7_0019.png)
 
 Locate Services object and find NotificationService component. Use `Notification Item Prefab` setting to setup item prefab.
 
-![](images/img_tut7_0020.png)
+![](../../images/img_tut7_0020.png)
 
 ###### Perform final test
 
@@ -542,4 +542,4 @@ public override void SelectLevel(LevelSelectScreenViewModel viewModel, LevelDesc
 Start your game from MainMenuScene and select any level.
 You should see a notification pop up in the bottom-right part of the screen.
 
-![](images/img_tut7_0023.png)
+![](../../images/img_tut7_0023.png)

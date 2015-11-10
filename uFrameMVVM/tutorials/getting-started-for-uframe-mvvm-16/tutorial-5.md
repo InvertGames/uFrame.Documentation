@@ -26,7 +26,7 @@ This tutorial attempts to explain registered instances. It explains the purpose 
 From the graph perspective, a subsystem node serves mainly to incorporate elements which are semantically related to each other.
 Suppose the user may create a CarSystem which holds elements to describe the car itself and all the related parts, like wheels, engines and others.
 
-![](images/img_tut5_0001.png)
+![](../../images/img_tut5_0001.png)
 
 From the code perspective a SubSystem is represented by a SystemLoader. The purpose of a SystemLoader is to load different parts of your architecture which are not Monobehaviors. Unity makes it extremely easy to setup classes which are MonoBehaviors: you just drag and drop them into your scene. But sometimes MonoBehavior is not desired and you need to setup class instances which have nothing to do with Unity in general. For example, Controllers and ViewModels are not MonoBehaviors. To effectively load them into your environment, uFrame generates SystemLoaders.
 
@@ -83,7 +83,7 @@ access to it by means of dependency injection.
 
 Locate and open the UserManagementSystem graph. Locate the UserManagementSystem graph node and expand it.
 
-![](images/img_tut5_0000.png)
+![](../../images/img_tut5_0000.png)
 
 Locate the `Instances` section. This section containes one item called `LocalUser` of type UserViewModel. You can use the plus button to add more items to this section. Remember: there should be no items with both the same name and same type. If you want to introduce another registered instance of type `User`, you have to use a unique name, for example, `RemoteUser`.
 
@@ -139,11 +139,11 @@ After you inject the instance you can do whatever you want with it. For example,
 
 Open the UserManagementSystem graph and locate the User element node. Expand it.
 
-![](images/img_tut5_0002.png)
+![](../../images/img_tut5_0002.png)
 
 Add a new property to the User element node. Name it `Username` and make sure the type is string.
 
-![](images/img_tut5_0003.png)
+![](../../images/img_tut5_0003.png)
 
 Save and compile.  
 Locate and open `Assets/ExampleProject/UserManagementSystem/Services/UserManagementService.cs`
@@ -193,30 +193,30 @@ But on the other hand, we want to define a View for the UserViewModel which is s
 Naviage to `MainMenuSystem`, right-click on the empty space on the graph and select
 `Show Item` -> `UserManagementSystem` -> `User`.
 
-![](images/img_tut5_0004.png)
+![](../../images/img_tut5_0004.png)
 
 A User element node will appear. However, it will have a different look and feel because it comes from the other graph.
 
-![](images/img_tut5_0005.png)
+![](../../images/img_tut5_0005.png)
 
 In such a state, you are not able to modify the User element node. However, you can still go inside of it by double-clicking its header. Despite being inside of User element node, we are still working within the MainMenuSystem graph. This means that we cannot accidentally break the UserManagementSystem or User element by any means.
 
 Right-click on empty space and select `Add View`
 
 
-![](images/img_tut5_0006.png)
+![](../../images/img_tut5_0006.png)
 
 
 Rename the View node to MainMenuUserView.
 Now we need to plug the output connector of the User element node into the input connector of the MainMenuUserView node called `Element`
 
-![](images/img_tut5_0007.png)
+![](../../images/img_tut5_0007.png)
 
 We have succesfully created a new view for the User element ouside of UserManagementService.
 
 Now we need to add a binding to MainMenuUserView called `Username To Text`.
 
-![](images/img_tut5_0008.png)
+![](../../images/img_tut5_0008.png)
 
 It is time for us to save and compile.
 
@@ -225,26 +225,26 @@ It is time for us to save and compile.
 Open MainMenuScene. Locate the `_MainMenuSceneRoot` GameObject and add an empty child.
 Call the newly created GameObject `_MainMenuUserView`. Add a script to this GameObject called MainMenuUserView.
 
-![](images/img_tut5_0009.png)
+![](../../images/img_tut5_0009.png)
 
 Select `_MainMenuUserView` object and, in the Unity inspector window, locate the editor for the MainMenuUserView component. Locate the Bindings section. Locate the Username binding and the `Input` property for a Text object to bind to.
 
-![](images/img_tut5_0010.png)
+![](../../images/img_tut5_0010.png)
 
 At this point you should design how your visual representation will look like.
 When you are done, link the Username binding property with the text object.
 
-![](images/img_tut5_0011.png)
+![](../../images/img_tut5_0011.png)
 
 ###### Learn how to bind a View to a registered ViewModel instance
 
 Select the `_MainMenuUserView` GameObject and in the Unity inspector window, locate the editor for the MainMenuUserView component. Find the property called `ViewModel Identifier`.
 
-![](images/img_tut5_0012.png)
+![](../../images/img_tut5_0012.png)
 
 You can either press the button on top of the field called "Use Registered 'LocalUser' Instance" or you can manually type in `LocalUser` into the field  
 
-![](images/img_tut5_0013.png)
+![](../../images/img_tut5_0013.png)
 
 Now this view will bind to the registered ViewModel and display its information. This is the same instance we use inside of UserManagementService to store authorization information.
 
@@ -252,7 +252,7 @@ Now this view will bind to the registered ViewModel and display its information.
 
 Start the game from MainMenuScene and type in the correct credentials (uframe/uframe). Click `Sign In`. Your text object should show the correct username.
 
-![](images/img_tut5_0014.png)
+![](../../images/img_tut5_0014.png)
 
 If you have TextMeshPro then this is how to amend uFrame to enable bindings for it such that they can be used in this tutorial.
 
