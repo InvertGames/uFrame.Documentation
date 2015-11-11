@@ -1,6 +1,8 @@
-# uFrame Guide
+# uFrame MVVM Wiki
 
-Welcome to the uFrame Guide.
+Welcome to the uFrame MVVM Wiki. You'll find here detailed informations on every aspect of the framework. Feel free to [contribute](../support/how-to-contribute.md).
+
+
 
 # Download and Installation
 
@@ -39,6 +41,7 @@ The following pages should help you get familiar with the core concepts of uFram
 * [Instantiation Scenarios and Methods](instantiation-scenarios-and-methods.md)
 * [Code Generation Templates](code-generation-templates.md)
 * [Quick Rundown on Lambdas](quick-rundown-on-lambdas.md)
+* [Integrations](integrations.md)
 
 # Reactive Programming
 

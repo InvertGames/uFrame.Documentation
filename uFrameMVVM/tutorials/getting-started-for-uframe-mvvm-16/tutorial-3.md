@@ -82,7 +82,7 @@ Now you should know how to subscribe to events.
 
 Open MainDiagram graph and locate SettingsService node:
 
-![](images/img_tut3_0000.png)
+![](../../images/img_tut3_0000.png)
 
 From graph perspective, Service node describes a piece of functionality, which is not bound to any specific ViewModel. SettingsService exposes functions and properties to setup game settings, like sound volume and resolution.
 
@@ -96,7 +96,7 @@ The second way involves direct reference and direct API calls.
 
 Right-click on the header of SettingsService node and select `Open` -> `MainDiagram/Services/SettingsService.cs`:
 
-![](images/img_tut3_0001.png)
+![](../../images/img_tut3_0001.png)
 
 Alternatively you can ctrl+click on the SettingsService node. This should open your IDE with SettingsService class. Our goal is to introduce properties with default values for Resolution and Volume.  
 
@@ -184,11 +184,11 @@ namespace uFrame.ExampleProject
 
 Open MainMenuSystem graph and locate SettingsScreen element node:
 
-![](images/img_tut3_0002.png)
+![](../../images/img_tut3_0002.png)
 
 Right-click on the header of SettingsScreen node and select Open -> MainMenuSystem/Controllers/SettingsScreenController.cs
 
-![](images/img_tut3_0003.png)
+![](../../images/img_tut3_0003.png)
 
 Alternatively, you can ctrl+click on the header of SettingsScreen node.
 This should open your IDE with SettingsScreenController class.
