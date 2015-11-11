@@ -87,4 +87,5 @@ In uFrame ECS notifications of when an entity newly matches within a group or no
 Imagine we have a health component that has a single numeric value, and we have a group called
 
 
-## Chapter 4 - Handlers - The Behavior for the context
+## Chapter 4 - Handlers - The Behavior For The Context
+Handlers are the when and what of creating something in uFrame.  They allow you to select the context to work within, in a more literal sense its a group of zero or more components.

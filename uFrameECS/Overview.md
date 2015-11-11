@@ -7,6 +7,7 @@ Welcome to the uFrame Entity Component Documentation!
 - [Systems](API/Systems.md)
 - [Handlers](API/Handlers.md)
 - [Events](API/Events.md)
+- [Descriptors](API/Descriptors.md)
 - [The Entity Component](API/EntityComponent.md)
 - [Create Custom Actions](API/CreateCustomActions.md)
 - [Get More Actions](ThirdPartyActions.md)
@@ -19,3 +20,10 @@ Welcome to the uFrame Entity Component Documentation!
 - [Creating And Using Custom Events](https://youtu.be/h_s-l30rNe0)
 - [Creating Custom Actions](https://youtu.be/AuockvC5Cys)
 - [Creating Code Handlers](https://www.youtube.com/watch?v=tloQJ2viEmI)
+
+## API
+Classes  | Description
+------------- | -------------
+EcsSystem  | Used for listening to events, and invoking handlers.
+EcsComponent | The base class for all components, it is an extended version of MonoBehaviour.
+Code Handlers  | Used to actually execute an action or sequence of actions invoked by a system.
