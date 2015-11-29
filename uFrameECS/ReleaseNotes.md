@@ -1,4 +1,14 @@
 # Release Notes
+## 1.0 Beta 9.2
+- Fixed deletion issues.
+- Fixed custom actions not generating a partial file.
+- Other small fixes and enhancements.
+
+## 1.0 Beta 9
+- Tons of bug fixes and small feature enhancements.
+- Important Change: Code Handlers are now obsolete.  Copy code from your handlers to your systems by overriding the {HandlerName}Handler method.
+- Change: Now systems always generate an editable file.
+
 ## 1.0 Beta 8
 - Feature: Custom Actions can be visualy scripted now.
 - Feature: Property changed events now have previous value.
