@@ -24,6 +24,16 @@ Listens for when a property is changed and ensures that the subscription is prop
 |handler|The method that is invoked when the property changes.|
 |getImmediateValue|The lambda method for retreiving the primtive value, if this is not null, it will immedietly invoke the handler with this value.|
 |onlyWhenChanged|Only invoke the method when the value actually changes rather than when it is set.|
+## PropertyChangedEvent Method
+Listens for when a property is changed and ensures that the subscription is properly disposed when the system disposes or when the component disposes.
+## Parameters
+|Name | Description|
+|-----|------------|
+|system|This system to install this listner on, it will get disposed with this one.|
+|select|A selector for the property observable on TComponentType that you wish to listen for.|
+|handler|The method that is invoked when the property changes.|
+|getImmediateValue|The lambda method for retreiving the primtive value, if this is not null, it will immedietly invoke the handler with this value.|
+|onlyWhenChanged|Only invoke the method when the value actually changes rather than when it is set.|
 ## CollectionItemAdded Method
 Listens for when a Reactive Collection's item has been added, and ensures that the subscription properly disposed when the system disposes or when the component disposes.
 ## Parameters

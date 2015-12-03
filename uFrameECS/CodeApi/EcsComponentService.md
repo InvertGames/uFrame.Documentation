@@ -43,4 +43,8 @@ System.ComponentSystem.RegisterComponent(typeof(CustomComponent), new CustomComp
 ```
 ## RegisterGroup Method
 Registers a a reactive group with the list of managers.  If the group already exists it will return it, if not it will create a new one and return that.
+## Parameters
+|Name | Description|
+|-----|------------|
+|componentId||
 ##### NOTE: This documentation has been generated, any edits will likely be overriden, to modify this, modify the doc comments in the source code.

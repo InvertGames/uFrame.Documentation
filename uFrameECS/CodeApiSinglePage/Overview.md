@@ -3,6 +3,8 @@
 # uFrame.ECS
 |Name |Description|
 |-----|------------|
+|[AttributeGroup`1](AttributeGroup`1.md)|A Type group reactively keeps up with all components that have a specific attribute defined on the component decleration.|
+|[DescriptorGroup`1](DescriptorGroup`1.md)|A Type group reactively keeps up with all components that have a specific base class, or interface implementation. This can be useful for queries such as. GetAllINetworkable, GetAllSerializable|
 |[EcsComponent](EcsComponent.md)|The base class for all ECS components, these components are nothing more than just data.   For the sake of Unity Compatability, it listens for a few Unity messages to make sure the ecs component system is always updated.|
 |[EcsComponentService](EcsComponentService.md)|The main component service used to register and manage all components and groups.|
 |[EcsDispatcher](EcsDispatcher.md)|Used for dispatching entity events that come from standard unity messages/events.|
@@ -23,6 +25,14 @@
 |[SystemService](SystemService.md)|This class is a generic base class for a systemservice, your probably looking for SystemServiceMonoBehaviour.|
 |[SystemServiceMonoBehavior](SystemServiceMonoBehavior.md)|The base class for all services on the kernel.  Services provide an easy communication layer with the use of the EventAggregator.  You can use this.Publish(new AnyType()).  Or you can use this.OnEvent<AnyType>().Subscribe(anyTypeInstance=>{ }); In services you can also inject any instances that are setup in any of the SystemLoaders.|
 |[uFrameComponent](uFrameComponent.md)|The uFrameComponent is a simple class that extends from MonoBehaviour, and is directly plugged into the kernel. Use this component when creating any components manually or if you need to plug existing libraries into the uFrame system.public class MyComponent : uFrameComponent { }|
+# AttributeGroup`1
+A Type group reactively keeps up with all components that have a specific attribute defined on the component decleration.
+
+
+# DescriptorGroup`1
+A Type group reactively keeps up with all components that have a specific base class, or interface implementation. This can be useful for queries such as. GetAllINetworkable, GetAllSerializable
+
+
 # EcsComponent
 The base class for all ECS components, these components are nothing more than just data.   For the sake of Unity Compatability, it listens for a few Unity messages to make sure the ecs component system is always updated.
 
@@ -30,12 +40,21 @@ The base class for all ECS components, these components are nothing more than ju
 |Name | Type | Description|
 |-----|------|------------|
 |EntityId|Int32|The id for the entity that this component belongs to.  This id belongs to the IEcsComponent interface and is used for matching under the hood.|
+|Enabled|Boolean|Is this component enabled|
 |IsQuiting|Boolean|A bool variable to determine if the application is quiting, useful in some situations.|
 |CachedTransform|Transform|A lazy loaded cached reference to the transform|
 |Entity|Entity|The actual entity component that this component belongs to.|
 
 
 
+## CreateObject Method
+Creates a new gamobject entity with the component attached to it.
+## Parameters
+|Name | Description|
+|-----|------------|
+|componentType|The type of component to add to the game object/entity.|
+## CreateObject Method
+Creates a new gamobject entity with the component attached to it.
 # EcsComponentService
 The main component service used to register and manage all components and groups.
 
@@ -81,6 +100,10 @@ System.ComponentSystem.RegisterComponent(typeof(CustomComponent), new CustomComp
 ```
 ## RegisterGroup Method
 Registers a a reactive group with the list of managers.  If the group already exists it will return it, if not it will create a new one and return that.
+## Parameters
+|Name | Description|
+|-----|------------|
+|componentId||
 # EcsDispatcher
 Used for dispatching entity events that come from standard unity messages/events.
 
@@ -103,29 +126,10 @@ This is the base class for all systems.  It derives from SystemServiceMonoBehavi
 |Name | Type | Description|
 |-----|------|------------|
 |ComponentSystem|IComponentSystem|Access to the component system.  Use this to get/register components or groups.|
+|EventSystem|EcsEventAggregator|The Ecs Event Aggregator, comes with additional features specific to ECS.|
 
 
 
-## Setup Method
-The setup method is used to register groups/components, and setup event listeners using EventAggregator
-### Example
-```cs
-public override void Setup() {
-        base.Setup();
-        EnemyAIManager = ComponentSystem.RegisterComponent-EnemyAI-();
-        RandomRotationManager = ComponentSystem.RegisterComponent-RandomRotation-();
-        ProjectileManager = ComponentSystem.RegisterComponent-Projectile-();
-        SpawnWithRandomXManager = ComponentSystem.RegisterComponent-SpawnWithRandomX-();
-        DestroyOnCollisionManager = ComponentSystem.RegisterComponen-DestroyOnCollision-();
-        this.OnEvent-uFrame.ECS.OnTriggerEnterDispatcher-().Subscribe(_=>{ HandleDestroyOnCollisionFilter(_); }).DisposeWith(this);
-        RandomRotationManager.CreatedObservable.Subscribe(BeginRandomRotationComponentCreatedFilter).DisposeWith(this);
-        ProjectileManager.CreatedObservable.Subscribe(ProjectileCreatedComponentCreatedFilter).DisposeWith(this);
-        SpawnWithRandomXManager.CreatedObservable.Subscribe(SetRandomPositionComponentCreatedFilter).DisposeWith(this);
-        this.OnEvent-uFrame.ECS.OnCollisionEnterDispatcher-().Subscribe(_=>{ HazardSystemOnCollisionEnterDispatcherFilter(_); }).DisposeWith(this);
-}
-```
-## Loaded Method
-Invoked when all EcsSystem setup methods have been invoked
 # EcsSystemExtensions
 These extensions are for facilitating the construction of systems. Component Created/Destroyed, Property Changes, Collection Modifications..etc
 
@@ -143,6 +147,16 @@ Listens for when a component is destroyed, this also works for groups sinces com
 |-----|------------|
 |system||
 ## PropertyChanged Method
+Listens for when a property is changed and ensures that the subscription is properly disposed when the system disposes or when the component disposes.
+## Parameters
+|Name | Description|
+|-----|------------|
+|system|This system to install this listner on, it will get disposed with this one.|
+|select|A selector for the property observable on TComponentType that you wish to listen for.|
+|handler|The method that is invoked when the property changes.|
+|getImmediateValue|The lambda method for retreiving the primtive value, if this is not null, it will immedietly invoke the handler with this value.|
+|onlyWhenChanged|Only invoke the method when the value actually changes rather than when it is set.|
+## PropertyChangedEvent Method
 Listens for when a property is changed and ensures that the subscription is properly disposed when the system disposes or when the component disposes.
 ## Parameters
 |Name | Description|
@@ -175,6 +189,7 @@ The base class for all group items, for example ReactiveGroup`TGroupItem`
 ## Properties
 |Name | Type | Description|
 |-----|------|------------|
+|Enabled|Boolean|Is this component enabled|
 |EntityId|Int32|The entity id for the entity this group item belongs to|
 |Entity|Entity|The entity object that this groupitem belongs to|
 

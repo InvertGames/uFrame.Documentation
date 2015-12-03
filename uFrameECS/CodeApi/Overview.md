@@ -3,6 +3,8 @@
 # uFrame.ECS
 |Name |Description|
 |-----|------------|
+|[AttributeGroup`1](AttributeGroup`1.md)|A Type group reactively keeps up with all components that have a specific attribute defined on the component decleration.|
+|[DescriptorGroup`1](DescriptorGroup`1.md)|A Type group reactively keeps up with all components that have a specific base class, or interface implementation. This can be useful for queries such as. GetAllINetworkable, GetAllSerializable|
 |[EcsComponent](EcsComponent.md)|The base class for all ECS components, these components are nothing more than just data.   For the sake of Unity Compatability, it listens for a few Unity messages to make sure the ecs component system is always updated.|
 |[EcsComponentService](EcsComponentService.md)|The main component service used to register and manage all components and groups.|
 |[EcsDispatcher](EcsDispatcher.md)|Used for dispatching entity events that come from standard unity messages/events.|
