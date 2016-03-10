@@ -9,6 +9,7 @@ Welcome to the uFrame Entity Component Documentation!
 - [Events](API/Events.md)
 - [Descriptors](API/Descriptors.md)
 - [The Entity Component](API/EntityComponent.md)
+- [Entity Proxies](API/EntityProxies.md)
 - [Create Custom Actions](API/CreateCustomActions.md)
 - [Get More Actions](ThirdPartyActions.md)
 
