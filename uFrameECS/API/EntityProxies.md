@@ -1,7 +1,7 @@
 # Entity Proxies - Creating Composite Entities
 
 Let's say you have a set of components that all need to work together, or a composite entity.
-For examplea menu screen made up of the following:
+For example, a menu screen made up of the following:
 
 - UsernameInput
 - PasswordInput
