@@ -1,4 +1,4 @@
-Entity Proxies
+# Entity Proxies - Creating Composite Entities
 
 Let's say you have a set of components that all need to work together, or a composite entity.
 For examplea menu screen made up of the following:
@@ -53,5 +53,3 @@ namespace Example {
     }
 }
 ```
-
-You could have a RegisterSystem that looks pretty similar.

@@ -10,6 +10,7 @@ These are mostly useful when you want to trigger an event on an entity from anot
 An example of this would be detecting a trigger enter event on the player but the collider lives on a child gameobject.
 
 Just drag the "player" gameobject to the "Proxy For" box, and all components on that gameobject will live on the "player" entity.
+See a more in depth example [here](API/EntityProxies.md)
 
 ### B - Entity Id's
 - ##### 0 = Auto Assign at runtime
